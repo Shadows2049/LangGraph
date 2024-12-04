@@ -1,0 +1,407 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.irs.gov/efile"  targetNamespace="http://www.irs.gov/efile" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" >
+<xsd:include schemaLocation="../../NYSCommon/master.xsd"/>
+<xsd:include schemaLocation="SchedCT46INVTAXCRDTBO.xsd"/>
+<xsd:include schemaLocation="SchedCT46RCPINVTAXCRDTBO.xsd"/>
+<xsd:complexType name="FormCT46BO">
+<xsd:complexContent>
+<xsd:extension base="FormBO">
+<xsd:sequence>
+	<xsd:element name="ITC_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="ITC_RD_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="ITC_EIC_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="ITC_PRIOR_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="ITC_TOT_AVL_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="ITC_RECAP_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="ITC_NET_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="ITC_USED_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="ITC_UNUSED_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="ITC_RFND_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="ITC_CRYF_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="ITC_XPRD_CR_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="ITC_CR_LMT_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="ITC_OCR_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="ITC_REMAIN_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="ITC_CR_NXT_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="ITC_BT_1YR_NMBR" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:decimal">
+						<xsd:fractionDigits value="3"/>
+						<xsd:totalDigits value="11"/>
+						<xsd:minInclusive value="0"/>
+						<xsd:maxInclusive value="9999999.999"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="ITC_CT_1YR_NMBR" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:decimal">
+						<xsd:fractionDigits value="3"/>
+						<xsd:totalDigits value="11"/>
+						<xsd:minInclusive value="0"/>
+						<xsd:maxInclusive value="9999999.999"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="ITC_BA_1YR_NMBR" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:decimal">
+						<xsd:fractionDigits value="3"/>
+						<xsd:totalDigits value="11"/>
+						<xsd:minInclusive value="0"/>
+						<xsd:maxInclusive value="9999999.999"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="ITC_TA_1YR_NMBR" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:decimal">
+						<xsd:fractionDigits value="3"/>
+						<xsd:totalDigits value="11"/>
+						<xsd:minInclusive value="0"/>
+						<xsd:maxInclusive value="9999999.999"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="ITC_BT_2YR_NMBR" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:decimal">
+						<xsd:fractionDigits value="3"/>
+						<xsd:totalDigits value="11"/>
+						<xsd:minInclusive value="0"/>
+						<xsd:maxInclusive value="9999999.999"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="ITC_CT_2YR_NMBR" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:decimal">
+						<xsd:fractionDigits value="3"/>
+						<xsd:totalDigits value="11"/>
+						<xsd:minInclusive value="0"/>
+						<xsd:maxInclusive value="9999999.999"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="ITC_BA_2YR_NMBR" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:decimal">
+						<xsd:fractionDigits value="3"/>
+						<xsd:totalDigits value="11"/>
+						<xsd:minInclusive value="0"/>
+						<xsd:maxInclusive value="9999999.999"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="ITC_TA_2YR_NMBR" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:decimal">
+						<xsd:fractionDigits value="3"/>
+						<xsd:totalDigits value="11"/>
+						<xsd:minInclusive value="0"/>
+						<xsd:maxInclusive value="9999999.999"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="ITC_ATT_RCP_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="ITC_RCP_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="ITC_OTH_RCP_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="ITC_TOT_RCP_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="ITC_EIC1_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="ITC_EIC2_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="ITC_3_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="ITC_RD3_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="CMLTV_EXCP_CNT" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:pattern value=".{0,3}"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="PSTMRK_DT" minOccurs="0" type="dateField"/>
+	<xsd:element name="ACH_RESTRICT_IND" minOccurs="0" type="switchIndicatorField"/>
+	<xsd:element name="IMG_IND" minOccurs="0" type="indicatorField"/>
+	<xsd:element name="FORM_ID_SEQ_NMBR" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:pattern value=".{0,1}"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="ROW_EXPIR_TS" minOccurs="0" type="timeStampField"/>
+	<xsd:element name="ROW_STATUS_IND" minOccurs="0" type="indicatorField"/>
+	<xsd:element name="RTN_CLM_IND" minOccurs="0" type="indicatorField"/>
+	<xsd:element name="RTN_CALC_IND" minOccurs="0" type="indicatorField"/>
+	<xsd:element name="RTN_BANK_CALC_IND" minOccurs="0" type="indicatorField"/>
+	<xsd:element name="DIN_NMBR" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:integer">
+						<xsd:pattern value="[\-?0-9]{1,15}"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="DCMT_RCVD_DT" minOccurs="0" type="dateField"/>
+	<xsd:element name="ROW_EFCTV_TS" minOccurs="0" type="timeStampField"/>
+	<xsd:element name="FRAUD_CK_DONE_IND" minOccurs="0" type="indicatorField"/>
+	<xsd:element name="SRC_CODE" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:pattern value=".{0,3}"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="ITC_SUBTL_CR_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="ITC_LT_XPRD_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="ITC_TX_B4_CR_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="ITC_TX_LESS_CR_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="ITC_TX_LRGR_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="ITC_TOT_ITC_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="ITC_TOT_RD_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="ITC_BSE_1_YR" minOccurs="0" type="yearTypeField"/>
+	<xsd:element name="ITC_BSE_1_B_NMBR" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:integer">
+						<xsd:pattern value="[\-?0-9]{1,6}"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="ITC_BSE_1_C_NMBR" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:integer">
+						<xsd:pattern value="[\-?0-9]{1,6}"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="ITC_BSE_1_D_NMBR" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:integer">
+						<xsd:pattern value="[\-?0-9]{1,6}"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="ITC_BSE_1_E_NMBR" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:integer">
+						<xsd:pattern value="[\-?0-9]{1,6}"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="ITC_CR_YR_1_YR" minOccurs="0" type="yearTypeField"/>
+	<xsd:element name="ITC_CR_YR_1_B_NMBR" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:integer">
+						<xsd:pattern value="[\-?0-9]{1,6}"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="ITC_CR_YR_1_C_NMBR" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:integer">
+						<xsd:pattern value="[\-?0-9]{1,6}"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="ITC_CR_YR_1_D_NMBR" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:integer">
+						<xsd:pattern value="[\-?0-9]{1,6}"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="ITC_CR_YR_1_E_NMBR" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:integer">
+						<xsd:pattern value="[\-?0-9]{1,6}"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="ITC_BSE_2_YR" minOccurs="0" type="yearTypeField"/>
+	<xsd:element name="ITC_BSE_2_B_NMBR" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:integer">
+						<xsd:pattern value="[\-?0-9]{1,6}"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="ITC_BSE_2_C_NMBR" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:integer">
+						<xsd:pattern value="[\-?0-9]{1,6}"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="ITC_BSE_2_D_NMBR" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:integer">
+						<xsd:pattern value="[\-?0-9]{1,6}"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="ITC_BSE_2_E_NMBR" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:integer">
+						<xsd:pattern value="[\-?0-9]{1,6}"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="ITC_CR_YR_2_YR" minOccurs="0" type="yearTypeField"/>
+	<xsd:element name="ITC_CR_YR_2_B_NMBR" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:integer">
+						<xsd:pattern value="[\-?0-9]{1,6}"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="ITC_CR_YR_2_C_NMBR" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:integer">
+						<xsd:pattern value="[\-?0-9]{1,6}"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="ITC_CR_YR_2_D_NMBR" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:integer">
+						<xsd:pattern value="[\-?0-9]{1,6}"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="ITC_CR_YR_2_E_NMBR" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:integer">
+						<xsd:pattern value="[\-?0-9]{1,6}"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="ITC_TAX_YR" minOccurs="0" type="yearTypeField"/>
+	<xsd:element name="ITC_INV_CR_1_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="ITC_TAX_2_YR" minOccurs="0" type="yearTypeField"/>
+	<xsd:element name="ITC_INV_CR_2_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="ITC_PRTNR_IND" minOccurs="0" type="switchIndicatorField"/>
+	<xsd:element name="ITC_1ST_NMBR" minOccurs="0" type="ratio99999Field"/>
+	<xsd:element name="ITC_2YR_NMBR" minOccurs="0" type="ratio99999Field"/>
+	<xsd:element name="ITC_FARM_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="ITC_FARM3_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="ITC_TOT_FARM_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="ITC_NEW_BUS_IND" minOccurs="0" type="switchIndicatorField"/>
+	<xsd:element name="ITC_ELIG_FARM_IND" minOccurs="0" type="switchIndicatorField"/>
+	<xsd:element minOccurs="0" name="CT46INVTAXCRDT" type="SchedCT46INVTAXCRDTBO"/>
+	<xsd:element minOccurs="0" name="CT46RCPINVTAXCRDT" type="SchedCT46RCPINVTAXCRDTBO"/>
+</xsd:sequence>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+</xsd:schema>

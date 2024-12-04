@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.irs.gov/efile"  targetNamespace="http://www.irs.gov/efile" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" >
+<xsd:include schemaLocation="../../NYSCommon/master.xsd"/>
+<xsd:complexType name="SchedAModInfoBO">
+<xsd:complexContent>
+<xsd:extension base="FormBO">
+<xsd:sequence>
+	<xsd:element name="NMBR" minOccurs="1" type="modCodeTypeField"/>
+	<xsd:element name="PRNT_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="TOT_SUB_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="SUBTL_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="INTERCORP_ELM_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="CMB_TOT_AMT" minOccurs="0" type="positiveAmountField"/>
+</xsd:sequence>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+</xsd:schema>

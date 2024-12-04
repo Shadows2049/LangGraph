@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.irs.gov/efile"  targetNamespace="http://www.irs.gov/efile" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" >
+<xsd:include schemaLocation="../../NYSCommon/master.xsd"/>
+<xsd:include schemaLocation="SchedCT652QUALCHLDCREXPBO.xsd"/>
+<xsd:include schemaLocation="SchedCT652QUALCHLDCRRSCBO.xsd"/>
+<xsd:include schemaLocation="SchedCT652PSHIPINFOBO.xsd"/>
+<xsd:complexType name="FormCT652BO">
+<xsd:complexContent>
+<xsd:extension base="FormBO">
+<xsd:sequence>
+	<xsd:element name="EPC_CRDT_ERNR_IND" minOccurs="0" type="switchIndicatorField"/>
+	<xsd:element name="EPC_CR_ERNR_NO_IND" minOccurs="0" type="switchIndicatorField"/>
+	<xsd:element name="EPC_ADDL_A_EXP_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="EPC_PART_A_EXP_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="EPC_P1_CR_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="EPC_ADDL_E_EXP_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="EPC_PART_E_EXP_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="EPC_P2_CR_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="EPC_P1_P2_CR_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="EPC_ALLW_CR_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="EPC_ADDL_B_CR_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="EPC_PRTN_CR_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="EPC_PRTN_RCP_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="EPC_ENT_CR_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="EPC_PRTN_TOT_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="EPC_TOT_CRDT_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="EPC_RCP_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="EPC_TOT_CR_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="EPC_TXB4_CR_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="EPC_OCR_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="EPC_TX_AFT_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="EPC_MIN_TX_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="EPC_LMT_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="EPC_USED_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="EPC_UNUSED_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="EPC_RFND_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="EPC_CR_2_NXT_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="EPC_FED_RCP_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="EPC_FED_NY_CR_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="EPC_RCP_PCT" minOccurs="0" type="ratioField"/>
+	<xsd:element name="EPC_ORIG_CR_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="EPC_NY_RCP_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="EPC_SHR_RCP_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="EPC_TOT_RCP_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element minOccurs="0" name="CT652QUALCHLDCREXP" type="SchedCT652QUALCHLDCREXPBO"/>
+	<xsd:element minOccurs="0" name="CT652QUALCHLDCRRSC" type="SchedCT652QUALCHLDCRRSCBO"/>
+	<xsd:element minOccurs="0" name="CT652PSHIPINFO" type="SchedCT652PSHIPINFOBO"/>
+</xsd:sequence>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+</xsd:schema>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.irs.gov/efile"  targetNamespace="http://www.irs.gov/efile" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" >
+<xsd:include schemaLocation="../../NYSCommon/master.xsd"/>
+<xsd:include schemaLocation="SchedCT657COMPOFCRINFOBO.xsd"/>
+<xsd:include schemaLocation="SchedCT657PSHIPINFOBO.xsd"/>
+<xsd:include schemaLocation="SchedCT657RECAPCRDTINFOBO.xsd"/>
+<xsd:complexType name="FormCT657BO">
+<xsd:complexContent>
+<xsd:extension base="FormBO">
+<xsd:sequence>
+	<xsd:element name="CCC_CRDT_ERNR_IND" minOccurs="0" type="switchIndicatorField"/>
+	<xsd:element name="CCC_CR_ERNR_NO_IND" minOccurs="0" type="switchIndicatorField"/>
+	<xsd:element name="CCC_ADDL_A_CR_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="CCC_PART_A_CR_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="CCC_ADDL_B_CR_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="CCC_PART_B_CR_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="CCC_TOT_CR_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="CCC_TXB4_CR_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="CCC_OCR_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="CCC_TXAFT_APL_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="CCC_FIX_MIN_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="CCC_LMT_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="CCC_USED_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="CCC_UNUSED_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="CCC_RFND_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="CCC_CR_2_NXT_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="CCC_ADDL_D_CR_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="CCC_RECAP_CR_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element minOccurs="0" name="CT657COMPOFCRINFO" type="SchedCT657COMPOFCRINFOBO"/>
+	<xsd:element minOccurs="0" name="CT657PSHIPINFO" type="SchedCT657PSHIPINFOBO"/>
+	<xsd:element minOccurs="0" name="CT657RECAPCRDTINFO" type="SchedCT657RECAPCRDTINFOBO"/>
+</xsd:sequence>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+</xsd:schema>

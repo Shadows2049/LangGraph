@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.irs.gov/efile"  targetNamespace="http://www.irs.gov/efile" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" >
+<xsd:include schemaLocation="../../NYSCommon/master.xsd"/>
+<xsd:include schemaLocation="SchedCT331ALLOCCAPCOCRBO.xsd"/>
+<xsd:include schemaLocation="SchedCT331CAPCOTOAFFBO.xsd"/>
+<xsd:include schemaLocation="SchedCT331CAPCOFRMAFFBO.xsd"/>
+<xsd:include schemaLocation="SchedCT331CAPCOCRYFFRMAFFBO.xsd"/>
+<xsd:include schemaLocation="SchedCT331CAPCOCRYFTOAFFBO.xsd"/>
+<xsd:complexType name="FormCT331BO">
+<xsd:complexContent>
+<xsd:extension base="FormBO">
+<xsd:sequence>
+	<xsd:element name="CMLTV_EXCP_CNT" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:pattern value=".{0,3}"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="PSTMRK_DT" minOccurs="0" type="dateField"/>
+	<xsd:element name="ACH_RESTRICT_IND" minOccurs="0" type="switchIndicatorField"/>
+	<xsd:element name="IMG_IND" minOccurs="0" type="indicatorField"/>
+	<xsd:element name="FORM_ID_SEQ_NMBR" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:pattern value=".{0,1}"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="ROW_EXPIR_TS" minOccurs="0" type="timeStampField"/>
+	<xsd:element name="ROW_STATUS_IND" minOccurs="0" type="indicatorField"/>
+	<xsd:element name="RTN_CLM_IND" minOccurs="0" type="indicatorField"/>
+	<xsd:element name="RTN_CALC_IND" minOccurs="0" type="indicatorField"/>
+	<xsd:element name="RTN_BANK_CALC_IND" minOccurs="0" type="indicatorField"/>
+	<xsd:element name="DIN_NMBR" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:integer">
+						<xsd:pattern value="[\-?0-9]{1,15}"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="DCMT_RCVD_DT" minOccurs="0" type="dateField"/>
+	<xsd:element name="ROW_EFCTV_TS" minOccurs="0" type="timeStampField"/>
+	<xsd:element name="FRAUD_CK_DONE_IND" minOccurs="0" type="indicatorField"/>
+	<xsd:element name="SRC_CODE" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:pattern value=".{0,3}"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="CAPCO_CR_AVL_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="CAPCO_CR_TOAFF_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="CAPCO_SUBTOT_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="CAPCO_CR_FRAFF_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="CAPCO_CUR_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="CAPCO_PRC_YRS_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="CAPCO_AFF_CRYF_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="CAPCO_TOT_PRR_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="CAPCO_CR_TOT_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="CAPCO_CR_RECAP_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="CAPCO_CR_NET_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="CAPCO_TAX_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="CAPCO_CR_OCR_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="CAPCO_TX_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="CAPCO_MIN_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="CAPCO_CR_LMT_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="CAPCO_CR_USED_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="CAPCO_REMAIN_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="CAPCO_CRYF_AFF_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="CAPCO_CR_CRYF_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="CAPCO_TOT_CR_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="CAPCO_RECAPA_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="CAPCO_RECAPB_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="CAPCO_RECAPC_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="CAPCO_RECAPREV_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="CAPCO_TOT_RCP_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="CAPCO_TO_AFF_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="CAPCO_FROM_AFF_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="CAPCO_CRYF_IN_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="CAPCO_CRYF_OUT_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element minOccurs="0" name="CT331ALLOCCAPCOCR" type="SchedCT331ALLOCCAPCOCRBO"/>
+	<xsd:element minOccurs="0" name="CT331CAPCOTOAFF" type="SchedCT331CAPCOTOAFFBO"/>
+	<xsd:element minOccurs="0" name="CT331CAPCOFRMAFF" type="SchedCT331CAPCOFRMAFFBO"/>
+	<xsd:element minOccurs="0" name="CT331CAPCOCRYFFRMAFF" type="SchedCT331CAPCOCRYFFRMAFFBO"/>
+	<xsd:element minOccurs="0" name="CT331CAPCOCRYFTOAFF" type="SchedCT331CAPCOCRYFTOAFFBO"/>
+</xsd:sequence>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+</xsd:schema>

@@ -1,0 +1,115 @@
+Based on the provided document, here is a JSON-LD scheme representing the data on the form:
+
+
+{
+  "@context": "https://schema.org",
+  "@type": "LegalDocument",
+  "name": "Form 608 - Certificate of Withdrawal of Registration",
+  "description": "Certificate of Withdrawal of Registration for foreign filing entities in Texas",
+  "dateCreated": "2024-07-17",
+  "creator": {
+    "@type": "GovernmentOrganization",
+    "name": "Secretary of State of Texas",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "P.O. Box 13697",
+      "addressLocality": "Austin",
+      "addressRegion": "TX",
+      "postalCode": "78711-3697",
+      "addressCountry": "USA"
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+1-512-463-5555",
+      "faxNumber": "+1-512-463-5709"
+    }
+  },
+  "mainEntity": {
+    "@type": "Corporation",
+    "name": "Entity Name",
+    "legalName": "Entity Name",
+    "organizationType": "Type of Organization",
+    "foundingLocation": {
+      "@type": "Place",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Jurisdiction of Formation"
+      }
+    },
+    "foundingDate": "Date of Registration",
+    "identifier": "File Number",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Principal Office Street Address",
+      "addressLocality": "Principal Office City",
+      "addressRegion": "Principal Office State",
+      "postalCode": "Principal Office Zip Code",
+      "addressCountry": "Principal Office Country"
+    }
+  },
+  "serviceOfProcess": {
+    "@type": "Service",
+    "name": "Service of Process",
+    "serviceType": "Process Service",
+    "description": "The foreign filing entity revokes the authority of the entity’s registered agent to accept service of process and consents to service by the secretary of state.",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Mailing Address for Process",
+      "addressLocality": "Mailing City for Process",
+      "addressRegion": "Mailing State for Process",
+      "postalCode": "Mailing Zip Code for Process",
+      "addressCountry": "Mailing Country for Process"
+    }
+  },
+  "financialObligations": {
+    "@type": "MonetaryAmount",
+    "name": "Money Due to the State",
+    "description": "Any money due or accrued to the state has been paid or adequate provision has been made for the payment of that money."
+  },
+  "filingEffectiveness": {
+    "@type": "Filing",
+    "description": "Effectiveness of Filing",
+    "effectiveDate": "Effective Date",
+    "delayedEffectiveDate": "Delayed Effective Date",
+    "futureEventEffectiveDate": {
+      "type": "Date",
+      "name": "90th day after signing",
+      "event": "Future Event or Fact"
+    }
+  },
+  "taxCertificate": {
+    "@type": "TaxCertificate",
+    "description": "Tax Certificate",
+    "required": "Required unless the entity is a foreign nonprofit corporation",
+    "attachment": "Certificate from the comptroller of public accounts"
+  },
+  "execution": {
+    "@type": "Action",
+    "actionStatus": "CompletedActionStatus",
+    "agent": {
+      "@type": "Person",
+      "name": "Authorized Person Name",
+      "jobTitle": "Authorized Person Title",
+      "date": "Signature Date"
+    }
+  },
+  "fees": {
+    "@type": "MonetaryAmount",
+    "description": "Filing Fee",
+    "value": {
+      "@type": "QuantitativeValue",
+      "value": 15,
+      "currency": "USD"
+    },
+    "alternateValues": [
+      {
+        "@type": "QuantitativeValue",
+        "value": 5,
+        "currency": "USD",
+        "description": "For nonprofit corporation or cooperative association"
+      }
+    ]
+  },
+  "paymentInstructions": "Fees may be paid by personal checks, money orders, LegalEase debit cards, or American Express, Discover, MasterCard, and Visa credit cards. Checks or money orders must be payable through a U.S. bank or financial institution and made payable to the secretary of state. Fees paid by credit card are subject to a statutorily authorized convenience fee of 2.7 percent of the total fees.",
+  "submissionInstructions": "Submit the completed form in duplicate along with the filing fee and appropriate certificate of account status. The form may be mailed to P.O. Box 13697, Austin, Texas 78711-3697; faxed to (512) 463-5709; or delivered to the James Earl Rudder Office Building, 1019 Brazos, Austin, Texas 78701. If a document is transmitted by fax, credit card information must accompany the transmission (Form 807)."
+}

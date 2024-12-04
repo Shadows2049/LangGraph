@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.irs.gov/efile"  targetNamespace="http://www.irs.gov/efile" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" >
+<xsd:include schemaLocation="../NYSCommon/master.xsd"/>
+<xsd:include schemaLocation="FilingKeysBO.xsd"/>
+<xsd:include schemaLocation="TICorpBO.xsd"/>
+<xsd:include schemaLocation="CompositionBO.xsd"/>
+<xsd:complexType name="ProcessBO">
+<xsd:sequence>
+	<xsd:element minOccurs="0" name="filingKeys" type="FilingKeysBO"/>
+	<xsd:element minOccurs="0" name="tiCorp" type="TICorpBO"/>
+	<xsd:element minOccurs="0" name="composition" type="CompositionBO"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:schema>

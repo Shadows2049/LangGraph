@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.irs.gov/efile"  targetNamespace="http://www.irs.gov/efile" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" >
+<xsd:include schemaLocation="../../NYSCommon/master.xsd"/>
+<xsd:complexType name="SchedInvcapInfoBO">
+<xsd:complexContent>
+<xsd:extension base="FormBO">
+<xsd:sequence>
+	<xsd:element name="DESCRIPTION" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:pattern value=".{0,138}"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="NAME" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:pattern value=".{0,39}"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="INV_CUSIP_NMBR" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:pattern value=".{0,9}"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="INV_LOT_NMBR" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:pattern value=".{0,9}"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="ACQ_DT" minOccurs="0" type="dateField"/>
+	<xsd:element name="SOLD_DT" minOccurs="0" type="dateField"/>
+	<xsd:element name="AVG_FMV_RPT_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="LIAB_ATTR_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="NET_AVG_FMV_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="ACQ_SHR_NMBR" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:integer">
+						<xsd:pattern value="[\-?0-9]{1,14}"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="SOLD_SHR_NMBR" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:integer">
+						<xsd:pattern value="[\-?0-9]{1,14}"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+</xsd:sequence>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+</xsd:schema>

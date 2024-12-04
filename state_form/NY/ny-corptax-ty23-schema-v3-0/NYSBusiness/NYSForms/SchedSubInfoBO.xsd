@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.irs.gov/efile"  targetNamespace="http://www.irs.gov/efile" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" >
+<xsd:include schemaLocation="../../NYSCommon/master.xsd"/>
+<xsd:complexType name="SchedSubInfoBO">
+<xsd:complexContent>
+<xsd:extension base="FormBO">
+<xsd:sequence>
+	<xsd:element name="EIN_SUBSID_ID" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:pattern value=".{0,9}"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="SUB_NAME" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:pattern value=".{0,138}"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="NYS_TXBL_PREM_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="NYS_OCN_PREM_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="NYS_PREM_ANNTY_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="NYS_PREM_REIN_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="NYS_GROSS_PREM_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="NYS_PREM_CEDED_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="PREM_NYS_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="PREM_ALL_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="NY_PREM_PCT" minOccurs="0" type="ratioField"/>
+	<xsd:element name="WGHTF_PREM_PCT" minOccurs="0" type="ratioField"/>
+	<xsd:element name="WG_NYS_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="WG_ALL_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="NY_PYRLL_PCT" minOccurs="0" type="ratioField"/>
+	<xsd:element name="ALLOC_PCT" minOccurs="0" type="ratioField"/>
+	<xsd:element name="AVG_VL_SUBCAP_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="LIAB_SUBCAP_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="NET_SUBCAP_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="S_ALLOC_SUBCAP_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="ASST_AVG_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="FMV_ADJ_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="NONASST_ANNUAL_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="LIAB_FMV_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="ASST_RES_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="FED_TXBL_INC_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="DVND_RCVD_DED_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="DVND_INT_INC_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="INT_STCKHLDRS_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="ADJ_GAIN_LOSS_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="DED_SUBCAP_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="NYS_FRAN_DED_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="SHL_DED_ADD_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="SHL_INCL_ADD_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="ACRS_DED_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="OTH_ADD_AMT" minOccurs="0" type="positiveAmountField"/>
+	<xsd:element name="IDC_SUBCAP_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="HALF_DVND_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="GAIN_INSTL_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="SHL_INCL_SUBT_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="SHL_DED_SUBT_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="NYS_DPRC_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="OTH_SUBT_AMT" minOccurs="0" type="positiveAmountField"/>
+	<xsd:element name="OFCR_SAL_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="LIFE_INS_PREM_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="ACCHLTH_INS_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="OTH_INS_PREM_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="TOT_LIFE_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="LIFE_1505_PREM_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="ACCHLTH_1505_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="OTH_1505_PREM_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="INS_PRM_1505_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="TOT_OTH_PREM_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="PREM_LMT_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="TOT_NYS_NMBR" minOccurs="0" type="ratio99999Field"/>
+</xsd:sequence>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+</xsd:schema>

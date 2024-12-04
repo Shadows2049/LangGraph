@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.irs.gov/efile"  targetNamespace="http://www.irs.gov/efile" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" >
+<xsd:include schemaLocation="../../NYSCommon/master.xsd"/>
+<xsd:include schemaLocation="SchedCT33AATTALCREINPREMBO.xsd"/>
+<xsd:include schemaLocation="SchedCT33AATTCMPALCSUBCAPBO.xsd"/>
+<xsd:include schemaLocation="SchedCT33AATTADJGLB4DTBO.xsd"/>
+<xsd:include schemaLocation="SchedCT33AATTOFFICERSBO.xsd"/>
+<xsd:complexType name="FormCT33AATTBO">
+<xsd:complexContent>
+<xsd:extension base="FormBO">
+<xsd:sequence>
+	<xsd:element name="SUB_SEQ_NMBR" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:nonNegativeInteger">
+						<xsd:pattern value="[0-9]{1,4}"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="CORP_NAME" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:pattern value=".{0,39}"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="INCORP_DATE" minOccurs="0" type="dateField"/>
+	<xsd:element name="FRGN_BBNY_DATE" minOccurs="0" type="dateField"/>
+	<xsd:element name="PRIN_BUS_ACTY_DESC" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:pattern value=".{0,35}"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="CMB_PARENT_NAME" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:pattern value=".{0,138}"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="PARENT_EIN_ID" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:pattern value=".{0,9}"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="MTA_IND" minOccurs="0" type="indicatorType03Field"/>
+	<xsd:element name="TOT_REIN_PREM_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="S_AVGVL_SUBCAP_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="S_LIAB_SUBCAP_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="S_NET_SUBCAP_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="ALLOC_SUBCAP_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="ASST_BEG_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="ASST_END_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="ASST_AVG_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="FMV_ADJ_BEG_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="FMV_ADJ_END_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="FMV_ADJ_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="NON_ASST_BEG_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="NON_ASST_END_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="NONASST_ANNUAL_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="LIAB_FMV_BEG_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="LIAB_FMV_END_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="LIAB_FMV_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="ASST_RES_BEG_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="ASST_RES_END_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="ASST_RES_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="TOT_NYS_GL_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="TOT_FED_GL_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="ADJ_GAIN_LOSS_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="TOT_SLRY_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="AUTHOFCR_FRST_NAME" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:pattern value=".{0,138}"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="AUTHOFCR_LAST_NAME" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:pattern value=".{0,138}"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="AUTHOFCR_TTLE_DESC" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:pattern value=".{0,138}"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="TP_EMAIL_ADR" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:pattern value=".{0,75}"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="AUTH_PH_NMBR" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:pattern value=".{0,12}"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="AUTH_OFCR_SGN_DT" minOccurs="0" type="dateField"/>
+	<xsd:element name="FIRM_NAME" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:pattern value=".{0,35}"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="PREP_LN_1_ADR" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:pattern value=".{0,30}"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="PREP_LN_2_ADR" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:pattern value=".{0,30}"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="PREP_CTY_ADR" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:pattern value="[A-Za-z\s]{0,20}"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="PREP_ST_ADR" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:pattern value=".{0,2}"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="PREP_ZIP_5_ADR" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:pattern value="[A-Za-z0-9\s]{0,5}"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="PREP_ZIP_4_ADR" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:pattern value="[A-Za-z0-9\s]{0,4}"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="PP_EMAIL_ADR" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:pattern value=".{0,75}"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="PREP_SIGN_DT" minOccurs="0" type="dateField"/>
+	<xsd:element minOccurs="0" name="CT33AATTALCREINPREM" type="SchedCT33AATTALCREINPREMBO"/>
+	<xsd:element minOccurs="0" name="CT33AATTCMPALCSUBCAP" type="SchedCT33AATTCMPALCSUBCAPBO"/>
+	<xsd:element minOccurs="0" name="CT33AATTADJGLB4DT" type="SchedCT33AATTADJGLB4DTBO"/>
+	<xsd:element minOccurs="0" name="CT33AATTOFFICERS" type="SchedCT33AATTOFFICERSBO"/>
+</xsd:sequence>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+</xsd:schema>

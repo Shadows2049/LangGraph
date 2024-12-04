@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.irs.gov/efile"  targetNamespace="http://www.irs.gov/efile" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" >
+<xsd:include schemaLocation="../../NYSCommon/master.xsd"/>
+<xsd:complexType name="FormCT3_3BO">
+<xsd:complexContent>
+<xsd:extension base="FormBO">
+<xsd:sequence>
+	<xsd:element name="CMLTV_EXCP_CNT" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:pattern value=".{0,3}"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="PSTMRK_DT" minOccurs="0" type="dateField"/>
+	<xsd:element name="ACH_RESTRICT_IND" minOccurs="0" type="switchIndicatorField"/>
+	<xsd:element name="IMG_IND" minOccurs="0" type="indicatorField"/>
+	<xsd:element name="FORM_ID_SEQ_NMBR" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:pattern value=".{0,1}"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="ROW_EXPIR_TS" minOccurs="0" type="timeStampField"/>
+	<xsd:element name="ROW_STATUS_IND" minOccurs="0" type="indicatorField"/>
+	<xsd:element name="RTN_CLM_IND" minOccurs="0" type="indicatorField"/>
+	<xsd:element name="RTN_CALC_IND" minOccurs="0" type="indicatorField"/>
+	<xsd:element name="RTN_BANK_CALC_IND" minOccurs="0" type="indicatorField"/>
+	<xsd:element name="DIN_NMBR" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:integer">
+						<xsd:pattern value="[\-?0-9]{1,15}"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="DCMT_RCVD_DT" minOccurs="0" type="dateField"/>
+	<xsd:element name="ROW_EFCTV_TS" minOccurs="0" type="timeStampField"/>
+	<xsd:element name="FRAUD_CK_DONE_IND" minOccurs="0" type="indicatorField"/>
+	<xsd:element name="SRC_CODE" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:pattern value=".{0,3}"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="APP_AFT_ADBK_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="PNOLC_MIN_TX_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="PNOLC_NET_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="PNOLC_DED_MAX_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="MBR_UNOL_TOT_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="MBR_PNOLC_TOT_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="MBR_PRD_TOT_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="MBR_POOL_TOT_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="CUR_TX_RT_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="PNOLC_CUR_SUBT_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="PNOLC_PRIOR_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="PNOLC_AVL_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="PNOLC_USED_AMT" minOccurs="0" type="positiveAmountField"/>
+	<xsd:element name="PNOLC_CRYF_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="PNOLC_REM_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="PNOLC_UNEXH_AMT" minOccurs="0" type="amountField"/>
+</xsd:sequence>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+</xsd:schema>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.irs.gov/efile"  targetNamespace="http://www.irs.gov/efile" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" >
+<xsd:include schemaLocation="../../NYSCommon/master.xsd"/>
+<xsd:complexType name="SchedAdjGLB4DtBO">
+<xsd:complexContent>
+<xsd:extension base="FormBO">
+<xsd:sequence>
+	<xsd:element name="PROP_DESC" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:pattern value=".{0,35}"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="COST_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="FMV_PRCE_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="VAL_DSP_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="NY_GL_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="GL_FED_AMT" minOccurs="0" type="amountField"/>
+</xsd:sequence>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+</xsd:schema>

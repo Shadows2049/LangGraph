@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.irs.gov/efile"  targetNamespace="http://www.irs.gov/efile" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" >
+<xsd:include schemaLocation="../NYSCommon/master.xsd"/>
+<xsd:complexType name="FilingKeysBO">
+<xsd:sequence>
+	<xsd:element name="SOURCE_CD" minOccurs="1">
+		<xsd:simpleType>
+			<xsd:restriction base="xsd:string">
+				<xsd:pattern value="[0-9]{0,3}"/>
+						<xsd:enumeration value="27"/>
+			</xsd:restriction>
+		</xsd:simpleType>
+	</xsd:element>
+	<xsd:element name="MAIN_FORM_ID" minOccurs="0">
+		<xsd:simpleType>
+			<xsd:restriction base="xsd:string">
+				<xsd:pattern value="[0-9]{0,5}"/>
+			</xsd:restriction>
+		</xsd:simpleType>
+	</xsd:element>
+	<xsd:element name="EXT_TP_ID" minOccurs="1" type="extTPIdType"/>
+	<xsd:element name="TAX_TYPE_CD" minOccurs="0">
+		<xsd:simpleType>
+			<xsd:restriction base="xsd:string">
+				<xsd:pattern value=".{0,2}"/>
+			</xsd:restriction>
+		</xsd:simpleType>
+	</xsd:element>
+	<xsd:element name="TAX_SUB_TYPE_CD" minOccurs="0">
+		<xsd:simpleType>
+			<xsd:restriction base="xsd:string">
+				<xsd:pattern value=".{0,2}"/>
+			</xsd:restriction>
+		</xsd:simpleType>
+	</xsd:element>
+	<xsd:element name="BUS_INDV_IND" minOccurs="0" type="indicator"/>
+	<xsd:element name="INT_TP_ID" minOccurs="0">
+		<xsd:simpleType>
+			<xsd:restriction base="xsd:string">
+				<xsd:pattern value=".{0,11}"/>
+			</xsd:restriction>
+		</xsd:simpleType>
+	</xsd:element>
+	<xsd:element name="INT_TP_SEQ_NMBR" minOccurs="0">
+		<xsd:simpleType>
+			<xsd:restriction base="xsd:string">
+				<xsd:pattern value=".{0,2}"/>
+			</xsd:restriction>
+		</xsd:simpleType>
+	</xsd:element>
+	<xsd:element name="LIAB_PRD_BEG_DT" minOccurs="1" type="xsd:date"/>
+	<xsd:element name="LIAB_PRD_END_DT" minOccurs="1" type="xsd:date"/>
+	<xsd:element name="TAX_YEAR" minOccurs="1" type="taxYear"/>
+	<xsd:element name="PROCESS_YEAR" minOccurs="0" type="processingYear"/>
+	<xsd:element name="EXT_TP_ID_SFX" minOccurs="0">
+		<xsd:simpleType>
+			<xsd:restriction base="xsd:string">
+				<xsd:pattern value=".{0,2}"/>
+			</xsd:restriction>
+		</xsd:simpleType>
+	</xsd:element>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:schema>

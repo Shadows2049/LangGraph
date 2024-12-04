@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.irs.gov/efile"  targetNamespace="http://www.irs.gov/efile" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" >
+<xsd:include schemaLocation="../../NYSCommon/master.xsd"/>
+<xsd:include schemaLocation="SchedCT655RECAPRRTWCRDTBO.xsd"/>
+<xsd:complexType name="FormCT655BO">
+<xsd:complexContent>
+<xsd:extension base="FormBO">
+<xsd:sequence>
+	<xsd:element name="RRTW_RECAP_CR_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="RRTW_ADDL_CR_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element minOccurs="0" name="CT655RECAPRRTWCRDT" type="SchedCT655RECAPRRTWCRDTBO"/>
+</xsd:sequence>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+</xsd:schema>

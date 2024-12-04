@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.irs.gov/efile"  targetNamespace="http://www.irs.gov/efile" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" >
+<xsd:include schemaLocation="../../NYSCommon/master.xsd"/>
+<xsd:include schemaLocation="SchedCT603COMPRECAPITCEICBO.xsd"/>
+<xsd:complexType name="FormCT603BO">
+<xsd:complexContent>
+<xsd:extension base="FormBO">
+<xsd:sequence>
+	<xsd:element name="CMLTV_EXCP_CNT" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:pattern value=".{0,3}"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="PSTMRK_DT" minOccurs="0" type="dateField"/>
+	<xsd:element name="ACH_RESTRICT_IND" minOccurs="0" type="switchIndicatorField"/>
+	<xsd:element name="IMG_IND" minOccurs="0" type="indicatorField"/>
+	<xsd:element name="FORM_ID_SEQ_NMBR" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:pattern value=".{0,1}"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="ROW_EXPIR_TS" minOccurs="0" type="timeStampField"/>
+	<xsd:element name="ROW_STATUS_IND" minOccurs="0" type="indicatorField"/>
+	<xsd:element name="RTN_CLM_IND" minOccurs="0" type="indicatorField"/>
+	<xsd:element name="RTN_CALC_IND" minOccurs="0" type="indicatorField"/>
+	<xsd:element name="RTN_BANK_CALC_IND" minOccurs="0" type="indicatorField"/>
+	<xsd:element name="DIN_NMBR" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:integer">
+						<xsd:pattern value="[\-?0-9]{1,15}"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="DCMT_RCVD_DT" minOccurs="0" type="dateField"/>
+	<xsd:element name="ROW_EFCTV_TS" minOccurs="0" type="timeStampField"/>
+	<xsd:element name="FRAUD_CK_DONE_IND" minOccurs="0" type="indicatorField"/>
+	<xsd:element name="SRC_CODE" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:pattern value=".{0,3}"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="EZ_INV_PRIOR_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="EZ_INV_RECAP_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="EZ_INV_NET_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="EZ_EMP_USED_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="EZ_TOT_USED_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="EZ_INV_USED_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="EZ_INV_REM_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="EZ_EMP_CRYF_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="EZ_EMP_PRIOR_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="EZ_EMP_RECAP_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="EZ_EMP_NET_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="EZ_EMP_LMT_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="EZ_INV_LMT_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="EZ_ITC_ZONE_NAME" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:pattern value=".{0,39}"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="EZ_TT_ITCRC_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="EZ_TT_EICRC_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="EZ_FRAN_TX_EIC_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="EZ_FRAN_TX_ITC_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="EZ_MIN_TX_INC_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="EZ_FIXED_MIN_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="EZ_CR_USED_EIC_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="EZ_CR_USED_ITC_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="EZ_CRYF_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="EZ_NET_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="PRTNR_IND" minOccurs="0" type="switchIndicatorField"/>
+	<xsd:element minOccurs="0" name="CT603COMPRECAPITCEIC" type="SchedCT603COMPRECAPITCEICBO"/>
+</xsd:sequence>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+</xsd:schema>

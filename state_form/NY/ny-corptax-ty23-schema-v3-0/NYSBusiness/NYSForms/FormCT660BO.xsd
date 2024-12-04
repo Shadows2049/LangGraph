@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.irs.gov/efile"  targetNamespace="http://www.irs.gov/efile" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" >
+<xsd:include schemaLocation="../../NYSCommon/master.xsd"/>
+<xsd:include schemaLocation="SchedCT660PSHIPINFOBO.xsd"/>
+<xsd:complexType name="FormCT660BO">
+<xsd:complexContent>
+<xsd:extension base="FormBO">
+<xsd:sequence>
+	<xsd:element name="ESDG_CRDT_ERNR_IND" minOccurs="0" type="switchIndicatorField"/>
+	<xsd:element name="ESDG_ERNR_NO_IND" minOccurs="0" type="switchIndicatorField"/>
+	<xsd:element name="ESDG_ENT_NAME" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:pattern value=".{0,39}"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="ESDG_EIN_ID" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:pattern value=".{0,9}"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="ESDG_CERT_NMBR" minOccurs="1">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:pattern value=".{0,14}"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="ESDG_ALLOC_YR" minOccurs="0" type="yearTypeField"/>
+	<xsd:element name="ESDG_CERT_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="ESDG_ADDTL_TOT_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="ESDG_CRB4_LIM_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="ESDG_TOT_CR_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="ESDG_TXB4_CR_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="ESDG_OCR_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="ESDG_TXAFT_APL_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="ESDG_FIX_MIN_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="ESDG_CR_LMT_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="ESDG_USED_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="ESDG_UNUSED_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="ESDG_RFND_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="ESDG_CR_2_NXT_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="ESDG_ADDL_C_CR_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="ESDG_PART_C_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element minOccurs="0" name="CT660PSHIPINFO" type="SchedCT660PSHIPINFOBO"/>
+</xsd:sequence>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+</xsd:schema>

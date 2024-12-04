@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.irs.gov/efile"  targetNamespace="http://www.irs.gov/efile" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" >
+<xsd:include schemaLocation="../../NYSCommon/master.xsd"/>
+<xsd:include schemaLocation="SchedCT33RCOMPRETALPT1BO.xsd"/>
+<xsd:include schemaLocation="SchedCT33RCOMPRETALPT2BO.xsd"/>
+<xsd:complexType name="FormCT33RBO">
+<xsd:complexContent>
+<xsd:extension base="FormBO">
+<xsd:sequence>
+	<xsd:element name="CMLTV_EXCP_CNT" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:pattern value=".{0,3}"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="PSTMRK_DT" minOccurs="0" type="dateField"/>
+	<xsd:element name="ACH_RESTRICT_IND" minOccurs="0" type="switchIndicatorField"/>
+	<xsd:element name="IMG_IND" minOccurs="0" type="indicatorField"/>
+	<xsd:element name="FORM_ID_SEQ_NMBR" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:pattern value=".{0,1}"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="ROW_EXPIR_TS" minOccurs="0" type="timeStampField"/>
+	<xsd:element name="ROW_STATUS_IND" minOccurs="0" type="indicatorField"/>
+	<xsd:element name="RTN_CLM_IND" minOccurs="0" type="indicatorField"/>
+	<xsd:element name="RTN_CALC_IND" minOccurs="0" type="indicatorField"/>
+	<xsd:element name="RTN_BANK_CALC_IND" minOccurs="0" type="indicatorField"/>
+	<xsd:element name="DIN_NMBR" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:integer">
+						<xsd:pattern value="[\-?0-9]{1,15}"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="DCMT_RCVD_DT" minOccurs="0" type="dateField"/>
+	<xsd:element name="ROW_EFCTV_TS" minOccurs="0" type="timeStampField"/>
+	<xsd:element name="FRAUD_CK_DONE_IND" minOccurs="0" type="indicatorField"/>
+	<xsd:element name="SRC_CODE" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:pattern value=".{0,3}"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="RETAL_LSCR_PR_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="RETAL_LSCR_LST_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="RETAL_LSCR_CUR_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="RETAL_CLM_PR_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="RETAL_CLM_LST_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="RETAL_BAL_PR_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="RETAL_BAL_LST_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="RETAL_PR_YR_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="RETAL_PAY_LAST_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="RETAL_PAY_CUR_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="RETAL_TOT_CR_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="RETAL_PR_ASMT_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="RETAL_LST_ASMT_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="RETAL_ASMT_CUR_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="RETAL_PR_LSCR_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="RETAL_LST_LSCR_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="RETAL_CUR_LSCR_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="RETAL_PR_CLM_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="RETAL_LST_CLM_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="RETAL_PR_BAL_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="RETAL_LST_BAL_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="RETAL_PRI_ASMT_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="RETAL_CUR_ASMT_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="RETAL_99_ASMT_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="RETAL_TOT_ASMT_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="RETAL_CLM_CUR_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="RETAL_TX_CR_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="RETAL_BAL_CR_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="RETAL_OVERPAY_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="RETAL_CR_RFND_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element minOccurs="0" name="CT33RCOMPRETALPT1" type="SchedCT33RCOMPRETALPT1BO"/>
+	<xsd:element minOccurs="0" name="CT33RCOMPRETALPT2" type="SchedCT33RCOMPRETALPT2BO"/>
+</xsd:sequence>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+</xsd:schema>

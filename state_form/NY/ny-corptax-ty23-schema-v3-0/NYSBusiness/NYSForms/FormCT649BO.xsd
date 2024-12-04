@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.irs.gov/efile"  targetNamespace="http://www.irs.gov/efile" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" >
+<xsd:include schemaLocation="../../NYSCommon/master.xsd"/>
+<xsd:include schemaLocation="SchedCT649PSHIPINFOBO.xsd"/>
+<xsd:include schemaLocation="SchedCT649QUALDONINFOBO.xsd"/>
+<xsd:complexType name="FormCT649BO">
+<xsd:complexContent>
+<xsd:extension base="FormBO">
+<xsd:sequence>
+	<xsd:element name="FDC_CRDT_ERNR_IND" minOccurs="0" type="switchIndicatorField"/>
+	<xsd:element name="FDC_CR_ERNR_NO_IND" minOccurs="0" type="switchIndicatorField"/>
+	<xsd:element name="FDC_PCT_THRES_IND" minOccurs="0" type="switchIndicatorField"/>
+	<xsd:element name="FDC_THRES_NO_IND" minOccurs="0" type="switchIndicatorField"/>
+	<xsd:element name="FDC_BUS_NAME" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:pattern value=".{0,138}"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="FDC_EIN_ID" minOccurs="0" type="extTPIdTypeField"/>
+	<xsd:element name="FDC_STR_1_ADR" minOccurs="0" type="addrTypeField"/>
+	<xsd:element name="FDC_STR_2_ADR" minOccurs="0" type="addrTypeField"/>
+	<xsd:element name="FDC_CITY_ADR" minOccurs="0" type="addrTypeField"/>
+	<xsd:element name="FDC_STATE_ADR" minOccurs="0" type="stateTypeField"/>
+	<xsd:element name="FDC_ZIP_5_ADR" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:pattern value="[A-Za-z0-9\s]{0,5}"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="FDC_ZIP_4_ADR" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:pattern value="[A-Za-z0-9\s]{0,4}"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="FDC_CRDT_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="FDC_PRTNR_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="FDC_TOT_CR_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="FDC_TXB4_CR_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="FDC_OCR_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="FDC_TX_AFT_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="FDC_FIX_MIN_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="FDC_CR_LMT_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="FDC_USED_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="FDC_UNUSED_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="FDC_RFND_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="FDC_CR_2_NXT_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="FDC_PART_CR_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="FDC_QUAL_DNTN_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="FDC_SHR_DNTN_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="FDC_LSR_DNTN_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element minOccurs="0" name="CT649PSHIPINFO" type="SchedCT649PSHIPINFOBO"/>
+	<xsd:element minOccurs="0" name="CT649QUALDONINFO" type="SchedCT649QUALDONINFOBO"/>
+</xsd:sequence>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+</xsd:schema>

@@ -1,0 +1,1 @@
+Extract the information from the document and fill in the 'value' field according to 'label' within given template

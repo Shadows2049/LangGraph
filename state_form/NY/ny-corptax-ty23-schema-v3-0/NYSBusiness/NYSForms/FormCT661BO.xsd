@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.irs.gov/efile"  targetNamespace="http://www.irs.gov/efile" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" >
+<xsd:include schemaLocation="../../NYSCommon/master.xsd"/>
+<xsd:include schemaLocation="SchedCT661PSHIPINFOBO.xsd"/>
+<xsd:complexType name="FormCT661BO">
+<xsd:complexContent>
+<xsd:extension base="FormBO">
+<xsd:sequence>
+	<xsd:element name="FEO_ADV_PYMT_IND" minOccurs="0" type="switchIndicatorField"/>
+	<xsd:element name="FEO_ADV_PAY_NO_IND" minOccurs="0" type="switchIndicatorField"/>
+	<xsd:element name="FEO_CERT_NMBR" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:pattern value=".{0,14}"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="FEO_CRDT_ERNR_IND" minOccurs="0" type="switchIndicatorField"/>
+	<xsd:element name="FEO_CR_ERNR_NO_IND" minOccurs="0" type="switchIndicatorField"/>
+	<xsd:element name="FEO_FED_INC_IND" minOccurs="0" type="switchIndicatorField"/>
+	<xsd:element name="FEO_FED_INC_NO_IND" minOccurs="0" type="switchIndicatorField"/>
+	<xsd:element name="FEO_BUS_NAME" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:pattern value=".{0,39}"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="FEO_EIN_ID" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:pattern value=".{0,9}"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="FEO_STR_1_ADR" minOccurs="0" type="addrTypeField"/>
+	<xsd:element name="FEO_STR_2_ADR" minOccurs="0" type="addrTypeField"/>
+	<xsd:element name="FEO_CITY_ADR" minOccurs="0" type="addrTypeField"/>
+	<xsd:element name="FEO_STATE_ADR" minOccurs="0" type="stateTypeField"/>
+	<xsd:element name="FEO_ZIP_5_ADR" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:pattern value="[A-Za-z0-9\s]{0,5}"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="FEO_ZIP_4_ADR" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:pattern value="[A-Za-z0-9\s]{0,4}"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="FEO_WINE_CIDER_IND" minOccurs="0" type="switchIndicatorField"/>
+	<xsd:element name="FEO_WIN_CID_NO_IND" minOccurs="0" type="switchIndicatorField"/>
+	<xsd:element name="FEO_EMP_NMBR" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:nonNegativeInteger">
+						<xsd:pattern value="[0-9]{1,7}"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="FEO_ADDL_CR_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="FEO_TOT_CR_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="FEO_PRTNR_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="FEO_CR_AVL_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="FEO_ADV_PYMT_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="FEO_NET_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="FEO_ADDL_D_CR_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="FEO_PART_D_CR_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="FEO_ADDL_E_CR_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="FEO_PART_E_CR_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="FEO_TXB4_CR_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="FEO_OCR_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="FEO_TX_AFTCR_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="FEO_FIX_MIN_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="FEO_LMT_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="FEO_USED_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="FEO_UNUSED_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="FEO_RFND_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="FEO_CR_2_NXT_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element minOccurs="0" name="CT661PSHIPINFO" type="SchedCT661PSHIPINFOBO"/>
+</xsd:sequence>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+</xsd:schema>

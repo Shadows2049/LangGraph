@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.irs.gov/efile"  targetNamespace="http://www.irs.gov/efile" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" >
+<xsd:include schemaLocation="../../NYSCommon/master.xsd"/>
+<xsd:include schemaLocation="SchedCT249PSHIPINFOBO.xsd"/>
+<xsd:complexType name="FormCT249BO">
+<xsd:complexContent>
+<xsd:extension base="FormBO">
+<xsd:sequence>
+	<xsd:element name="LTC_CR_CUR_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="LTC_CR_EARN_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="LTC_CR_FLW_ENT_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="LTC_CR_PRR_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="LTC_CR_TOT_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="LTC_TX_B4CR_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="LTC_OCR_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="LTC_NET_TX_AMT" minOccurs="0" type="positiveAmountField"/>
+	<xsd:element name="LTC_MTX_LMT_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="LTC_CR_LMT_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="LTC_CR_USED_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="LTC_CR_CRYF_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="LTC_PRTNR_IND" minOccurs="0" type="switchIndicatorField"/>
+	<xsd:element minOccurs="0" name="CT249PSHIPINFO" type="SchedCT249PSHIPINFOBO"/>
+</xsd:sequence>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+</xsd:schema>

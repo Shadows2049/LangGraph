@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.irs.gov/efile"  targetNamespace="http://www.irs.gov/efile" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" >
+<xsd:include schemaLocation="../../NYSCommon/master.xsd"/>
+<xsd:include schemaLocation="SchedCT645PSHIPINFOBO.xsd"/>
+<xsd:complexType name="FormCT645BO">
+<xsd:complexContent>
+<xsd:extension base="FormBO">
+<xsd:sequence>
+	<xsd:element name="CMLTV_EXCP_CNT" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:pattern value=".{0,3}"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="PSTMRK_DT" minOccurs="0" type="dateField"/>
+	<xsd:element name="ACH_RESTRICT_IND" minOccurs="0" type="switchIndicatorField"/>
+	<xsd:element name="IMG_IND" minOccurs="0" type="indicatorField"/>
+	<xsd:element name="FORM_ID_SEQ_NMBR" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:pattern value=".{0,1}"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="ROW_EXPIR_TS" minOccurs="0" type="timeStampField"/>
+	<xsd:element name="ROW_STATUS_IND" minOccurs="0" type="indicatorField"/>
+	<xsd:element name="RTN_CLM_IND" minOccurs="0" type="indicatorField"/>
+	<xsd:element name="RTN_CALC_IND" minOccurs="0" type="indicatorField"/>
+	<xsd:element name="RTN_BANK_CALC_IND" minOccurs="0" type="indicatorField"/>
+	<xsd:element name="DIN_NMBR" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:integer">
+						<xsd:pattern value="[\-?0-9]{1,15}"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="DCMT_RCVD_DT" minOccurs="0" type="dateField"/>
+	<xsd:element name="ROW_EFCTV_TS" minOccurs="0" type="timeStampField"/>
+	<xsd:element name="FRAUD_CK_DONE_IND" minOccurs="0" type="indicatorField"/>
+	<xsd:element name="SRC_CODE" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:pattern value=".{0,3}"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="RSU_EIN_ID" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:pattern value=".{0,9}"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="RSU_BEG_DT" minOccurs="0" type="dateField"/>
+	<xsd:element name="RSU_END_DT" minOccurs="0" type="dateField"/>
+	<xsd:element name="RSU_BNFT_YR" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:integer">
+						<xsd:pattern value="[\-?0-9]{1,2}"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="RSU_BENCH_NMBR" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:decimal">
+						<xsd:fractionDigits value="3"/>
+						<xsd:totalDigits value="11"/>
+						<xsd:minInclusive value="0"/>
+						<xsd:maxInclusive value="9999999.999"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="RSU_NET_NEW_NMBR" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:decimal">
+						<xsd:fractionDigits value="3"/>
+						<xsd:totalDigits value="11"/>
+						<xsd:minInclusive value="0"/>
+						<xsd:maxInclusive value="9999999.999"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="RSU_NET_SUBT_NMBR" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:decimal">
+						<xsd:fractionDigits value="3"/>
+						<xsd:totalDigits value="11"/>
+						<xsd:minInclusive value="0"/>
+						<xsd:maxInclusive value="9999999.999"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="RSU_REC_PCT" minOccurs="0" type="ratioField"/>
+	<xsd:element name="RSU_CRDT_CLM_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="RSU_RCP_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="RSU_TELE_CR_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="RSU_TELE_RCP_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="RSU_MCTMT_EXP_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="RSU_MCTMT_RCP_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="RSU_SALES_CR_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="RSU_SALES_RCP_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="RSU_TRNSF_TX_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="RSU_TRNSF_RCP_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="RSU_LIC_FEE_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="RSU_FEE_RCP_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="RSU_AVL_RCP_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="RSU_CR_FRD_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="RSU_TELE_FRD_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="RSU_FEE_FRD_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="RSU_MCTMT_FRD_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="RSU_SALES_FRD_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="RSU_TRNSF_FRD_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="RSU_WAGE_FRD_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="RSU_TOT_FRD_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="RSU_PRTN_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="RSU_SUBTOT_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="RSU_PRTN_TOT_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="RSU_TOTAL_RCP_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="RSU_ELM_REC_PCT" minOccurs="0" type="ratioField"/>
+	<xsd:element name="RSU_TELE_REC_PCT" minOccurs="0" type="ratioField"/>
+	<xsd:element name="RSU_MCTMT_REC_PCT" minOccurs="0" type="ratioField"/>
+	<xsd:element name="RSU_SUTAX_REC_PCT" minOccurs="0" type="ratioField"/>
+	<xsd:element name="RSU_RET_REC_PCT" minOccurs="0" type="ratioField"/>
+	<xsd:element name="RSU_ORG_REC_PCT" minOccurs="0" type="ratioField"/>
+	<xsd:element name="RSU_CERT_APRV_NMBR" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:pattern value=".{0,15}"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element minOccurs="0" name="CT645PSHIPINFO" type="SchedCT645PSHIPINFOBO"/>
+</xsd:sequence>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+</xsd:schema>

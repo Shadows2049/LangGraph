@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.irs.gov/efile"  targetNamespace="http://www.irs.gov/efile" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" >
+<xsd:include schemaLocation="../../NYSCommon/master.xsd"/>
+<xsd:complexType name="SchedIzCapInvestBO">
+<xsd:complexContent>
+<xsd:extension base="FormBO">
+<xsd:sequence>
+	<xsd:element name="PROP_LINE_1_ADR" minOccurs="0" type="addrTypeField"/>
+	<xsd:element name="PROP_LINE_2_ADR" minOccurs="0" type="addrTypeField"/>
+	<xsd:element name="PROP_CTY_ADR" minOccurs="0" type="ctyAdrTypeField"/>
+	<xsd:element name="PROP_ST_ADR" minOccurs="0" type="stateTypeField"/>
+	<xsd:element name="PROP_ZIP_5_ADR" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:pattern value="[A-Za-z0-9\s]{0,5}"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="PROP_ZIP_4_ADR" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:pattern value="[A-Za-z0-9\s]{0,4}"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="ZONE_NAME" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:pattern value=".{0,20}"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="CST_OBASIS_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="MPLY_CST_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="PCT_OCC_AMT" minOccurs="0" type="ratioField"/>
+	<xsd:element name="PCT_CST_AMT" minOccurs="0" type="ratioField"/>
+	<xsd:element name="CST_OCC_AMT" minOccurs="0" type="amountField"/>
+</xsd:sequence>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+</xsd:schema>

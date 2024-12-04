@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.irs.gov/efile"  targetNamespace="http://www.irs.gov/efile" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" >
+<xsd:include schemaLocation="../../NYSCommon/master.xsd"/>
+<xsd:complexType name="FormCT227BO">
+<xsd:complexContent>
+<xsd:extension base="FormBO">
+<xsd:sequence>
+	<xsd:element name="WILD_GFT_AMT" minOccurs="0" type="positiveAmountField"/>
+	<xsd:element name="BCNCR_GFT_AMT" minOccurs="0" type="positiveAmountField"/>
+	<xsd:element name="PRSTCNCR_GFT_AMT" minOccurs="0" type="positiveAmountField"/>
+	<xsd:element name="WTC_MEM_AMT" minOccurs="0" type="positiveAmountField"/>
+	<xsd:element name="VFA_GFT_AMT" minOccurs="0" type="positiveAmountField"/>
+	<xsd:element name="VET_RMBRNC_GFT_AMT" minOccurs="0" type="positiveAmountField"/>
+	<xsd:element name="WMN_CNCR_GFT_AMT" minOccurs="0" type="positiveAmountField"/>
+	<xsd:element name="VET_HOME_GFT_AMT" minOccurs="0" type="positiveAmountField"/>
+	<xsd:element name="LVE_LBRY_GFT_AMT" minOccurs="0" type="positiveAmountField"/>
+	<xsd:element name="LUPUS_GFT_AMT" minOccurs="0" type="positiveAmountField"/>
+	<xsd:element name="MLTRY_RLF_GFT_AMT" minOccurs="0" type="positiveAmountField"/>
+	<xsd:element name="ALS_GFT_AMT" minOccurs="0" type="positiveAmountField"/>
+	<xsd:element name="TOT_GFT_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="MEAL_GFT_AMT" minOccurs="0" type="positiveAmountField"/>
+	<xsd:element name="LLM_GFT_AMT" minOccurs="0" type="positiveAmountField"/>
+	<xsd:element name="RRTRH_GFT_AMT" minOccurs="0" type="positiveAmountField"/>
+	<xsd:element name="RRSRH_GFT_AMT" minOccurs="0" type="positiveAmountField"/>
+	<xsd:element name="LTD_GFT_AMT" minOccurs="0" type="positiveAmountField"/>
+	<xsd:element name="DIAB_GFT_AMT" minOccurs="0" type="positiveAmountField"/>
+</xsd:sequence>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+</xsd:schema>

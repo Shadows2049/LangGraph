@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.irs.gov/efile"  targetNamespace="http://www.irs.gov/efile" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" >
+<xsd:include schemaLocation="../../NYSCommon/master.xsd"/>
+<xsd:include schemaLocation="SchedCT60APT1QSSSINFOBO.xsd"/>
+<xsd:include schemaLocation="SchedCT60APT2QSSSINFOBO.xsd"/>
+<xsd:include schemaLocation="SchedCT60APT3SHRHDRINFOBO.xsd"/>
+<xsd:include schemaLocation="SchedCT60BPT3AFFINFOBO.xsd"/>
+<xsd:include schemaLocation="SchedCT60BPT4AFFINFOBO.xsd"/>
+<xsd:complexType name="FormCT60BO">
+<xsd:complexContent>
+<xsd:extension base="FormBO">
+<xsd:sequence>
+	<xsd:element name="CMLTV_EXCP_CNT" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:pattern value=".{0,3}"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="PSTMRK_DT" minOccurs="0" type="dateField"/>
+	<xsd:element name="ACH_RESTRICT_IND" minOccurs="0" type="switchIndicatorField"/>
+	<xsd:element name="IMG_IND" minOccurs="0" type="indicatorField"/>
+	<xsd:element name="FORM_ID_SEQ_NMBR" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:pattern value=".{0,1}"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="ROW_EXPIR_TS" minOccurs="0" type="timeStampField"/>
+	<xsd:element name="ROW_STATUS_IND" minOccurs="0" type="indicatorField"/>
+	<xsd:element name="RTN_CLM_IND" minOccurs="0" type="indicatorField"/>
+	<xsd:element name="RTN_CALC_IND" minOccurs="0" type="indicatorField"/>
+	<xsd:element name="RTN_BANK_CALC_IND" minOccurs="0" type="indicatorField"/>
+	<xsd:element name="DIN_NMBR" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:integer">
+						<xsd:pattern value="[\-?0-9]{1,15}"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="DCMT_RCVD_DT" minOccurs="0" type="dateField"/>
+	<xsd:element name="ROW_EFCTV_TS" minOccurs="0" type="timeStampField"/>
+	<xsd:element name="FRAUD_CK_DONE_IND" minOccurs="0" type="indicatorField"/>
+	<xsd:element name="SRC_CODE" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:pattern value=".{0,3}"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="DIST_FED_FRM_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="QSSS_STATUS_IND" minOccurs="0" type="switchIndicatorField"/>
+	<xsd:element name="CPTV_REIT_RIC_IND" minOccurs="0" type="switchIndicatorField"/>
+	<xsd:element name="CMB_CPTV_INS_IND" minOccurs="0" type="switchIndicatorField"/>
+	<xsd:element name="PRTNRSHP_INT_IND" minOccurs="0" type="switchIndicatorField"/>
+	<xsd:element name="DIS_ENT_IND" minOccurs="0" type="switchIndicatorField"/>
+	<xsd:element name="SMLLC_IND" minOccurs="0" type="switchIndicatorField"/>
+	<xsd:element name="FEDCONS_IND" minOccurs="0" type="switchIndicatorField"/>
+	<xsd:element name="CORP_INCL_NMBR" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:nonNegativeInteger">
+						<xsd:pattern value="[0-9]{1,9}"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="TOT_CONS_FED_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="FTI_B4_NOL_FED_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="FTI_B4_NOL_NYS_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="EIN_50PCT_OWN_IND" minOccurs="0" type="switchIndicatorField"/>
+	<xsd:element name="EIN_50PCT_OWN_NAME" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:pattern value=".{0,35}"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="EIN_50PCT_OWN_ID" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:pattern value=".{0,9}"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="OWN_OTH_STOCK_IND" minOccurs="0" type="switchIndicatorField"/>
+	<xsd:element name="OWN_OTH_STOCK_NAME" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:pattern value=".{0,35}"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="OWN_OTH_STOCK_ID" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:pattern value=".{0,9}"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="TRNSF_INT_IND" minOccurs="0" type="switchIndicatorField"/>
+	<xsd:element name="TRNSF_INT_NAME" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:pattern value=".{0,35}"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="TRNSF_INT_ID" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:pattern value=".{0,9}"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="NAME_AFF_GRP_IND" minOccurs="0" type="switchIndicatorField"/>
+	<xsd:element name="NAME_AFF_GRP_NAME" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:pattern value=".{0,35}"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="NAME_AFF_GRP_ID" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:pattern value=".{0,9}"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="PSHIP_INC_INCL_IND" minOccurs="0" type="switchIndicatorField"/>
+	<xsd:element name="ENT_INC_INCL_IND" minOccurs="0" type="switchIndicatorField"/>
+	<xsd:element name="TX_EXMPT_DISC_IND" minOccurs="0" type="switchIndicatorField"/>
+	<xsd:element minOccurs="0" name="CT60APT1QSSSINFO" type="SchedCT60APT1QSSSINFOBO"/>
+	<xsd:element minOccurs="0" name="CT60APT2QSSSINFO" type="SchedCT60APT2QSSSINFOBO"/>
+	<xsd:element minOccurs="0" name="CT60APT3SHRHDRINFO" type="SchedCT60APT3SHRHDRINFOBO"/>
+	<xsd:element minOccurs="0" name="CT60BPT3AFFINFO" type="SchedCT60BPT3AFFINFOBO"/>
+	<xsd:element minOccurs="0" name="CT60BPT4AFFINFO" type="SchedCT60BPT4AFFINFOBO"/>
+</xsd:sequence>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+</xsd:schema>

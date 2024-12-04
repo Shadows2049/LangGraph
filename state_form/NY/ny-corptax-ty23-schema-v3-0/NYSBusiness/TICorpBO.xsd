@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.irs.gov/efile"  targetNamespace="http://www.irs.gov/efile" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" >
+<xsd:include schemaLocation="../NYSCommon/master.xsd"/>
+<xsd:complexType name="TICorpBO">
+<xsd:sequence>
+	<xsd:element name="EXT_TP_ID" minOccurs="0" type="extTPIdType"/>
+	<xsd:element name="LEGAL_NAME" minOccurs="1">
+		<xsd:simpleType>
+			<xsd:restriction base="xsd:string">
+				<xsd:pattern value=".{1,138}"/>
+			</xsd:restriction>
+		</xsd:simpleType>
+	</xsd:element>
+	<xsd:element name="BUS_TRADE_NAME" minOccurs="0">
+		<xsd:simpleType>
+			<xsd:restriction base="xsd:string">
+				<xsd:pattern value=".{0,138}"/>
+			</xsd:restriction>
+		</xsd:simpleType>
+	</xsd:element>
+	<xsd:element name="STATE_INCORP_NAME" minOccurs="0">
+		<xsd:simpleType>
+			<xsd:restriction base="xsd:string">
+				<xsd:pattern value=".{0,10}"/>
+			</xsd:restriction>
+		</xsd:simpleType>
+	</xsd:element>
+	<xsd:element name="MAILING_NAME" minOccurs="0">
+		<xsd:simpleType>
+			<xsd:restriction base="xsd:string">
+				<xsd:pattern value=".{0,138}"/>
+			</xsd:restriction>
+		</xsd:simpleType>
+	</xsd:element>
+	<xsd:element name="MAIL_LN_1_ADR" minOccurs="0" type="addrType"/>
+	<xsd:element name="MAIL_LN_2_ADR" minOccurs="1" type="addrType"/>
+	<xsd:element name="MAIL_CITY_ADR" minOccurs="1">
+		<xsd:simpleType>
+			<xsd:restriction base="xsd:string">
+				<xsd:pattern value="[A-Za-z\s]{0,18}"/>
+			</xsd:restriction>
+		</xsd:simpleType>
+	</xsd:element>
+	<xsd:element name="MAIL_STATE_ADR" minOccurs="0" type="stateType"/>
+	<xsd:element name="MAIL_ZIP_5_ADR" minOccurs="0" type="alphaNmbrFiveType"/>
+	<xsd:element name="MAIL_ZIP_4_ADR" minOccurs="0" type="alphaNmbrFourType"/>
+	<xsd:element name="MAIL_CNTRY_CD" minOccurs="1" type="countryType"/>
+	<xsd:element name="TP_PHONE_NMBR" minOccurs="0">
+		<xsd:simpleType>
+			<xsd:restriction base="xsd:string">
+				<xsd:pattern value=".{0,16}"/>
+			</xsd:restriction>
+		</xsd:simpleType>
+	</xsd:element>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:schema>

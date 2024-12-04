@@ -1,0 +1,1250 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.irs.gov/efile" targetNamespace="http://www.irs.gov/efile">
+	<xsd:annotation>
+		<xsd:documentation>An amount field in the return filing. Contains "claimed" and "computed" attributes of "amount" type</xsd:documentation>
+	</xsd:annotation>
+	<xsd:simpleType name="amount">
+		<xsd:annotation>
+			<xsd:documentation>A decimal field with two fraction digits only. There are no bounds and allow both negative and positive numbers</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:decimal">
+			<xsd:totalDigits value="16"/>
+			<xsd:fractionDigits value="2"/>
+			<xsd:minInclusive value="-999999999999.99"/>
+			<xsd:maxInclusive value="9999999999999.99"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="positiveAmount">
+		<xsd:annotation>
+			<xsd:documentation>An amount field that allow only positive decimals including 0</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="amount">
+			<xsd:minInclusive value="0"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="taxYear">
+		<xsd:annotation>
+			<xsd:documentation>Four digit year field whose range is from 1900 to nnnn.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:gYear">
+			<xsd:pattern value="[0-9]{4}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="processingYear">
+		<xsd:annotation>
+			<xsd:documentation>Processing Year -- refers to the current year of processing</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:gYear">
+			<xsd:pattern value="[0-9]{4}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="percent">
+		<xsd:restriction base="xsd:decimal">
+			<xsd:maxInclusive value="100"/>
+			<xsd:minInclusive value="0"/>
+			<xsd:fractionDigits value="4"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="decimalScale6">
+		<xsd:restriction base="xsd:decimal">
+			<xsd:totalDigits value="13"/>
+			<xsd:fractionDigits value="6"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="ratio">
+		<xsd:annotation>
+			<xsd:documentation>
+				A percent fraction field that allows 6 fraction digits with 0 and
+				9.999999 as its bounds. e.g. 200% is represented as 2.000000
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:decimal">
+			<xsd:minInclusive value="0"/>
+			<xsd:maxInclusive value="9.999999"/>
+			<xsd:fractionDigits value="6"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="integer35">
+		<xsd:annotation>
+			<xsd:documentation>A positive integer with max of 35</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:positiveInteger">
+			<xsd:maxInclusive value="35"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="integer75">
+		<xsd:annotation>
+			<xsd:documentation>A postive integer with a max of 75</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:positiveInteger">
+			<xsd:maxInclusive value="75"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="timeStamp">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[0-9]{4}\-[0-9]{2}\-[0-9]{2}\-[0-9]{2}\.[0-9]{2}\.[0-9]{2}\.[0-9]{6}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="indicator">
+		<xsd:annotation>
+			<xsd:documentation>Generic 1 character field</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[A-Za-z0-9]{1}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="statTypeIndicator">
+		<xsd:annotation>
+			<xsd:documentation>Stat Type indicator to indicate whether it is a Count or Amount as required by DEM Stats</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:length value="1"/>
+			<xsd:enumeration value="C"/>
+			<xsd:enumeration value="D"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="switchIndicator">
+		<xsd:annotation>
+			<xsd:documentation>An switch indicator that can have value of 1 or 2</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:nonNegativeInteger">
+			<xsd:pattern value="[1-2]{1}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="indicatorType13">
+		<xsd:annotation>
+			<xsd:documentation>An indicator that can have a numeric value from 1 to 3</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:positiveInteger">
+			<xsd:pattern value="[1-3]{1}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="indicatorType12">
+		<xsd:annotation>
+			<xsd:documentation>An indicator that can have a numeric value from 1 to 2</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:positiveInteger">
+			<xsd:pattern value="[1-2]{1}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="indicatorType12Field">
+		<xsd:annotation>
+			<xsd:documentation>Indicator field with claimed and computed attributes</xsd:documentation>
+		</xsd:annotation>
+		<xsd:attribute name="claimed" type="indicatorType12" use="optional"/>
+	</xsd:complexType>
+	<xsd:complexType name="indicatorType03Field">
+		<xsd:annotation>
+			<xsd:documentation>Indicator field with claimed and computed attributes</xsd:documentation>
+		</xsd:annotation>
+		<xsd:attribute name="claimed" type="indicatorType03" use="optional"/>
+	</xsd:complexType>
+	<xsd:complexType name="indicatorType02Field">
+		<xsd:annotation>
+			<xsd:documentation>Indicator field with claimed and computed attributes</xsd:documentation>
+		</xsd:annotation>
+		<xsd:attribute name="claimed" type="indicatorType02" use="optional"/>
+	</xsd:complexType>
+	<xsd:complexType name="indicatorType04Field">
+		<xsd:annotation>
+			<xsd:documentation>Indicator field with claimed and computed attributes</xsd:documentation>
+		</xsd:annotation>
+		<xsd:attribute name="claimed" type="indicatorType04" use="optional"/>
+	</xsd:complexType>
+	<xsd:complexType name="indicatorType09Field">
+		<xsd:annotation>
+			<xsd:documentation>Indicator field with claimed and computed attributes</xsd:documentation>
+		</xsd:annotation>
+		<xsd:attribute name="claimed" type="indicatorType09" use="optional"/>
+	</xsd:complexType>
+	<xsd:complexType name="indicatorType13Field">
+		<xsd:annotation>
+			<xsd:documentation>Indicator field with claimed and computed attributes</xsd:documentation>
+		</xsd:annotation>
+		<xsd:attribute name="claimed" type="indicatorType13" use="optional"/>
+	</xsd:complexType>
+	<xsd:simpleType name="indicatorType04">
+		<xsd:annotation>
+			<xsd:documentation>An indicator that can have a numeric value from 0 to 4</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:nonNegativeInteger">
+			<xsd:pattern value="[0-4]{1}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="indicatorType14">
+		<xsd:annotation>
+			<xsd:documentation>An indicator that can have a numeric value from 1 to 4</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:positiveInteger">
+			<xsd:pattern value="[1-4]{1}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="indicatorType14Field">
+		<xsd:annotation>
+			<xsd:documentation>Indicator field with claimed and computed attributes</xsd:documentation>
+		</xsd:annotation>
+		<xsd:attribute name="claimed" type="indicatorType14" use="optional"/>
+	</xsd:complexType>
+	<xsd:simpleType name="indicatorType02">
+		<xsd:annotation>
+			<xsd:documentation>An indicator that can have a numeric value from 0 to 2</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:nonNegativeInteger">
+			<xsd:pattern value="[0-2]{1}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="indicatorType09">
+		<xsd:annotation>
+			<xsd:documentation>An indicator that can have a numeric value from 0 to 9</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:nonNegativeInteger">
+			<xsd:pattern value="[0-9]{1}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="indicatorType03">
+		<xsd:annotation>
+			<xsd:documentation>An indicator that can have a numeric value from 0 to 3</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:nonNegativeInteger">
+			<xsd:pattern value="[0-3]{1}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="indicatorField">
+		<xsd:annotation>
+			<xsd:documentation>Indicator field with claimed and computed attributes</xsd:documentation>
+		</xsd:annotation>
+		<xsd:attribute name="claimed" type="indicator" use="optional"/>
+	</xsd:complexType>
+	<xsd:complexType name="amountField">
+		<xsd:annotation>
+			<xsd:documentation>A return field of "amount" type having both claimed and computed attributes</xsd:documentation>
+		</xsd:annotation>
+		<xsd:attribute name="claimed" type="amount" use="optional"/>
+	</xsd:complexType>
+	<xsd:complexType name="positiveAmountField">
+		<xsd:annotation>
+			<xsd:documentation>A return field of "positiveAmount" type having both claimed and computed attributes</xsd:documentation>
+		</xsd:annotation>
+		<xsd:attribute name="claimed" type="positiveAmount" use="optional"/>
+	</xsd:complexType>
+	<xsd:complexType name="FormBO"/>
+	<xsd:complexType name="percentField">
+		<xsd:attribute name="claimed" type="percent" use="optional"/>
+	</xsd:complexType>
+	<xsd:complexType name="ratioField">
+		<xsd:attribute name="claimed" type="ratio" use="optional"/>
+	</xsd:complexType>
+	<xsd:complexType name="stringField">
+		<xsd:attribute name="claimed" type="xsd:string" use="optional"/>
+	</xsd:complexType>
+	<xsd:complexType name="integerField">
+		<xsd:attribute name="claimed" type="xsd:integer" use="optional"/>
+	</xsd:complexType>
+	<xsd:complexType name="dateField">
+		<xsd:attribute name="claimed" type="xsd:date" use="optional"/>
+	</xsd:complexType>
+	<xsd:complexType name="switchIndicatorField">
+		<xsd:attribute name="claimed" type="switchIndicator" use="optional"/>
+	</xsd:complexType>
+	<xsd:complexType name="positiveIntegerField">
+		<xsd:annotation>
+			<xsd:documentation>Positive Integer with attributes</xsd:documentation>
+		</xsd:annotation>
+		<xsd:attribute name="claimed" type="xsd:positiveInteger" use="optional"/>
+	</xsd:complexType>
+	<xsd:simpleType name="indicatorType15">
+		<xsd:annotation>
+			<xsd:documentation>An indicator that can have a numeric value from 1 to 5</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:positiveInteger">
+			<xsd:pattern value="[1-5]{1}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="indicatorType15Field">
+		<xsd:annotation>
+			<xsd:documentation>Indicator field with claimed and computed attributes</xsd:documentation>
+		</xsd:annotation>
+		<xsd:attribute name="claimed" type="indicatorType15" use="optional"/>
+	</xsd:complexType>
+	<xsd:simpleType name="indicatorType05">
+		<xsd:annotation>
+			<xsd:documentation>An indicator that can have a numeric value from 0 to 5</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:nonNegativeInteger">
+			<xsd:pattern value="[0-5]{1}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="indicatorType05Field">
+		<xsd:annotation>
+			<xsd:documentation>indicatorType05 field with claimed and computed attributes</xsd:documentation>
+		</xsd:annotation>
+		<xsd:attribute name="claimed" type="indicatorType05" use="optional"/>
+	</xsd:complexType>
+	<xsd:complexType name="nonNegativeIntegerField">
+		<xsd:attribute name="claimed" type="xsd:nonNegativeInteger" use="optional"/>
+	</xsd:complexType>
+	<xsd:complexType name="decimalField">
+		<xsd:annotation>
+			<xsd:documentation>Field with decimal positions that is neither an Amount nor a Percent</xsd:documentation>
+		</xsd:annotation>
+		<xsd:attribute name="claimed" type="xsd:decimal" use="optional"/>
+	</xsd:complexType>
+	<xsd:complexType name="timeStampField">
+		<xsd:annotation>
+			<xsd:documentation>Timestamp data type with flexible pattern t osupport ISO and non-ISO</xsd:documentation>
+		</xsd:annotation>
+		<xsd:attribute name="claimed" type="timeStamp" use="optional"/>
+	</xsd:complexType>
+	<xsd:simpleType name="nmbrFiveType">
+		<xsd:annotation>
+			<xsd:documentation>String with up to 5 digits</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:nonNegativeInteger">
+			<xsd:pattern value="[0-9]{0,5}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="nmbrFiveTypeField">
+		<xsd:annotation>
+			<xsd:documentation>String with 5 digits with claimed and computed attributes</xsd:documentation>
+		</xsd:annotation>
+		<xsd:attribute name="claimed" type="nmbrFiveType"/>
+	</xsd:complexType>
+	<xsd:simpleType name="extTPIdType">
+		<xsd:annotation>
+			<xsd:documentation>Type for External TP ID</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="(TF|NY|CT|TN|\d\d){1}[0-9]{7}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="extTPIdTypeField">
+		<xsd:annotation>
+			<xsd:documentation>External TP ID type with claimed and computed attributes</xsd:documentation>
+		</xsd:annotation>
+		<xsd:attribute name="claimed" type="extTPIdType"/>
+	</xsd:complexType>
+	<xsd:simpleType name="stateType">
+		<xsd:annotation>
+			<xsd:documentation>State Code</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[A-Z]{2}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="stateTypeField">
+		<xsd:annotation>
+			<xsd:documentation>State type with claimed and computed attributes</xsd:documentation>
+		</xsd:annotation>
+		<xsd:attribute name="claimed" type="stateType"/>
+	</xsd:complexType>
+	<xsd:simpleType name="nonNegativeAmtType">
+		<xsd:annotation>
+			<xsd:documentation>Non Negative Amount</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:decimal">
+			<xsd:minInclusive value="0"/>
+			<xsd:fractionDigits value="2"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="nonNegativeAmtTypeField">
+		<xsd:annotation>
+			<xsd:documentation>Non Negative Amount with claimed and computed attributes</xsd:documentation>
+		</xsd:annotation>
+		<xsd:attribute name="claimed" type="nonNegativeAmtType"/>
+	</xsd:complexType>
+	<xsd:simpleType name="alphaHyphenType">
+		<xsd:annotation>
+			<xsd:documentation>String with alphabets and hyphens</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[A-Za-z\s]+[\-]{0,1}[A-Za-z\s]+[\-]{0,1}[A-Za-z\s]+"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="alphaHyphenTypeField">
+		<xsd:annotation>
+			<xsd:documentation>String with alphabets and hyphens</xsd:documentation>
+		</xsd:annotation>
+		<xsd:attribute name="claimed" type="alphaHyphenType"/>
+	</xsd:complexType>
+	<xsd:simpleType name="alphaType">
+		<xsd:annotation>
+			<xsd:documentation>String with alphabets only</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[A-Za-z\s]*"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="alphaTypeField">
+		<xsd:annotation>
+			<xsd:documentation>String with alphabets only</xsd:documentation>
+		</xsd:annotation>
+		<xsd:attribute name="claimed" type="alphaType"/>
+	</xsd:complexType>
+	<xsd:simpleType name="alphaNmbrType">
+		<xsd:annotation>
+			<xsd:documentation>String with alphabets and digits</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[0-9A-Za-z\s]*"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="alphaNmbrTypeField">
+		<xsd:annotation>
+			<xsd:documentation>String with alphabets and digits</xsd:documentation>
+		</xsd:annotation>
+		<xsd:attribute name="claimed" type="alphaNmbrType"/>
+	</xsd:complexType>
+	<xsd:simpleType name="addrType">
+		<xsd:annotation>
+			<xsd:documentation>Address Line format</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[A-Za-z0-9]([A-Za-z0-9 \-/]{0,29})"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="addrTypeField">
+		<xsd:annotation>
+			<xsd:documentation>Address Line format</xsd:documentation>
+		</xsd:annotation>
+		<xsd:attribute name="claimed" type="addrType"/>
+	</xsd:complexType>
+	<xsd:simpleType name="addrTypeExt">
+		<xsd:annotation>
+			<xsd:documentation>Address Line format extended</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[A-Za-z0-9]([A-Za-z0-9 \-/.,#]{0,29})"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="addrTypeExtField">
+		<xsd:annotation>
+			<xsd:documentation>Address Line format extended</xsd:documentation>
+		</xsd:annotation>
+		<xsd:attribute name="claimed" type="addrTypeExt"/>
+	</xsd:complexType>
+	<xsd:simpleType name="nmbrNineType">
+		<xsd:annotation>
+			<xsd:documentation>Number with 9 digits</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:nonNegativeInteger">
+			<xsd:pattern value="[0-9]{9}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="nmbrNineTypeField">
+		<xsd:annotation>
+			<xsd:documentation>Number with 9 digits</xsd:documentation>
+		</xsd:annotation>
+		<xsd:attribute name="claimed" type="nmbrNineType"/>
+	</xsd:complexType>
+	<xsd:simpleType name="alphaNmbrHyphenType">
+		<xsd:annotation>
+			<xsd:documentation>Alphanumeric data delimited with optional hyphens</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[A-Za-z0-9\-\s]*"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="alphaNmbrHyphenTypeField">
+		<xsd:annotation>
+			<xsd:documentation>Alphanumeric data delimited with optional hyphens</xsd:documentation>
+		</xsd:annotation>
+		<xsd:attribute name="claimed" type="alphaNmbrHyphenType"/>
+	</xsd:complexType>
+	<xsd:simpleType name="nmbrSixType">
+		<xsd:annotation>
+			<xsd:documentation>Number with 6 digits</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:nonNegativeInteger">
+			<xsd:pattern value="[0-9]{6}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="nmbrSixTypeField">
+		<xsd:annotation>
+			<xsd:documentation>Number with 6 digits</xsd:documentation>
+		</xsd:annotation>
+		<xsd:attribute name="claimed" type="nmbrSixType"/>
+	</xsd:complexType>
+	<xsd:simpleType name="nmbrElevenType">
+		<xsd:annotation>
+			<xsd:documentation>Number with 11 digits</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:nonNegativeInteger">
+			<xsd:pattern value="[0-9]{11}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="nmbrElevenTypeField">
+		<xsd:annotation>
+			<xsd:documentation>Number with 11 digits</xsd:documentation>
+		</xsd:annotation>
+		<xsd:attribute name="claimed" type="nmbrElevenType"/>
+	</xsd:complexType>
+	<xsd:simpleType name="alphaNmbrFiveType">
+		<xsd:annotation>
+			<xsd:documentation>Alphanumeric data item with 5 characters</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[0-9A-Za-z]{3,5}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="alphaNmbrFiveTypeField">
+		<xsd:annotation>
+			<xsd:documentation>Alphanumeric data item with 5 characters</xsd:documentation>
+		</xsd:annotation>
+		<xsd:attribute name="claimed" type="alphaNmbrFiveType"/>
+	</xsd:complexType>
+	<xsd:simpleType name="nmbrThreeType">
+		<xsd:annotation>
+			<xsd:documentation>Number with up to 3 digits</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:nonNegativeInteger">
+			<xsd:pattern value="[0-9]{0,3}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="nmbrThreeTypeField">
+		<xsd:annotation>
+			<xsd:documentation>Number with 3 digits</xsd:documentation>
+		</xsd:annotation>
+		<xsd:attribute name="claimed" type="nmbrThreeType"/>
+	</xsd:complexType>
+	<xsd:simpleType name="dateMMCCYYType">
+		<xsd:annotation>
+			<xsd:documentation>MMCCYY Date format</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="(01|02|03|04|05|06|07|08|09|10|11|12)[\-][1-9][0-9]{3}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="dateMMCCYYTypeField">
+		<xsd:annotation>
+			<xsd:documentation>MMCCYY Date format</xsd:documentation>
+		</xsd:annotation>
+		<xsd:attribute name="claimed" type="dateMMCCYYType"/>
+	</xsd:complexType>
+	<xsd:simpleType name="countryType">
+		<xsd:annotation>
+			<xsd:documentation>Country Code</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[A-Z]{2}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="countryTypeField">
+		<xsd:annotation>
+			<xsd:documentation>Country Code with claimed and computed attributes</xsd:documentation>
+		</xsd:annotation>
+		<xsd:attribute name="claimed" type="countryType"/>
+	</xsd:complexType>
+	<xsd:simpleType name="nmbrSevenType">
+		<xsd:annotation>
+			<xsd:documentation>Number with 7 digits</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:nonNegativeInteger">
+			<xsd:pattern value="[0-9]{7}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="nmbrSevenTypeField">
+		<xsd:annotation>
+			<xsd:documentation>Number with 7 digits</xsd:documentation>
+		</xsd:annotation>
+		<xsd:attribute name="claimed" type="nmbrSevenType"/>
+	</xsd:complexType>
+	<xsd:simpleType name="bankRoutingNmbrType">
+		<xsd:annotation>
+			<xsd:documentation>Data Type for Bank Routing Number (ABA#)</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="(01|02|03|04|05|06|07|08|09|10|11|12|21|22|23|24|25|26|27|28|29|30|31|32)[0-9]{7}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="bankRoutingNmbrTypeField">
+		<xsd:annotation>
+			<xsd:documentation>Data Type for Bank Routing Number (ABA#)</xsd:documentation>
+		</xsd:annotation>
+		<xsd:attribute name="claimed" type="bankRoutingNmbrType"/>
+	</xsd:complexType>
+	<xsd:simpleType name="percentDec6">
+		<xsd:annotation>
+			<xsd:documentation>
+				A percent field that allows 6 fraction digits. 
+				e.g. 200% is represented as 200.000000
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:decimal">
+			<xsd:minInclusive value="0"/>
+			<xsd:maxInclusive value="999.999999"/>
+			<xsd:fractionDigits value="6"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="percentDec6Field">
+		<xsd:annotation>
+			<xsd:documentation>Percent Decimal 6 field with claimed and computed attributes</xsd:documentation>
+		</xsd:annotation>
+		<xsd:attribute name="claimed" type="percentDec6"/>
+	</xsd:complexType>
+	<xsd:simpleType name="NYPTINType">
+		<xsd:annotation>
+			<xsd:documentation>Type for Paid Prepared Id</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="(TF|NY|S\d|P\d|\d\d){1}[0-9]{7}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="NYPTINTypeField">
+		<xsd:annotation>
+			<xsd:documentation>NYPTINType with claimed and computed attributes</xsd:documentation>
+		</xsd:annotation>
+		<xsd:attribute name="claimed" type="NYPTINType"/>
+	</xsd:complexType>
+	<xsd:simpleType name="NYEINType">
+		<xsd:annotation>
+			<xsd:documentation>Type for NYS EIN</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="(TR|NY|\d\d){1}[0-9]{7}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="NYEINTypeField">
+		<xsd:annotation>
+			<xsd:documentation>NYEINType with claimed and computed attributes</xsd:documentation>
+		</xsd:annotation>
+		<xsd:attribute name="claimed" type="NYEINType"/>
+	</xsd:complexType>
+	<xsd:simpleType name="alphaNmbrFourType">
+		<xsd:annotation>
+			<xsd:documentation>Alphanumeric data item with 4 characters</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[0-9A-Za-z]{3,4}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="alphaNmbrFourTypeField">
+		<xsd:annotation>
+			<xsd:documentation>Alphanumeric data item with 4 characters</xsd:documentation>
+		</xsd:annotation>
+		<xsd:attribute name="claimed" type="alphaNmbrFourType"/>
+	</xsd:complexType>
+	<xsd:simpleType name="prepNameType">
+		<xsd:annotation>
+			<xsd:documentation>Type for Paid Preparer name and Third Party name with restriction to prevent the word PREPARER</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<!-- <xsd:pattern value="^((?!PREPARER).)*$"/> -->
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="prepNameTypeField">
+		<xsd:annotation>
+			<xsd:documentation>prepNameType with claimed and computed attributes</xsd:documentation>
+		</xsd:annotation>
+		<xsd:attribute name="claimed" type="prepNameType"/>
+	</xsd:complexType>
+	<xsd:simpleType name="stringElevnType">
+		<xsd:annotation>
+			<xsd:documentation>String with 11 characters</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[0-9A-Za-z]{0,11}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="stringElevnTypeField">
+		<xsd:annotation>
+			<xsd:documentation>String with 11 characters</xsd:documentation>
+		</xsd:annotation>
+		<xsd:attribute name="claimed" type="stringElevnType"/>
+	</xsd:complexType>
+	<xsd:simpleType name="indicatorType1">
+		<xsd:annotation>
+			<xsd:documentation>An indicator that can have a numeric value 1 only</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:positiveInteger">
+			<xsd:maxInclusive value="1"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="indicatorType1Field">
+		<xsd:annotation>
+			<xsd:documentation>Indicator field with claimed and computed attributes</xsd:documentation>
+		</xsd:annotation>
+		<xsd:attribute name="claimed" type="indicatorType1"/>
+	</xsd:complexType>
+	<xsd:simpleType name="alphaNmbr2Type">
+		<xsd:annotation>
+			<xsd:documentation>Alphanumeric data item with 2 characters</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[0-9A-Za-z]{2}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="alphaNmbr2TypeField">
+		<xsd:annotation>
+			<xsd:documentation>Alphanumeric data item with 2 characters</xsd:documentation>
+		</xsd:annotation>
+		<xsd:attribute name="claimed" type="alphaNmbr2Type"/>
+	</xsd:complexType>
+	<xsd:simpleType name="nameCntrlType">
+		<xsd:annotation>
+			<xsd:documentation>Used for a Name Control. Legal Characters: A-Z, 0-9, hyphen and ampersand. Illegal Character: spaces and symbols.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="([A-Z0-9\-]|&#x26;){1,4}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="nameCntrlTypeField">
+		<xsd:annotation>
+			<xsd:documentation>nameCntrlType with claimed and computed attributes</xsd:documentation>
+		</xsd:annotation>
+		<xsd:attribute name="claimed" type="nameCntrlType"/>
+	</xsd:complexType>
+	<xsd:simpleType name="dateMMYY">
+		<xsd:annotation>
+			<xsd:documentation>Date in MMYY format</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="((0[1-9])|(1[0-2]))[00-99]{2}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="dateMMYYField">
+		<xsd:annotation>
+			<xsd:documentation>Date in MMYY format</xsd:documentation>
+		</xsd:annotation>
+		<xsd:attribute name="claimed" type="dateMMYY"/>
+	</xsd:complexType>
+	<xsd:simpleType name="indicatorType2">
+		<xsd:annotation>
+			<xsd:documentation>An indicator that can have a numeric value 2 only</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:positiveInteger">
+			<xsd:pattern value="[2]{1}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="indicatorType2Field">
+		<xsd:annotation>
+			<xsd:documentation>Indicator field with claimed and computed attributes</xsd:documentation>
+		</xsd:annotation>
+		<xsd:attribute name="claimed" type="indicatorType2"/>
+	</xsd:complexType>
+	<xsd:complexType name="processingYearField">
+		<xsd:annotation>
+			<xsd:documentation>Indicator field with claimed and computed attributes</xsd:documentation>
+		</xsd:annotation>
+		<xsd:attribute name="claimed" type="processingYear"/>
+	</xsd:complexType>
+	<xsd:simpleType name="bankAcctType">
+		<xsd:annotation>
+			<xsd:documentation>Bank Account datatype</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="17"/>
+			<xsd:pattern value="[A-Za-z0-9\-\s]*"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="bankAcctTypeField">
+		<xsd:annotation>
+			<xsd:documentation>Bank Account datatype with claimed attributes</xsd:documentation>
+		</xsd:annotation>
+		<xsd:attribute name="claimed" type="bankAcctType"/>
+	</xsd:complexType>
+	<xsd:simpleType name="NYTPRINType">
+		<xsd:annotation>
+			<xsd:documentation>Datatype for Tax Preparer Registion ID Number</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[1-9]{1}[0-9]{7}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="NYTPRINTypeField">
+		<xsd:annotation>
+			<xsd:documentation>Datatype for NTax Preparer Registion ID Number with claimed attributes</xsd:documentation>
+		</xsd:annotation>
+		<xsd:attribute name="claimed" type="NYTPRINType"/>
+	</xsd:complexType>
+	<xsd:simpleType name="firstNameType">
+		<xsd:annotation>
+			<xsd:documentation>Datatype for First Name</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[a-zA-z]{1}([A-Za-z\-\s']{0,15})"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="firstNameTypeField">
+		<xsd:annotation>
+			<xsd:documentation>Datatype for First Name with claimed attributes</xsd:documentation>
+		</xsd:annotation>
+		<xsd:attribute name="claimed" type="firstNameType"/>
+	</xsd:complexType>
+	<xsd:simpleType name="lastNameType">
+		<xsd:annotation>
+			<xsd:documentation>Datatype for Last Name</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[a-zA-z]{1}([A-Za-z\-\s']{0,137})"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="lastNameTypeField">
+		<xsd:annotation>
+			<xsd:documentation>Datatype for Last Name with claimed attributes</xsd:documentation>
+		</xsd:annotation>
+		<xsd:attribute name="claimed" type="lastNameType"/>
+	</xsd:complexType>
+	<xsd:simpleType name="EROPINType">
+		<xsd:annotation>
+			<xsd:documentation>Datatype for Electronic Return Originator PIN Number</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[0-9A-Za-z\s]{0,12}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="EROPINTypeField">
+		<xsd:annotation>
+			<xsd:documentation>Datatype for Electronic Return Originator PIN Number with claimed attributes</xsd:documentation>
+		</xsd:annotation>
+		<xsd:attribute name="claimed" type="EROPINType"/>
+	</xsd:complexType>
+	<xsd:simpleType name="ctyAdrType">
+		<xsd:annotation>
+			<xsd:documentation>Datatype for city address</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[A-Za-z\s]{0,18}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="ctyAdrTypeField">
+		<xsd:annotation>
+			<xsd:documentation>Datatype for city address with claimed attributes</xsd:documentation>
+		</xsd:annotation>
+		<xsd:attribute name="claimed" type="ctyAdrType"/>
+	</xsd:complexType>
+	<xsd:simpleType name="vendorType">
+		<xsd:annotation>
+			<xsd:documentation>Datatype for software vendor ID</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[A-Za-z0-9\-\s]{0,10}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="vendorTypeField">
+		<xsd:annotation>
+			<xsd:documentation>Datatype for software vendor ID with claimed attributes</xsd:documentation>
+		</xsd:annotation>
+		<xsd:attribute name="claimed" type="vendorType"/>
+	</xsd:complexType>
+	<xsd:simpleType name="alphaNmbr3Type">
+		<xsd:annotation>
+			<xsd:documentation>Datatype with 3 alphanumeric characters</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="3"/>
+			<xsd:pattern value="[0-9A-Za-z\s]*"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="alphaNmbr3TypeField">
+		<xsd:annotation>
+			<xsd:documentation>Datatype with 3 alphanumeric characters </xsd:documentation>
+		</xsd:annotation>
+		<xsd:attribute name="claimed" type="alphaNmbr3Type"/>
+	</xsd:complexType>
+	<xsd:simpleType name="alphaNmbr20Type">
+		<xsd:annotation>
+			<xsd:documentation>Datatype with 20 alphanumeric characters</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="20"/>
+			<xsd:pattern value="[0-9A-Za-z\s]*"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="alphaNmbr20TypeField">
+		<xsd:annotation>
+			<xsd:documentation>Datatype with 20 alphanumeric characters </xsd:documentation>
+		</xsd:annotation>
+		<xsd:attribute name="claimed" type="alphaNmbr20Type"/>
+	</xsd:complexType>
+	<xsd:simpleType name="ctyAdr20Type">
+		<xsd:annotation>
+			<xsd:documentation>Datatype for city address length 20</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[A-Za-z\s]{0,20}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="ctyAdr20TypeField">
+		<xsd:annotation>
+			<xsd:documentation>Datatype for city address length 20 with claimed attributes</xsd:documentation>
+		</xsd:annotation>
+		<xsd:attribute name="claimed" type="ctyAdr20Type"/>
+	</xsd:complexType>
+	<xsd:simpleType name="ctyAdr30Type">
+		<xsd:annotation>
+			<xsd:documentation>Datatype for city address length 30</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[A-Za-z\s]{0,30}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="ctyAdr30TypeField">
+		<xsd:annotation>
+			<xsd:documentation>Datatype for city address length 30 with claimed attributes</xsd:documentation>
+		</xsd:annotation>
+		<xsd:attribute name="claimed" type="ctyAdr30Type"/>
+	</xsd:complexType>
+	<xsd:simpleType name="ctyAdr22Type">
+		<xsd:annotation>
+			<xsd:documentation>Datatype for city address length 22</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[A-Za-z\s]{0,22}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="ctyAdr22TypeField">
+		<xsd:annotation>
+			<xsd:documentation>Datatype for city address length 30 with claimed attributes</xsd:documentation>
+		</xsd:annotation>
+		<xsd:attribute name="claimed" type="ctyAdr22Type"/>
+	</xsd:complexType>
+	<xsd:simpleType name="alphaNmbr5Type">
+		<xsd:annotation>
+			<xsd:documentation>Datatype with 5 alphanumeric characters</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="5"/>
+			<xsd:pattern value="[0-9A-Za-z\s]*"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="alphaNmbr5TypeField">
+		<xsd:annotation>
+			<xsd:documentation>Datatype with 5 alphanumeric characters with claimed attributes</xsd:documentation>
+		</xsd:annotation>
+		<xsd:attribute name="claimed" type="alphaNmbr5Type"/>
+	</xsd:complexType>
+	<xsd:simpleType name="alphaNmbr4Type">
+		<xsd:annotation>
+			<xsd:documentation>Datatype with 4 alphanumeric characters</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="4"/>
+			<xsd:pattern value="[0-9A-Za-z\s]*"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="alphaNmbr4TypeField">
+		<xsd:annotation>
+			<xsd:documentation>Datatype with 4 alphanumeric characters with claimed attributes</xsd:documentation>
+		</xsd:annotation>
+		<xsd:attribute name="claimed" type="alphaNmbr4Type"/>
+	</xsd:complexType>
+	<xsd:simpleType name="nmbrTwoType">
+		<xsd:annotation>
+			<xsd:documentation>Datatype with 2 numeric digits</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:nonNegativeInteger">
+			<xsd:pattern value="[0-9]{0,2}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="nmbrTwoTypeField">
+		<xsd:annotation>
+			<xsd:documentation>Datatype with 2 numeric digits with claimed attributes</xsd:documentation>
+		</xsd:annotation>
+		<xsd:attribute name="claimed" type="nmbrTwoType"/>
+	</xsd:complexType>
+	<xsd:simpleType name="pshipType">
+		<xsd:annotation>
+			<xsd:documentation>Datatype with 2 alphanumeric characters</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="2"/>
+			<xsd:pattern value="[0-9A-Za-z\s]*"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="pshipTypeField">
+		<xsd:annotation>
+			<xsd:documentation>Datatype with 2 alphanumeric characters with claimed attributes</xsd:documentation>
+		</xsd:annotation>
+		<xsd:attribute name="claimed" type="pshipType"/>
+	</xsd:complexType>
+	<xsd:simpleType name="yearType">
+		<xsd:annotation>
+			<xsd:documentation>Four digit year greater than 1900</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:integer">
+			<xsd:minExclusive value="1900"/>
+			<xsd:pattern value="[0-9]{4}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="yearTypeField">
+		<xsd:annotation>
+			<xsd:documentation>Four digit year greater than 1900 with claimed and computed attributes</xsd:documentation>
+		</xsd:annotation>
+		<xsd:attribute name="claimed" type="yearType"/>
+	</xsd:complexType>
+	<xsd:simpleType name="depLastNameType">
+		<xsd:annotation>
+			<xsd:documentation>Datatype for Last Name</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[a-zA-z]{1}.{0,31}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="depLastNameTypeField">
+		<xsd:annotation>
+			<xsd:documentation>Datatype for Last Name with claimed attributes</xsd:documentation>
+		</xsd:annotation>
+		<xsd:attribute name="claimed" type="depLastNameType"/>
+	</xsd:complexType>
+	<xsd:simpleType name="ratio100">
+		<xsd:annotation>
+			<xsd:documentation>
+				A percent fraction field that allows 6 fraction digits with 0 and
+				1.000000 as its bounds. e.g. 100% is represented as 1.000000
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:decimal">
+			<xsd:minInclusive value="0"/>
+			<xsd:maxInclusive value="1.000000"/>
+			<xsd:fractionDigits value="6"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="ratio100Field">
+		<xsd:attribute name="claimed" type="ratio100" use="optional"/>
+	</xsd:complexType>
+	<xsd:simpleType name="careOfType">
+		<xsd:annotation>
+			<xsd:documentation>Care Of Address Line format</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[A-Za-z0-9%]([A-Za-z0-9 \-/%]{0,29})"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="careOfTypeField">
+		<xsd:annotation>
+			<xsd:documentation>are Of Address Line format</xsd:documentation>
+		</xsd:annotation>
+		<xsd:attribute name="claimed" type="careOfType"/>
+	</xsd:complexType>
+	<xsd:simpleType name="routingNmbrType">
+		<xsd:annotation>
+			<xsd:documentation>Datatype for Bank Routing Number.  Length up to 9</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[0-9]{1,9}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="routingNmbrTypeField">
+		<xsd:annotation>
+			<xsd:documentation>Datatype for Bank Routing number with claimed attributes</xsd:documentation>
+		</xsd:annotation>
+		<xsd:attribute name="claimed" type="routingNmbrType"/>
+	</xsd:complexType>
+	<xsd:simpleType name="barCodeType">
+		<xsd:annotation>
+			<xsd:documentation>Datatype for Bar Code.  Length must equal 12</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:integer">
+			<xsd:pattern value="[0-9]{12}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="barCodeTypeField">
+		<xsd:annotation>
+			<xsd:documentation>Datatype for Bar Code with claimed attributes</xsd:documentation>
+		</xsd:annotation>
+		<xsd:attribute name="claimed" type="barCodeType"/>
+	</xsd:complexType>
+	<xsd:simpleType name="cpExtTpId">
+		<xsd:annotation>
+			<xsd:documentation>Type for Care Provider EIN</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="((TF|NY|\d\d){1}[0-9]{7})|TAXEXEMPT|LAFCP|THE PROVIDER HAS MOVED AND I AM UNABLE TO FIND THE PROVIDER TO GET THE TIN|THE PROVIDER HAS REFUSED TO GIVE ME THE TIN|See W-2"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="cpExtTpIdField">
+		<xsd:annotation>
+			<xsd:documentation>Type for Care Provider EIN with claimed and computed attributes</xsd:documentation>
+		</xsd:annotation>
+		<xsd:attribute name="claimed" type="cpExtTpId"/>
+	</xsd:complexType>
+	<xsd:simpleType name="percentNoMax">
+		<xsd:annotation>
+			<xsd:documentation>Percent With no Max inclusive</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:decimal">
+			<xsd:minInclusive value="0"/>
+			<xsd:maxInclusive value="999999.9999"/>
+			<xsd:fractionDigits value="4"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="percentNoMaxField">
+		<xsd:annotation>
+			<xsd:documentation>Percent With no Max inclusive with Claimed Attributes</xsd:documentation>
+		</xsd:annotation>
+		<xsd:attribute name="claimed" type="percentNoMax" use="optional"/>
+	</xsd:complexType>
+	<xsd:simpleType name="indNmCntrlType">
+		<xsd:annotation>
+			<xsd:documentation>Used for a  Individual Name Control. Legal Characters: A-Z, 0-9, hyphen and ampersand and Space. Illegal Character:  and symbols.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="([A-Z0-9\-0 ]|&#x26;){1,4}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="indNmCntrlTypeField">
+		<xsd:annotation>
+			<xsd:documentation> Individual nameCntrlType with claimed and computed attributes</xsd:documentation>
+		</xsd:annotation>
+		<xsd:attribute name="claimed" type="indNmCntrlType"/>
+	</xsd:complexType>
+	<xsd:simpleType name="alphaNmbr12Type">
+		<xsd:annotation>
+			<xsd:documentation>Datatype with 12 alphanumeric characters</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="12"/>
+			<xsd:pattern value="[0-9A-Za-z\s]*"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="alphaNmbr12TypeField">
+		<xsd:annotation>
+			<xsd:documentation>Datatype with 12 alphanumeric characters with claimed attributes</xsd:documentation>
+		</xsd:annotation>
+		<xsd:attribute name="claimed" type="alphaNmbr12Type"/>
+	</xsd:complexType>
+	<xsd:simpleType name="ratio99999">
+		<xsd:annotation>
+			<xsd:documentation>
+				A percent fraction field that allows 6 fraction digits with 0 and
+				999.999999 as its bounds. e.g. 100% is represented as 1.000000
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:decimal">
+			<xsd:minInclusive value="0"/>
+			<xsd:maxInclusive value="999.999999"/>
+			<xsd:fractionDigits value="6"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="ratio99999Field">
+		<xsd:attribute name="claimed" type="ratio99999" use="optional"/>
+	</xsd:complexType>
+	<xsd:simpleType name="ratio4">
+		<xsd:annotation>
+			<xsd:documentation>
+				A percent fraction field that allows 4 fraction digits with 0 and
+				9999.9999 as its bounds. 
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:decimal">
+			<xsd:minInclusive value="0"/>
+			<xsd:maxInclusive value="9999.9999"/>
+			<xsd:fractionDigits value="4"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="ratio4Field">
+		<xsd:attribute name="claimed" type="ratio4" use="optional"/>
+	</xsd:complexType>
+	<xsd:simpleType name="deviceIdType">
+		<xsd:annotation>
+			<xsd:documentation>40 alphanumeric character field for device ID</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[A-Fa-f0-9]{40}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="deviceIdTypeField">
+		<xsd:annotation>
+			<xsd:documentation>40 alphanumeric character field for device ID with claimed attributes</xsd:documentation>
+		</xsd:annotation>
+		<xsd:attribute name="claimed" type="deviceIdType"/>
+	</xsd:complexType>
+	<xsd:simpleType name="modCodeType">
+		<xsd:annotation>
+			<xsd:documentation>6 alphanumeric character field allows dash</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="(A|EA|S|ES)[\-][0-9]{3}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="modCodeTypeField">
+		<xsd:annotation>
+			<xsd:documentation>6 alphanumeric character field allows dash</xsd:documentation>
+		</xsd:annotation>
+		<xsd:attribute name="claimed" type="modCodeType"/>
+	</xsd:complexType>
+	<xsd:simpleType name="ratio2">
+		<xsd:annotation>
+			<xsd:documentation>
+				A percent fraction field that allows 2 fraction digits with 0 and
+				99999999.99 as its bounds. 
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:decimal">
+			<xsd:minInclusive value="0"/>
+			<xsd:maxInclusive value="99999999.99"/>
+			<xsd:fractionDigits value="2"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="ratio2Field">
+		<xsd:attribute name="claimed" type="ratio2" use="optional"/>
+	</xsd:complexType>
+	<xsd:simpleType name="percentSix">
+		<xsd:annotation>
+			<xsd:documentation>
+				A percent fraction field that allows 6 fraction digits with 0 and
+				999999.999999 as its bounds. 
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:decimal">
+			<xsd:minInclusive value="0"/>
+			<xsd:maxInclusive value="999999.999999"/>
+			<xsd:fractionDigits value="6"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="percentSixField">
+		<xsd:annotation>
+			<xsd:documentation>Percent Six field with claimed and computed attributes</xsd:documentation>
+		</xsd:annotation>
+		<xsd:attribute name="claimed" type="percentSix"/>
+	</xsd:complexType>
+	<xsd:simpleType name="mbrTypeInd">
+		<xsd:annotation>
+			<xsd:documentation>Indicator to indicate whether the combined member is new</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:length value="1"/>
+			<xsd:enumeration value="N"/>
+			<xsd:enumeration value="D"/>
+			<xsd:enumeration value="n"/>
+			<xsd:enumeration value="d"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="mbrTypeIndField">
+		<xsd:annotation>
+			<xsd:documentation>mbrTypeInd field with claimed and computed attributes</xsd:documentation>
+		</xsd:annotation>
+		<xsd:attribute name="claimed" type="mbrTypeInd" use="optional"/>
+	</xsd:complexType>
+	<xsd:simpleType name="ratio43">
+		<xsd:annotation>
+			<xsd:documentation>
+				A percent fraction field that allows 4 fraction digits with 0 and
+				9999.9999
+				 as its bounds. 
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:decimal">
+			<xsd:minInclusive value="0"/>
+			<xsd:maxInclusive value="9999.999"/>
+			<xsd:fractionDigits value="3"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="ratio43Field">
+		<xsd:attribute name="claimed" type="ratio43" use="optional"/>
+	</xsd:complexType>
+	<xsd:simpleType name="name20Type">
+		<xsd:annotation>
+			<xsd:documentation>Datatype for First Name length 20</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[a-zA-z]{1}([A-Za-z\-\s']{0,19})"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="name20TypeField">
+		<xsd:annotation>
+			<xsd:documentation>Datatype for name20 with claimed attributes</xsd:documentation>
+		</xsd:annotation>
+		<xsd:attribute name="claimed" type="name20Type"/>
+	</xsd:complexType>
+</xsd:schema>

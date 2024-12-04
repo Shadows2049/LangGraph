@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.irs.gov/efile"  targetNamespace="http://www.irs.gov/efile" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" >
+<xsd:include schemaLocation="../../NYSCommon/master.xsd"/>
+<xsd:include schemaLocation="SchedCT643QUALVETCRBO.xsd"/>
+<xsd:include schemaLocation="SchedCT643QUALDISVETCRBO.xsd"/>
+<xsd:include schemaLocation="SchedCT643PSHIPINFOBO.xsd"/>
+<xsd:include schemaLocation="SchedCT643QUALVETCRPTBO.xsd"/>
+<xsd:include schemaLocation="SchedCT643QUALDISVETCRPTBO.xsd"/>
+<xsd:complexType name="FormCT643BO">
+<xsd:complexContent>
+<xsd:extension base="FormBO">
+<xsd:sequence>
+	<xsd:element name="CMLTV_EXCP_CNT" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:pattern value=".{0,3}"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="PSTMRK_DT" minOccurs="0" type="dateField"/>
+	<xsd:element name="ACH_RESTRICT_IND" minOccurs="0" type="switchIndicatorField"/>
+	<xsd:element name="IMG_IND" minOccurs="0" type="indicatorField"/>
+	<xsd:element name="FORM_ID_SEQ_NMBR" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:pattern value=".{0,1}"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="ROW_EXPIR_TS" minOccurs="0" type="timeStampField"/>
+	<xsd:element name="ROW_STATUS_IND" minOccurs="0" type="indicatorField"/>
+	<xsd:element name="RTN_CLM_IND" minOccurs="0" type="indicatorField"/>
+	<xsd:element name="RTN_CALC_IND" minOccurs="0" type="indicatorField"/>
+	<xsd:element name="RTN_BANK_CALC_IND" minOccurs="0" type="indicatorField"/>
+	<xsd:element name="DIN_NMBR" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:integer">
+						<xsd:pattern value="[\-?0-9]{1,15}"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="DCMT_RCVD_DT" minOccurs="0" type="dateField"/>
+	<xsd:element name="ROW_EFCTV_TS" minOccurs="0" type="timeStampField"/>
+	<xsd:element name="FRAUD_CK_DONE_IND" minOccurs="0" type="indicatorField"/>
+	<xsd:element name="SRC_CODE" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:pattern value=".{0,3}"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="VET_TOT_EMP_NMBR" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:decimal">
+						<xsd:fractionDigits value="3"/>
+						<xsd:totalDigits value="11"/>
+						<xsd:minInclusive value="0"/>
+						<xsd:maxInclusive value="9999999.999"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="VET_CR_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="VET_DIS_CR_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="VET_PRTN_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="VET_TOT_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="VET_TX_B4CR_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="VET_OCR_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="VET_NET_TX_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="VET_MTX_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="VET_LMT_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="VET_USED_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="VET_CRYF_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="VET_DTF_75_IND" minOccurs="0" type="switchIndicatorField"/>
+	<xsd:element name="VET_PRTNR_NO_IND" minOccurs="0" type="switchIndicatorField"/>
+	<xsd:element name="VET_PRIOR_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="VET_CRDT_ERNR_IND" minOccurs="0" type="switchIndicatorField"/>
+	<xsd:element name="VET_UNUSED_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="VET_XPRD_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="VET_FT_CR_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="VET_PT_CR_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="VET_FT_DIS_CR_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="VET_PT_DIS_CR_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element minOccurs="0" name="CT643QUALVETCR" type="SchedCT643QUALVETCRBO"/>
+	<xsd:element minOccurs="0" name="CT643QUALDISVETCR" type="SchedCT643QUALDISVETCRBO"/>
+	<xsd:element minOccurs="0" name="CT643PSHIPINFO" type="SchedCT643PSHIPINFOBO"/>
+	<xsd:element minOccurs="0" name="CT643QUALVETCRPT" type="SchedCT643QUALVETCRPTBO"/>
+	<xsd:element minOccurs="0" name="CT643QUALDISVETCRPT" type="SchedCT643QUALDISVETCRPTBO"/>
+</xsd:sequence>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+</xsd:schema>

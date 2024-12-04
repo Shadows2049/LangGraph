@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.irs.gov/efile"  targetNamespace="http://www.irs.gov/efile" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" >
+	<xsd:include schemaLocation="../CTRtnHeaderBO.xsd"/>
+	<xsd:include schemaLocation="FormCT5BO.xsd"/>
+	<xsd:include schemaLocation="FormCT34SHABO.xsd"/>
+	<xsd:include schemaLocation="FormCT43BO.xsd"/>
+	<xsd:include schemaLocation="FormCT46BO.xsd"/>
+	<xsd:include schemaLocation="FormCT47BO.xsd"/>
+	<xsd:include schemaLocation="FormCT222BO.xsd"/>
+	<xsd:include schemaLocation="FormCT3M4MBO.xsd"/>
+	<xsd:include schemaLocation="FormCT3SBO.xsd"/>
+	<xsd:include schemaLocation="FormCT51BO.xsd"/>
+	<xsd:include schemaLocation="FormCT53BO.xsd"/>
+	<xsd:include schemaLocation="FormCT54BO.xsd"/>
+	<xsd:include schemaLocation="FormCT59BO.xsd"/>
+	<xsd:include schemaLocation="FormCT59EBO.xsd"/>
+	<xsd:include schemaLocation="FormCT400BO.xsd"/>
+	<xsd:include schemaLocation="FormCT34SHBBO.xsd"/>
+	<xsd:include schemaLocation="FormCT686BO.xsd"/>
+	<xsd:include schemaLocation="FormCT13BO.xsd"/>
+	<xsd:include schemaLocation="FormCT601BO.xsd"/>
+	<xsd:include schemaLocation="FormCT603BO.xsd"/>
+	<xsd:include schemaLocation="FormCT604BO.xsd"/>
+	<xsd:include schemaLocation="FormCT606BO.xsd"/>
+	<xsd:include schemaLocation="FormCT607BO.xsd"/>
+	<xsd:include schemaLocation="FormCT602BO.xsd"/>
+	<xsd:include schemaLocation="FormCT605BO.xsd"/>
+	<xsd:include schemaLocation="FormCT604CPBO.xsd"/>
+	<xsd:include schemaLocation="FormCT621BO.xsd"/>
+	<xsd:include schemaLocation="FormCT501BO.xsd"/>
+	<xsd:include schemaLocation="FormCT241BO.xsd"/>
+	<xsd:include schemaLocation="FormCT635BO.xsd"/>
+	<xsd:include schemaLocation="FormCT248BO.xsd"/>
+	<xsd:include schemaLocation="FormCT611BO.xsd"/>
+	<xsd:include schemaLocation="FormCT6111BO.xsd"/>
+	<xsd:include schemaLocation="FormCT612BO.xsd"/>
+	<xsd:include schemaLocation="FormCT44BO.xsd"/>
+	<xsd:include schemaLocation="FormCT238BO.xsd"/>
+	<xsd:include schemaLocation="FormCT246BO.xsd"/>
+	<xsd:include schemaLocation="FormCT261BO.xsd"/>
+	<xsd:include schemaLocation="FormCT633BO.xsd"/>
+	<xsd:include schemaLocation="FormCT634BO.xsd"/>
+	<xsd:include schemaLocation="FormCT636BO.xsd"/>
+	<xsd:include schemaLocation="FormCT637BO.xsd"/>
+	<xsd:include schemaLocation="FormCT613BO.xsd"/>
+	<xsd:include schemaLocation="FormCT223HOTSPOTBO.xsd"/>
+	<xsd:include schemaLocation="FormCT33NLBO.xsd"/>
+	<xsd:include schemaLocation="FormCT33MBO.xsd"/>
+	<xsd:include schemaLocation="FormCT33BO.xsd"/>
+	<xsd:include schemaLocation="FormCT33RBO.xsd"/>
+	<xsd:include schemaLocation="FormCT331BO.xsd"/>
+	<xsd:include schemaLocation="FormCT33ABO.xsd"/>
+	<xsd:include schemaLocation="FormCT33CBO.xsd"/>
+	<xsd:include schemaLocation="FormCT33AATTBO.xsd"/>
+	<xsd:include schemaLocation="FormCT33ABBO.xsd"/>
+	<xsd:include schemaLocation="FormCT249BO.xsd"/>
+	<xsd:include schemaLocation="FormCT3REFBO.xsd"/>
+	<xsd:include schemaLocation="FormCT3_1BO.xsd"/>
+	<xsd:include schemaLocation="FormCT3AREFBO.xsd"/>
+	<xsd:include schemaLocation="FormCT3_2BO.xsd"/>
+	<xsd:include schemaLocation="FormCT3_3BO.xsd"/>
+	<xsd:include schemaLocation="FormCT3_4BO.xsd"/>
+	<xsd:include schemaLocation="FormCT3_2COMPINFOBO.xsd"/>
+	<xsd:include schemaLocation="FormCT225BO.xsd"/>
+	<xsd:include schemaLocation="FormCT225MODBO.xsd"/>
+	<xsd:include schemaLocation="FormCT640BO.xsd"/>
+	<xsd:include schemaLocation="FormCT638BO.xsd"/>
+	<xsd:include schemaLocation="FormCT641BO.xsd"/>
+	<xsd:include schemaLocation="FormCT225ABO.xsd"/>
+	<xsd:include schemaLocation="FormCT225AMODBO.xsd"/>
+	<xsd:include schemaLocation="FormCT643BO.xsd"/>
+	<xsd:include schemaLocation="FormCT642BO.xsd"/>
+	<xsd:include schemaLocation="FormCT37BO.xsd"/>
+	<xsd:include schemaLocation="FormCT224BO.xsd"/>
+	<xsd:include schemaLocation="FormCT60BO.xsd"/>
+	<xsd:include schemaLocation="FormCT645BO.xsd"/>
+	<xsd:include schemaLocation="FormCT646BO.xsd"/>
+	<xsd:include schemaLocation="FormCT644BO.xsd"/>
+	<xsd:include schemaLocation="FormCT3ABCBO.xsd"/>
+	<xsd:include schemaLocation="FormCT3_3SCHAMBRSCGRPBO.xsd"/>
+	<xsd:include schemaLocation="FormCT6112BO.xsd"/>
+	<xsd:include schemaLocation="FormCT56BO.xsd"/>
+	<xsd:include schemaLocation="FormCT300BO.xsd"/>
+	<xsd:include schemaLocation="FormCT332BO.xsd"/>
+	<xsd:include schemaLocation="FormCT647BO.xsd"/>
+	<xsd:include schemaLocation="FormCT183BO.xsd"/>
+	<xsd:include schemaLocation="FormCT183MBO.xsd"/>
+	<xsd:include schemaLocation="FormCT184BO.xsd"/>
+	<xsd:include schemaLocation="FormCT184MBO.xsd"/>
+	<xsd:include schemaLocation="FormCT186EBO.xsd"/>
+	<xsd:include schemaLocation="FormCT648BO.xsd"/>
+	<xsd:include schemaLocation="FormCT649BO.xsd"/>
+	<xsd:include schemaLocation="FormCT650BO.xsd"/>
+	<xsd:include schemaLocation="FormCT227BO.xsd"/>
+	<xsd:include schemaLocation="FormCT651BO.xsd"/>
+	<xsd:include schemaLocation="FormCT652BO.xsd"/>
+	<xsd:include schemaLocation="FormCT48BO.xsd"/>
+	<xsd:include schemaLocation="FormCT654BO.xsd"/>
+	<xsd:include schemaLocation="FormCT655BO.xsd"/>
+	<xsd:include schemaLocation="FormCT656BO.xsd"/>
+	<xsd:include schemaLocation="FormCT657BO.xsd"/>
+	<xsd:include schemaLocation="FormCT658BO.xsd"/>
+	<xsd:include schemaLocation="FormCT660BO.xsd"/>
+	<xsd:include schemaLocation="FormCT661BO.xsd"/>
+	<xsd:include schemaLocation="FormCT662BO.xsd"/>
+<xsd:complexType name="FormsBO">
+<xsd:choice minOccurs="0" maxOccurs="unbounded">
+	<xsd:element minOccurs="0" name="CTRtnHeader" type="CTRtnHeaderBO"/>
+	<xsd:element minOccurs="0" name="CT5" type="FormCT5BO"/>
+	<xsd:element minOccurs="0" name="CT34SHA" type="FormCT34SHABO"/>
+	<xsd:element minOccurs="0" maxOccurs="unbounded" name="CT43" type="FormCT43BO"/>
+	<xsd:element minOccurs="0" maxOccurs="unbounded" name="CT46" type="FormCT46BO"/>
+	<xsd:element minOccurs="0" maxOccurs="unbounded" name="CT47" type="FormCT47BO"/>
+	<xsd:element minOccurs="0" maxOccurs="unbounded" name="CT222" type="FormCT222BO"/>
+	<xsd:element minOccurs="0" name="CT3M4M" type="FormCT3M4MBO"/>
+	<xsd:element minOccurs="0" name="CT3S" type="FormCT3SBO"/>
+	<xsd:element minOccurs="0" name="CT51" type="FormCT51BO"/>
+	<xsd:element minOccurs="0" name="CT53" type="FormCT53BO"/>
+	<xsd:element minOccurs="0" name="CT54" type="FormCT54BO"/>
+	<xsd:element minOccurs="0" name="CT59" type="FormCT59BO"/>
+	<xsd:element minOccurs="0" name="CT59E" type="FormCT59EBO"/>
+	<xsd:element minOccurs="0" name="CT400" type="FormCT400BO"/>
+	<xsd:element minOccurs="0" maxOccurs="unbounded" name="CT34SHB" type="FormCT34SHBBO"/>
+	<xsd:element minOccurs="0" name="CT686" type="FormCT686BO"/>
+	<xsd:element minOccurs="0" name="CT13" type="FormCT13BO"/>
+	<xsd:element minOccurs="0" maxOccurs="unbounded" name="CT601" type="FormCT601BO"/>
+	<xsd:element minOccurs="0" maxOccurs="unbounded" name="CT603" type="FormCT603BO"/>
+	<xsd:element minOccurs="0" maxOccurs="unbounded" name="CT604" type="FormCT604BO"/>
+	<xsd:element minOccurs="0" maxOccurs="unbounded" name="CT606" type="FormCT606BO"/>
+	<xsd:element minOccurs="0" maxOccurs="unbounded" name="CT607" type="FormCT607BO"/>
+	<xsd:element minOccurs="0" maxOccurs="unbounded" name="CT602" type="FormCT602BO"/>
+	<xsd:element minOccurs="0" maxOccurs="unbounded" name="CT605" type="FormCT605BO"/>
+	<xsd:element minOccurs="0" maxOccurs="unbounded" name="CT604CP" type="FormCT604CPBO"/>
+	<xsd:element minOccurs="0" maxOccurs="unbounded" name="CT621" type="FormCT621BO"/>
+	<xsd:element minOccurs="0" name="CT501" type="FormCT501BO"/>
+	<xsd:element minOccurs="0" maxOccurs="unbounded" name="CT241" type="FormCT241BO"/>
+	<xsd:element minOccurs="0" maxOccurs="unbounded" name="CT635" type="FormCT635BO"/>
+	<xsd:element minOccurs="0" maxOccurs="unbounded" name="CT248" type="FormCT248BO"/>
+	<xsd:element minOccurs="0" maxOccurs="unbounded" name="CT611" type="FormCT611BO"/>
+	<xsd:element minOccurs="0" maxOccurs="unbounded" name="CT6111" type="FormCT6111BO"/>
+	<xsd:element minOccurs="0" maxOccurs="unbounded" name="CT612" type="FormCT612BO"/>
+	<xsd:element minOccurs="0" maxOccurs="unbounded" name="CT44" type="FormCT44BO"/>
+	<xsd:element minOccurs="0" maxOccurs="unbounded" name="CT238" type="FormCT238BO"/>
+	<xsd:element minOccurs="0" maxOccurs="unbounded" name="CT246" type="FormCT246BO"/>
+	<xsd:element minOccurs="0" maxOccurs="unbounded" name="CT261" type="FormCT261BO"/>
+	<xsd:element minOccurs="0" maxOccurs="unbounded" name="CT633" type="FormCT633BO"/>
+	<xsd:element minOccurs="0" maxOccurs="unbounded" name="CT634" type="FormCT634BO"/>
+	<xsd:element minOccurs="0" maxOccurs="unbounded" name="CT636" type="FormCT636BO"/>
+	<xsd:element minOccurs="0" name="CT637" type="FormCT637BO"/>
+	<xsd:element minOccurs="0" maxOccurs="unbounded" name="CT613" type="FormCT613BO"/>
+	<xsd:element minOccurs="0" maxOccurs="unbounded" name="CT223HOTSPOT" type="FormCT223HOTSPOTBO"/>
+	<xsd:element minOccurs="0" name="CT33NL" type="FormCT33NLBO"/>
+	<xsd:element minOccurs="0" name="CT33M" type="FormCT33MBO"/>
+	<xsd:element minOccurs="0" name="CT33" type="FormCT33BO"/>
+	<xsd:element minOccurs="0" maxOccurs="unbounded" name="CT33R" type="FormCT33RBO"/>
+	<xsd:element minOccurs="0" maxOccurs="unbounded" name="CT331" type="FormCT331BO"/>
+	<xsd:element minOccurs="0" name="CT33A" type="FormCT33ABO"/>
+	<xsd:element minOccurs="0" name="CT33C" type="FormCT33CBO"/>
+	<xsd:element minOccurs="0" maxOccurs="unbounded" name="CT33AATT" type="FormCT33AATTBO"/>
+	<xsd:element minOccurs="0" name="CT33AB" type="FormCT33ABBO"/>
+	<xsd:element minOccurs="0" maxOccurs="unbounded" name="CT249" type="FormCT249BO"/>
+	<xsd:element minOccurs="0" name="CT3REF" type="FormCT3REFBO"/>
+	<xsd:element minOccurs="0" name="CT3_1" type="FormCT3_1BO"/>
+	<xsd:element minOccurs="0" name="CT3AREF" type="FormCT3AREFBO"/>
+	<xsd:element minOccurs="0" name="CT3_2" type="FormCT3_2BO"/>
+	<xsd:element minOccurs="0" name="CT3_3" type="FormCT3_3BO"/>
+	<xsd:element minOccurs="0" name="CT3_4" type="FormCT3_4BO"/>
+	<xsd:element minOccurs="0" maxOccurs="unbounded" name="CT3_2COMPINFO" type="FormCT3_2COMPINFOBO"/>
+	<xsd:element minOccurs="0" name="CT225" type="FormCT225BO"/>
+	<xsd:element minOccurs="0" name="CT225MOD" type="FormCT225MODBO"/>
+	<xsd:element minOccurs="0" maxOccurs="unbounded" name="CT640" type="FormCT640BO"/>
+	<xsd:element minOccurs="0" maxOccurs="unbounded" name="CT638" type="FormCT638BO"/>
+	<xsd:element minOccurs="0" name="CT641" type="FormCT641BO"/>
+	<xsd:element minOccurs="0" name="CT225A" type="FormCT225ABO"/>
+	<xsd:element minOccurs="0" name="CT225AMOD" type="FormCT225AMODBO"/>
+	<xsd:element minOccurs="0" maxOccurs="unbounded" name="CT643" type="FormCT643BO"/>
+	<xsd:element minOccurs="0" maxOccurs="unbounded" name="CT642" type="FormCT642BO"/>
+	<xsd:element minOccurs="0" name="CT37" type="FormCT37BO"/>
+	<xsd:element minOccurs="0" maxOccurs="unbounded" name="CT224" type="FormCT224BO"/>
+	<xsd:element minOccurs="0" name="CT60" type="FormCT60BO"/>
+	<xsd:element minOccurs="0" name="CT645" type="FormCT645BO"/>
+	<xsd:element minOccurs="0" maxOccurs="unbounded" name="CT646" type="FormCT646BO"/>
+	<xsd:element minOccurs="0" maxOccurs="unbounded" name="CT644" type="FormCT644BO"/>
+	<xsd:element minOccurs="0" name="CT3ABC" type="FormCT3ABCBO"/>
+	<xsd:element minOccurs="0" maxOccurs="unbounded" name="CT3_3SCHAMBRSCGRP" type="FormCT3_3SCHAMBRSCGRPBO"/>
+	<xsd:element minOccurs="0" maxOccurs="unbounded" name="CT6112" type="FormCT6112BO"/>
+	<xsd:element minOccurs="0" name="CT56" type="FormCT56BO"/>
+	<xsd:element minOccurs="0" name="CT300" type="FormCT300BO"/>
+	<xsd:element minOccurs="0" maxOccurs="unbounded" name="CT332" type="FormCT332BO"/>
+	<xsd:element minOccurs="0" name="CT647" type="FormCT647BO"/>
+	<xsd:element minOccurs="0" name="CT183" type="FormCT183BO"/>
+	<xsd:element minOccurs="0" name="CT183M" type="FormCT183MBO"/>
+	<xsd:element minOccurs="0" name="CT184" type="FormCT184BO"/>
+	<xsd:element minOccurs="0" name="CT184M" type="FormCT184MBO"/>
+	<xsd:element minOccurs="0" name="CT186E" type="FormCT186EBO"/>
+	<xsd:element minOccurs="0" maxOccurs="unbounded" name="CT648" type="FormCT648BO"/>
+	<xsd:element minOccurs="0" maxOccurs="unbounded" name="CT649" type="FormCT649BO"/>
+	<xsd:element minOccurs="0" maxOccurs="unbounded" name="CT650" type="FormCT650BO"/>
+	<xsd:element minOccurs="0" name="CT227" type="FormCT227BO"/>
+	<xsd:element minOccurs="0" maxOccurs="unbounded" name="CT651" type="FormCT651BO"/>
+	<xsd:element minOccurs="0" maxOccurs="unbounded" name="CT652" type="FormCT652BO"/>
+	<xsd:element minOccurs="0" maxOccurs="unbounded" name="CT48" type="FormCT48BO"/>
+	<xsd:element minOccurs="0" maxOccurs="unbounded" name="CT654" type="FormCT654BO"/>
+	<xsd:element minOccurs="0" maxOccurs="unbounded" name="CT655" type="FormCT655BO"/>
+	<xsd:element minOccurs="0" maxOccurs="unbounded" name="CT656" type="FormCT656BO"/>
+	<xsd:element minOccurs="0" maxOccurs="unbounded" name="CT657" type="FormCT657BO"/>
+	<xsd:element minOccurs="0" maxOccurs="unbounded" name="CT658" type="FormCT658BO"/>
+	<xsd:element minOccurs="0" maxOccurs="unbounded" name="CT660" type="FormCT660BO"/>
+	<xsd:element minOccurs="0" maxOccurs="unbounded" name="CT661" type="FormCT661BO"/>
+	<xsd:element minOccurs="0" maxOccurs="unbounded" name="CT662" type="FormCT662BO"/>
+</xsd:choice>
+</xsd:complexType>
+</xsd:schema>

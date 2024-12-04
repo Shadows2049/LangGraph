@@ -1,0 +1,40 @@
+[{
+    "name": "topmostSubform[0].Page1[0].f1_01[0]",
+    "type": 7,
+    "rect": [
+        50.400001525878906,
+        93.9990234375,
+        446.3999938964844,
+        108.0
+    ],
+    "options": 8388608,
+    "label": "company_name",
+    "value": ""
+},
+{
+    "name": "topmostSubform[0].Page1[0].f1_02[0]",
+    "type": 7,
+    "rect": [
+        50.400001525878906,
+        118.0,
+        446.3999938964844,
+        132.00103759765625
+    ],
+    "options": 8388608,
+    "label": "company_address",
+    "value": ""
+},
+{
+    "name": "topmostSubform[0].Page1[0].f1_04[0]",
+    "type": 7,
+    "rect": [
+        446.3999938964844,
+        93.9990234375,
+        576.0,
+        108.0
+    ],
+    "options": 0,
+    "label": "ein",
+    "value": ""
+}
+]

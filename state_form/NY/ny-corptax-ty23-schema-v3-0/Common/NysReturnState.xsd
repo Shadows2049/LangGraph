@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2007 sp1 (http://www.altova.com) by Altova XMLSpy 2006 Enterprise Edition (ASC X12) -->
+<xsd:schema xmlns="http://www.irs.gov/efile" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.irs.gov/efile" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0">
+	<xsd:include schemaLocation="BinaryAttachment.xsd"/>
+	<xsd:annotation>
+		<xsd:documentation>
+			<Description>State e-file Schema</Description>
+		</xsd:documentation>
+	</xsd:annotation>
+	<xsd:include schemaLocation="../StateBusiness/BusinessReturnHeaderState.xsd"/>
+	<xsd:include schemaLocation="../StateBusiness/AuthenticationHeader.xsd"/>
+	<xsd:include schemaLocation="ReturnDataState.xsd"/>
+	<!-- -->
+	<xsd:element name="ReturnState">
+		<xsd:annotation>
+			<xsd:documentation>Wraps around Return Header and Return Data</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="AuthenticationHeader"/>
+				<xsd:element ref="ReturnHeaderState"/>
+				<!--ReturnDataState to be built by each state -->
+				<xsd:element ref="ReturnDataState"/>
+				<xsd:element ref="BinaryAttachment" minOccurs="0" maxOccurs="unbounded"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+</xsd:schema>

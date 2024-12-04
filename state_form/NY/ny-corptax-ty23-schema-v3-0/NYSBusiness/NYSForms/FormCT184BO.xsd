@@ -1,0 +1,439 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.irs.gov/efile"  targetNamespace="http://www.irs.gov/efile" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" >
+<xsd:include schemaLocation="../../NYSCommon/master.xsd"/>
+<xsd:complexType name="FormCT184BO">
+<xsd:complexContent>
+<xsd:extension base="FormBO">
+<xsd:sequence>
+	<xsd:element name="CMLTV_EXCP_CNT" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:pattern value=".{0,3}"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="PSTMRK_DT" minOccurs="0" type="dateField"/>
+	<xsd:element name="ACH_RESTRICT_IND" minOccurs="0" type="switchIndicatorField"/>
+	<xsd:element name="IMG_IND" minOccurs="0" type="indicatorField"/>
+	<xsd:element name="FORM_ID_SEQ_NMBR" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:pattern value=".{0,1}"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="ROW_EXPIR_TS" minOccurs="0" type="timeStampField"/>
+	<xsd:element name="ROW_STATUS_IND" minOccurs="0" type="indicatorField"/>
+	<xsd:element name="RTN_CLM_IND" minOccurs="0" type="indicatorField"/>
+	<xsd:element name="RTN_CALC_IND" minOccurs="0" type="indicatorField"/>
+	<xsd:element name="RTN_BANK_CALC_IND" minOccurs="0" type="indicatorField"/>
+	<xsd:element name="DIN_NMBR" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:integer">
+						<xsd:pattern value="[\-?0-9]{1,15}"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="DCMT_RCVD_DT" minOccurs="0" type="dateField"/>
+	<xsd:element name="ROW_EFCTV_TS" minOccurs="0" type="timeStampField"/>
+	<xsd:element name="FRAUD_CK_DONE_IND" minOccurs="0" type="indicatorField"/>
+	<xsd:element name="SRC_CODE" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:pattern value=".{0,3}"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="TOT_TX_AMT" minOccurs="0" type="positiveAmountField"/>
+	<xsd:element name="INT_LATE_PAY_AMT" minOccurs="0" type="positiveAmountField"/>
+	<xsd:element name="LATE_FIL_AMT" minOccurs="0" type="positiveAmountField"/>
+	<xsd:element name="PREPAY_AMT" minOccurs="0" type="positiveAmountField"/>
+	<xsd:element name="BAL_DUE_AMT" minOccurs="0" type="positiveAmountField"/>
+	<xsd:element name="CR_2_NXT_PRD_AMT" minOccurs="0" type="positiveAmountField"/>
+	<xsd:element name="RFND_AMT" minOccurs="0" type="positiveAmountField"/>
+	<xsd:element name="TAX_CRDS_AMT" minOccurs="0" type="positiveAmountField"/>
+	<xsd:element name="CT222_IND" minOccurs="0" type="switchIndicatorField"/>
+	<xsd:element name="PENALTY_AMT" minOccurs="0" type="positiveAmountField"/>
+	<xsd:element name="BAL_OVERPAY_AMT" minOccurs="0" type="positiveAmountField"/>
+	<xsd:element name="MTA_IND" minOccurs="0" type="indicatorType03Field"/>
+	<xsd:element name="GR_EARN_TRANS_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="GRS_EARN_TAX_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="TAX_DIVIDENDS_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="ALLOC_NYS_PCT" minOccurs="0" type="ratio100Field"/>
+	<xsd:element name="INTRAST_OP_REV_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="INTR_OP_REV_NY_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="FRGN_OP_REV_NY_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="TOT_OP_REV_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="TOT_NYS_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="TOT_ALL_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="PROP_FACT_FORM_PCT" minOccurs="0" type="ratio100Field"/>
+	<xsd:element name="INTER_GR_REV_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="INTER_REV_PCT_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="FRGN_GR_REV_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="FRGN_REV_PCT_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="TOT_GR_OPER_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="GR_RCPT_BUSOTH_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="GR_RCPT_TRUCK_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="GR_TRUCK_PCT_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="GR_RCPT_MSNGR_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="GR_MSGR_PCT_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="TELE_SERVICES_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="WATER_TRANS_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="RAILROAD_TRANS_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="RENTAL_INC_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="INT_DIV_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="CAP_GAINS_PROP_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="GR_RCPT_OTH_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="TOT_GR_NYS_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="CAP_GAINS_SEC_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="TOT_NYOPER_TEL_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="INTER_LATA_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="TOT_NY_LOCTEL_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="INTRA_LATA_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="OVERPAY_CR_MTA_AMT" minOccurs="0" type="positiveAmountField"/>
+	<xsd:element name="CT40_IND" minOccurs="0" type="switchIndicatorField"/>
+	<xsd:element name="CT40_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="CT41_IND" minOccurs="0" type="switchIndicatorField"/>
+	<xsd:element name="CT41_AMT" minOccurs="0" type="positiveAmountField"/>
+	<xsd:element name="CT43_IND" minOccurs="0" type="switchIndicatorField"/>
+	<xsd:element name="CT43_AMT" minOccurs="0" type="positiveAmountField"/>
+	<xsd:element name="DTF630_IND" minOccurs="0" type="switchIndicatorField"/>
+	<xsd:element name="DTF630_AMT" minOccurs="0" type="positiveAmountField"/>
+	<xsd:element name="CT249_IND" minOccurs="0" type="switchIndicatorField"/>
+	<xsd:element name="CT249_AMT" minOccurs="0" type="positiveAmountField"/>
+	<xsd:element name="OTH_CR_IND" minOccurs="0" type="switchIndicatorField"/>
+	<xsd:element name="OTH_CR_AMT" minOccurs="0" type="positiveAmountField"/>
+	<xsd:element name="RFND_TX_CR_AMT" minOccurs="0" type="positiveAmountField"/>
+	<xsd:element name="TX_CR_OP_NXT_AMT" minOccurs="0" type="positiveAmountField"/>
+	<xsd:element name="CT611_IND" minOccurs="0" type="switchIndicatorField"/>
+	<xsd:element name="CT611_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="CT612_IND" minOccurs="0" type="switchIndicatorField"/>
+	<xsd:element name="CT612_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="CT613_IND" minOccurs="0" type="switchIndicatorField"/>
+	<xsd:element name="CT613_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="TOT_TX_CR_RFND_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="CT631_IND" minOccurs="0" type="switchIndicatorField"/>
+	<xsd:element name="CT631_AMT" minOccurs="0" type="positiveAmountField"/>
+	<xsd:element name="CT611_1_IND" minOccurs="0" type="switchIndicatorField"/>
+	<xsd:element name="CT611_1_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="OVPMT_IND" minOccurs="0" type="switchIndicatorField"/>
+	<xsd:element name="INCORP_DATE" minOccurs="0" type="dateField"/>
+	<xsd:element name="FRGN_BBNY_DATE" minOccurs="0" type="dateField"/>
+	<xsd:element name="PRIN_BUS_ACTY_DESC" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:pattern value=".{0,35}"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="IRS_AUD_YRS" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:pattern value=".{0,255}"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="AUDITED_IND" minOccurs="0" type="indicatorType03Field"/>
+	<xsd:element name="CT_UNDR_NY_TRP_IND" minOccurs="0" type="indicatorType03Field"/>
+	<xsd:element name="OVPMT_AMT" minOccurs="0" type="positiveAmountField"/>
+	<xsd:element name="TOT_LATA_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="NYS_GRS_LOCAL_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="RL_EST_OWN_NYS_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="RL_EST_OWN_ALL_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="RL_EST_RNT_NYS_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="RL_EST_RNT_ALL_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="TPP_OWN_NYS_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="TPP_OWN_ALL_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="TPP_RNT_NYS_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="TPP_RNT_ALL_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="INTGB_ASST_NYS_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="INTGB_ASST_ALL_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="EXTRSTL_NYS_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="EXTRSTL_ALL_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="TOT_ALL_GR_OPR_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="GR_RCPT_CABLE_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="CORP_NAME" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:pattern value=".{0,138}"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="CAP_STOCK_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="TOT_DIV_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="DIV_RATE_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="DIV_PD_XS_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="INSTALL_A_DT" minOccurs="0" type="dateField"/>
+	<xsd:element name="REQ_INSTALL_A_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="INSTALL_B_DT" minOccurs="0" type="dateField"/>
+	<xsd:element name="REQ_INSTALL_B_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="INSTALL_C_DT" minOccurs="0" type="dateField"/>
+	<xsd:element name="REQ_INSTALL_C_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="INSTALL_D_DT" minOccurs="0" type="dateField"/>
+	<xsd:element name="REQ_INSTALL_D_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="EXTN_PYMT_DT" minOccurs="0" type="dateField"/>
+	<xsd:element name="REQ_EXTN_PYMT_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="OVPMT_PRR_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="CRD_FROM_PRD_DATE" minOccurs="0" type="dateField"/>
+	<xsd:element name="PREPAY_CR_AMT" minOccurs="0" type="positiveAmountField"/>
+	<xsd:element name="THRD_PRTY_DSGN_IND" minOccurs="0" type="indicatorType03Field"/>
+	<xsd:element name="THRD_PRTY_NAME" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:pattern value=".{0,30}"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="THRD_PRTY_PH_NMBR" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:pattern value=".{0,12}"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="THRD_PRTY_PIN_NMBR" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:pattern value="[A-Za-z0-9\s]{0,5}"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="AUTHOFCR_TTLE_DESC" minOccurs="1">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:pattern value=".{0,138}"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="AUTH_OFCR_SGN_DT" minOccurs="1" type="dateField"/>
+	<xsd:element name="FIRM_NAME" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:pattern value=".{0,35}"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="PREP_LN_1_ADR" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:pattern value=".{0,30}"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="PREP_LN_2_ADR" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:pattern value=".{0,30}"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="PREP_CTY_ADR" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:pattern value="[A-Za-z\s]{0,20}"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="PREP_ST_ADR" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:pattern value=".{0,2}"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="PREP_ZIP_5_ADR" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:pattern value="[A-Za-z0-9\s]{0,5}"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="PREP_ZIP_4_ADR" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:pattern value="[A-Za-z0-9\s]{0,4}"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="PREP_SIGN_DT" minOccurs="0" type="dateField"/>
+	<xsd:element name="THRDPRTY_EMAIL_ADR" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:pattern value=".{0,75}"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="AUTHOFCR_FRST_NAME" minOccurs="1">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:pattern value=".{0,138}"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="AUTHOFCR_LAST_NAME" minOccurs="1">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:pattern value=".{0,138}"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="PP_EMAIL_ADR" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:pattern value=".{0,75}"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="PYMNT_AMT" minOccurs="0" type="positiveAmountField"/>
+	<xsd:element name="TP_EMAIL_ADR" minOccurs="1">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:pattern value=".{0,75}"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="AUTH_PH_NMBR" minOccurs="1">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:pattern value=".{0,12}"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="CT501_IND" minOccurs="0" type="switchIndicatorField"/>
+	<xsd:element name="CT501_AMT" minOccurs="0" type="positiveAmountField"/>
+	<xsd:element name="CT637_IND" minOccurs="0" type="switchIndicatorField"/>
+	<xsd:element name="CT637_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="CONVICTED_IND" minOccurs="0" type="switchIndicatorField"/>
+	<xsd:element name="CT611_2_IND" minOccurs="0" type="switchIndicatorField"/>
+	<xsd:element name="CT611_2_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="REV_MILE_NYS_NMBR" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:nonNegativeInteger">
+						<xsd:pattern value="[0-9]{1,9}"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="REV_MILE_ALL_NMBR" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:nonNegativeInteger">
+						<xsd:pattern value="[0-9]{1,9}"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="BALANCE_AMT" minOccurs="0" type="positiveAmountField"/>
+	<xsd:element name="ADD_MFI_AMT" minOccurs="0" type="positiveAmountField"/>
+	<xsd:element name="INCR_BAL_AMT" minOccurs="0" type="positiveAmountField"/>
+	<xsd:element name="XS_PREPAY_AMT" minOccurs="0" type="positiveAmountField"/>
+	<xsd:element name="PR_CR_MFI_AMT" minOccurs="0" type="positiveAmountField"/>
+	<xsd:element name="TP_SGN_IND" minOccurs="0" type="switchIndicatorField"/>
+	<xsd:element name="PREP_SGN_IND" minOccurs="0" type="switchIndicatorField"/>
+</xsd:sequence>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+</xsd:schema>

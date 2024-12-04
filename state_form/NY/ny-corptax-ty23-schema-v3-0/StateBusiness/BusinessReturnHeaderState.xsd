@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2007 rel. 3 sp1 (http://www.altova.com) by Arman Meltonyan (ASC X12) -->
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.irs.gov/efile" targetNamespace="http://www.irs.gov/efile" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.06">
+	<xsd:include schemaLocation="../Common/efileTypes.xsd"/>
+	<xsd:include schemaLocation="../Common/ReturnHeader.xsd"/>
+	<xsd:include schemaLocation="BusinessStateEnumerations.xsd"/>
+	<xsd:element name="ReturnHeaderState" type="BusinessReturnHeaderStateType"/>
+	<xsd:complexType name="BusinessReturnHeaderStateType">
+		<xsd:complexContent>
+			<xsd:extension base="ReturnHeaderType">
+				<xsd:sequence>
+					<!-- Return Type -->
+					<xsd:element name="ReturnType" type="ReturnTypeType"/>
+					<!-- Filer -->
+					<xsd:element name="Filer">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="EIN" type="EINType"/>
+								<xsd:element name="StateEIN" type="StringType" minOccurs="0"/>
+								<xsd:element name="BusinessName" type="BusinessNameType"/>
+								<xsd:element name="InCareOfNm" type="InCareOfNameType" minOccurs="0"/>
+								<xsd:element name="BusinessNameControlTxt" type="BusinessNameControlType"/>
+								<xsd:choice>
+									<xsd:element name="USAddress" type="USAddressType"/>
+									<xsd:element name="ForeignAddress" type="ForeignAddressType"/>
+								</xsd:choice>
+							</xsd:sequence>
+						</xsd:complexType>
+					</xsd:element>
+					<!-- Officer for 1120 or Partner for 1065 -->
+					<xsd:element name="BusinessRepresentative">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="PersonName" type="IndividualNameType"/>
+								<xsd:element name="PersonTitleTxt" type="PersonTitleType"/>
+								<xsd:element name="TaxpayerPIN" type="PINType" minOccurs="0"/>
+								<xsd:choice minOccurs="0">
+									<xsd:element name="PhoneNum" type="PhoneNumberType"/>
+									<xsd:element name="ForeignPhoneNum" type="ForeignPhoneNumberType"/>
+								</xsd:choice>
+								<xsd:element name="EmailAddressTxt" type="EmailAddressType" minOccurs="0"/>
+								<xsd:element name="SignatureDt" type="DateType" minOccurs="0"/>
+							</xsd:sequence>
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name="DiscussWithPaidPreparerInd" type="BooleanType" minOccurs="0">
+						<xsd:annotation>
+							<xsd:documentation>May the State discuss return with preparer?</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<!-- Multiple Software Packages Used ? -->
+					<xsd:element name="MultSoftwarePackagesUsedInd" type="BooleanType" minOccurs="0"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+</xsd:schema>

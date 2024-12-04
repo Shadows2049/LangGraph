@@ -1,0 +1,373 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.irs.gov/efile"  targetNamespace="http://www.irs.gov/efile" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" >
+<xsd:include schemaLocation="../../NYSCommon/master.xsd"/>
+<xsd:include schemaLocation="SchedCT636SCHEDBPT1BO.xsd"/>
+<xsd:include schemaLocation="SchedCT636SCHEDBPT2BO.xsd"/>
+<xsd:include schemaLocation="SchedCT636PSHIPINFOBO.xsd"/>
+<xsd:include schemaLocation="SchedCT636CIDERNYFRSTCRBO.xsd"/>
+<xsd:include schemaLocation="SchedCT636CIDERNYSXSCRBO.xsd"/>
+<xsd:include schemaLocation="SchedCT636WINENYSFRSTCRBO.xsd"/>
+<xsd:include schemaLocation="SchedCT636WINENYSXSCRBO.xsd"/>
+<xsd:include schemaLocation="SchedCT636LIQNYSFRSTCRBO.xsd"/>
+<xsd:include schemaLocation="SchedCT636LIQNYSXSCRBO.xsd"/>
+<xsd:complexType name="FormCT636BO">
+<xsd:complexContent>
+<xsd:extension base="FormBO">
+<xsd:sequence>
+	<xsd:element name="CMLTV_EXCP_CNT" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:pattern value=".{0,3}"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="PSTMRK_DT" minOccurs="0" type="dateField"/>
+	<xsd:element name="ACH_RESTRICT_IND" minOccurs="0" type="switchIndicatorField"/>
+	<xsd:element name="IMG_IND" minOccurs="0" type="indicatorField"/>
+	<xsd:element name="FORM_ID_SEQ_NMBR" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:pattern value=".{0,1}"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="ROW_EXPIR_TS" minOccurs="0" type="timeStampField"/>
+	<xsd:element name="ROW_STATUS_IND" minOccurs="0" type="indicatorField"/>
+	<xsd:element name="RTN_CLM_IND" minOccurs="0" type="indicatorField"/>
+	<xsd:element name="RTN_CALC_IND" minOccurs="0" type="indicatorField"/>
+	<xsd:element name="RTN_BANK_CALC_IND" minOccurs="0" type="indicatorField"/>
+	<xsd:element name="DIN_NMBR" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:integer">
+						<xsd:pattern value="[\-?0-9]{1,15}"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="DCMT_RCVD_DT" minOccurs="0" type="dateField"/>
+	<xsd:element name="ROW_EFCTV_TS" minOccurs="0" type="timeStampField"/>
+	<xsd:element name="FRAUD_CK_DONE_IND" minOccurs="0" type="indicatorField"/>
+	<xsd:element name="SRC_CODE" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:pattern value=".{0,3}"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="ALE_L5_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="ALE_G5_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="ALE_TOT_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="ALE_PRTNR_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="ALE_AVL_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="ALE_OTH_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="ALE_LMT_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="ALE_USED_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="ALE_REMAIN_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="ALE_RFND_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="ALE_CR_2_NXT_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="ALE_GALS_L5_NMBR" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:nonNegativeInteger">
+						<xsd:pattern value="[0-9]{1,9}"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="ALE_GALS_G5_NMBR" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:nonNegativeInteger">
+						<xsd:pattern value="[0-9]{1,9}"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="ALE_RGST_IND" minOccurs="0" type="switchIndicatorField"/>
+	<xsd:element name="ALE_LSR_L5_NMBR" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:integer">
+						<xsd:pattern value="[\-?0-9]{1,9}"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="ALE_SUBT_G5_NMBR" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:integer">
+						<xsd:pattern value="[\-?0-9]{1,9}"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="ALE_LSR_G5_NMBR" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:integer">
+						<xsd:pattern value="[\-?0-9]{1,9}"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="ALE_TX_B4CR_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="ALE_AFT_CR_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="ALE_MTX_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="ALE_PRTNR_NO_IND" minOccurs="0" type="switchIndicatorField"/>
+	<xsd:element name="ALE_RGST_DIST_NAME" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:pattern value=".{0,138}"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="ALE_EIN_ID" minOccurs="0" type="extTPIdTypeField"/>
+	<xsd:element name="ALE_SLA_LIC_NMBR" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:integer">
+						<xsd:pattern value="[\-?0-9]{1,7}"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="ALE_BEER_LMT_IND" minOccurs="0" type="switchIndicatorField"/>
+	<xsd:element name="ALE_CIDER_LMT_IND" minOccurs="0" type="switchIndicatorField"/>
+	<xsd:element name="ALE_WINE_LMT_IND" minOccurs="0" type="switchIndicatorField"/>
+	<xsd:element name="ALE_LIQ_LMT_IND" minOccurs="0" type="switchIndicatorField"/>
+	<xsd:element name="ALE_NET_BEER_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="ALE_GALS_L5C_NMBR" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:nonNegativeInteger">
+						<xsd:pattern value="[0-9]{1,9}"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="ALE_LSR_CIDER_NMBR" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:integer">
+						<xsd:pattern value="[\-?0-9]{1,9}"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="ALE_L5C_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="ALE_GALS_G5C_NMBR" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:nonNegativeInteger">
+						<xsd:pattern value="[0-9]{1,9}"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="ALE_CIDER_SUB_NMBR" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:integer">
+						<xsd:pattern value="[\-?0-9]{1,9}"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="ALE_CIDER_LSR_NMBR" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:integer">
+						<xsd:pattern value="[\-?0-9]{1,9}"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="ALE_G5C_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="ALE_NET_CIDER_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="ALE_GALS_L5W_NMBR" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:nonNegativeInteger">
+						<xsd:pattern value="[0-9]{1,9}"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="ALE_LSR_WINE_NMBR" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:integer">
+						<xsd:pattern value="[\-?0-9]{1,9}"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="ALE_L5W_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="ALE_GALS_G5W_NMBR" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:nonNegativeInteger">
+						<xsd:pattern value="[0-9]{1,9}"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="ALE_WINE_SUB_NMBR" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:integer">
+						<xsd:pattern value="[\-?0-9]{1,9}"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="ALE_WINE_LSR_NMBR" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:integer">
+						<xsd:pattern value="[\-?0-9]{1,9}"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="ALE_G5W_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="ALE_NET_WINE_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="ALE_GALS_L5L_NMBR" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:nonNegativeInteger">
+						<xsd:pattern value="[0-9]{1,9}"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="ALE_L5L_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="ALE_GALS_G5L_NMBR" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:nonNegativeInteger">
+						<xsd:pattern value="[0-9]{1,9}"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="ALE_G5L_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="ALE_NET_LIQ_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="ALE_RGST_NO_IND" minOccurs="0" type="switchIndicatorField"/>
+	<xsd:element name="ALE_BER_LMT_NO_IND" minOccurs="0" type="switchIndicatorField"/>
+	<xsd:element name="ALE_CID_LMT_NO_IND" minOccurs="0" type="switchIndicatorField"/>
+	<xsd:element name="ALE_WNE_LMT_NO_IND" minOccurs="0" type="switchIndicatorField"/>
+	<xsd:element name="ALE_LIQ_LMT_NO_IND" minOccurs="0" type="switchIndicatorField"/>
+	<xsd:element name="ALE_ADD_BEER_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="ALE_ADD_CIDER_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="ALE_ADD_WINE_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="ALE_ADD_LIQ_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="ALE_ADD_TOT_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="ALE_PRTN_BEER_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="ALE_PRTN_CIDER_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="ALE_PRTN_WINE_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="ALE_PRTN_LIQ_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="ALE_PRTN_TOT_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="ALE_CRDT_ERNR_IND" minOccurs="0" type="switchIndicatorField"/>
+	<xsd:element name="ALE_GALS_L24_NMBR" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:nonNegativeInteger">
+						<xsd:pattern value="[0-9]{1,9}"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="ALE_WKSHT_L5L_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="ALE_WKSHT_L24_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="ALE_L24_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="ALE_GALS_G24_NMBR" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:nonNegativeInteger">
+						<xsd:pattern value="[0-9]{1,9}"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="ALE_WKSHT_G5L_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="ALE_WKSHT_G24_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="ALE_G24_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="ALE_NET_LIQ_C_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="ALE_ADD_24_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="ALE_PRTN_24_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element minOccurs="0" name="CT636SCHEDBPT1" type="SchedCT636SCHEDBPT1BO"/>
+	<xsd:element minOccurs="0" name="CT636SCHEDBPT2" type="SchedCT636SCHEDBPT2BO"/>
+	<xsd:element minOccurs="0" name="CT636PSHIPINFO" type="SchedCT636PSHIPINFOBO"/>
+	<xsd:element minOccurs="0" name="CT636CIDERNYFRSTCR" type="SchedCT636CIDERNYFRSTCRBO"/>
+	<xsd:element minOccurs="0" name="CT636CIDERNYSXSCR" type="SchedCT636CIDERNYSXSCRBO"/>
+	<xsd:element minOccurs="0" name="CT636WINENYSFRSTCR" type="SchedCT636WINENYSFRSTCRBO"/>
+	<xsd:element minOccurs="0" name="CT636WINENYSXSCR" type="SchedCT636WINENYSXSCRBO"/>
+	<xsd:element minOccurs="0" name="CT636LIQNYSFRSTCR" type="SchedCT636LIQNYSFRSTCRBO"/>
+	<xsd:element minOccurs="0" name="CT636LIQNYSXSCR" type="SchedCT636LIQNYSXSCRBO"/>
+</xsd:sequence>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+</xsd:schema>

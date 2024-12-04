@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.irs.gov/efile"  targetNamespace="http://www.irs.gov/efile" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" >
+<xsd:include schemaLocation="../../NYSCommon/master.xsd"/>
+<xsd:include schemaLocation="SchedCT611SITEPREPCRCOMPBO.xsd"/>
+<xsd:include schemaLocation="SchedCT611TPCRCBO.xsd"/>
+<xsd:include schemaLocation="SchedCT611GRWRMDCMPTBO.xsd"/>
+<xsd:include schemaLocation="SchedCT611RCPTPCRCBO.xsd"/>
+<xsd:include schemaLocation="SchedCT611BRRDPSHIPINFOBO.xsd"/>
+<xsd:complexType name="FormCT611BO">
+<xsd:complexContent>
+<xsd:extension base="FormBO">
+<xsd:sequence>
+	<xsd:element name="CMLTV_EXCP_CNT" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:pattern value=".{0,3}"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="PSTMRK_DT" minOccurs="0" type="dateField"/>
+	<xsd:element name="ACH_RESTRICT_IND" minOccurs="0" type="switchIndicatorField"/>
+	<xsd:element name="IMG_IND" minOccurs="0" type="indicatorField"/>
+	<xsd:element name="FORM_ID_SEQ_NMBR" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:pattern value=".{0,1}"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="ROW_EXPIR_TS" minOccurs="0" type="timeStampField"/>
+	<xsd:element name="ROW_STATUS_IND" minOccurs="0" type="indicatorField"/>
+	<xsd:element name="RTN_CLM_IND" minOccurs="0" type="indicatorField"/>
+	<xsd:element name="RTN_CALC_IND" minOccurs="0" type="indicatorField"/>
+	<xsd:element name="RTN_BANK_CALC_IND" minOccurs="0" type="indicatorField"/>
+	<xsd:element name="DIN_NMBR" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:integer">
+						<xsd:pattern value="[\-?0-9]{1,15}"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="DCMT_RCVD_DT" minOccurs="0" type="dateField"/>
+	<xsd:element name="ROW_EFCTV_TS" minOccurs="0" type="timeStampField"/>
+	<xsd:element name="FRAUD_CK_DONE_IND" minOccurs="0" type="indicatorField"/>
+	<xsd:element name="SRC_CODE" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:pattern value=".{0,3}"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="BR_RDV_BCA_DATE" minOccurs="0" type="dateField"/>
+	<xsd:element name="BR_RDV_COC_DATE" minOccurs="0" type="dateField"/>
+	<xsd:element name="BR_RDV_EN_IND" minOccurs="0" type="switchIndicatorField"/>
+	<xsd:element name="BR_RDV_EN_PCT" minOccurs="0" type="ratioField"/>
+	<xsd:element name="BR_RDV_SP_CT_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="BR_RDV_SP_PCT" minOccurs="0" type="ratioField"/>
+	<xsd:element name="BR_RDV_SP_CR_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="BR_RDV_PR_CT_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="BR_RDV_PR_PCT" minOccurs="0" type="ratioField"/>
+	<xsd:element name="BR_RDV_PR_CR_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="BR_RDV_GRW_CT_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="BR_RDV_GRW_PCT" minOccurs="0" type="ratioField"/>
+	<xsd:element name="BR_RDV_GRW_CR_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="BR_RDV_RCP_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="BR_RDV_TOT_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="BR_RDV_RECAP_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="BR_RDV_NET_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="BR_RDV_OCR_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="BR_RDV_LMT_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="BR_RDV_USED_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="BR_RDV_REMAIN_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="BR_RDV_RFND_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="BR_RDV_CR_NXT_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="BR_RDV_TRNSF_DATE" minOccurs="0" type="dateField"/>
+	<xsd:element name="BR_RDV_SP_CT4_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="BR_RDV_PR_CT4_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="BR_RDV_GRW_CT4_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="BR_RDV_RCP4_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="BR_RDV_TP_RCP_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="BR_RDV_SP_RCP_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="BR_RDV_GW_RCP_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="BR_RDV_TOT_RCP_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="BR_RDV_DEC_IND" minOccurs="0" type="switchIndicatorField"/>
+	<xsd:element name="BR_RDV_SITE_A_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="BR_RDV_PROP_A_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="BR_RDV_GRW_A_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="BR_RDV_SITE_T_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="BR_RDV_PROP_T_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="BR_RDV_GRW_T_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="BR_RDV_DEC_NO_IND" minOccurs="0" type="switchIndicatorField"/>
+	<xsd:element name="BR_RDV_SITE_NAME" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:pattern value=".{0,39}"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="BR_RDV_MNCP_NAME" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:pattern value=".{0,25}"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="BR_RDV_COUNTY_NAME" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:pattern value=".{0,20}"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="BR_RDV_RGN_NAME" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:pattern value=".{0,16}"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="BR_RDV_EN_NO_IND" minOccurs="0" type="switchIndicatorField"/>
+	<xsd:element name="BR_RDV_MIN_TAX_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="BR_RDV_SITE_CODE" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:pattern value=".{0,12}"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="BR_RP_PRTNR_IND" minOccurs="0" type="switchIndicatorField"/>
+	<xsd:element name="BR_RDV_TX_B4CR_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="BR_RDV_LS_TX_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element minOccurs="0" name="CT611SITEPREPCRCOMP" type="SchedCT611SITEPREPCRCOMPBO"/>
+	<xsd:element minOccurs="0" name="CT611TPCRC" type="SchedCT611TPCRCBO"/>
+	<xsd:element minOccurs="0" name="CT611GRWRMDCMPT" type="SchedCT611GRWRMDCMPTBO"/>
+	<xsd:element minOccurs="0" name="CT611RCPTPCRC" type="SchedCT611RCPTPCRCBO"/>
+	<xsd:element minOccurs="0" name="CT611BRRDPSHIPINFO" type="SchedCT611BRRDPSHIPINFOBO"/>
+</xsd:sequence>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+</xsd:schema>

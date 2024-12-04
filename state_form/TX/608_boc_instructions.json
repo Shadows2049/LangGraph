@@ -1,0 +1,183 @@
+Here is a JSON-LD representation of the instructions in a recipe format:
+
+```json
+{
+  "@context": "https://schema.org/",
+  "@type": "HowTo",
+  "name": "Form 608 - Certificate of Withdrawal of Registration",
+  "description": "Instructions for completing the Certificate of Withdrawal of Registration for foreign filing entities in Texas",
+  "step": [
+    {
+      "@type": "HowToStep",
+      "name": "Start",
+      "itemListElement": [
+        {
+          "@type": "HowToSection",
+          "name": "Entity Information",
+          "itemListElement": [
+            {
+              "@type": "HowToStep",
+              "name": "Enter the legal name of the entity"
+            },
+            {
+              "@type": "HowToStep",
+              "name": "Specify the type of organization"
+            },
+            {
+              "@type": "HowToStep",
+              "name": "State the jurisdiction of formation"
+            },
+            {
+              "@type": "HowToStep",
+              "name": "Provide the date of registration"
+            },
+            {
+              "@type": "HowToStep",
+              "name": "Enter the file number issued by the secretary of state"
+            },
+            {
+              "@type": "HowToStep",
+              "name": "Provide the principal office address",
+              "itemListElement": [
+                {
+                  "@type": "HowToStep",
+                  "name": "Street address"
+                },
+                {
+                  "@type": "HowToStep",
+                  "name": "City"
+                },
+                {
+                  "@type": "HowToStep",
+                  "name": "State"
+                },
+                {
+                  "@type": "HowToStep",
+                  "name": "Country"
+                },
+                {
+                  "@type": "HowToStep",
+                  "name": "Zip code"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "@type": "HowToSection",
+          "name": "Service of Process",
+          "itemListElement": [
+            {
+              "@type": "HowToStep",
+              "name": "Indicate that the foreign filing entity is no longer transacting business in Texas",
+              "itemListElement": [
+                {
+                  "@type": "HowToStep",
+                  "name": "Revoke the authority of the entity’s registered agent to accept service of process"
+                },
+                {
+                  "@type": "HowToStep",
+                  "name": "Consent to service by the secretary of state"
+                }
+              ]
+            },
+            {
+              "@type": "HowToStep",
+              "name": "Provide the mailing address for process",
+              "itemListElement": [
+                {
+                  "@type": "HowToStep",
+                  "name": "Street address"
+                },
+                {
+                  "@type": "HowToStep",
+                  "name": "City"
+                },
+                {
+                  "@type": "HowToStep",
+                  "name": "State"
+                },
+                {
+                  "@type": "HowToStep",
+                  "name": "Country"
+                },
+                {
+                  "@type": "HowToStep",
+                  "name": "Zip code"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Money Due to the State",
+          "description": "Indicate that any money due or accrued to the state has been paid or adequate provision has been made for the payment of that money."
+        },
+        {
+          "@type": "HowToSection",
+          "name": "Effectiveness of Filing",
+          "itemListElement": [
+            {
+              "@type": "HowToStep",
+              "name": "Select the effectiveness of filing option",
+              "itemListElement": [
+                {
+                  "@type": "HowToStep",
+                  "name": "Effective when filed"
+                },
+                {
+                  "@type": "HowToStep",
+                  "name": "Delayed effective date",
+                  "description": "Provide the delayed effective date"
+                },
+                {
+                  "@type": "HowToStep",
+                  "name": "Future event or fact",
+                  "description": "Describe the future event or fact that will cause the document to take effect and provide the 90th day after signing."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Tax Certificate",
+          "description": "Attach a certificate from the comptroller of public accounts that all taxes under Title 2, Tax Code have been paid. Note: Foreign nonprofit corporations are not required to provide a tax certificate."
+        },
+        {
+          "@type": "HowToSection",
+          "name": "Execution",
+          "itemListElement": [
+            {
+              "@type": "HowToStep",
+              "name": "Signature",
+              "description": "The document must be signed by an authorized person."
+            },
+            {
+              "@type": "HowToStep",
+              "name": "Printed or typed name of the authorized person"
+            }
+          ]
+        },
+        {
+          "@type": "HowToSection",
+          "name": "Fees",
+          "description": "The filing fee is $15 for most entities, and $5 for nonprofit corporations or cooperative associations. Fees may be paid by various methods, including personal checks, money orders, LegalEase debit cards, or major credit cards. Note: Fees paid by credit card are subject to a 2.7% convenience fee."
+        },
+        {
+          "@type": "HowToSection",
+          "name": "Payment Instructions",
+          "description": "Submit the completed form in duplicate along with the filing fee and appropriate certificate of account status. The form may be mailed, faxed, or delivered in person. If faxed, credit card information must accompany the transmission (Form 807)."
+        },
+        {
+          "@type": "HowToStep",
+          "name": "End"
+        }
+      ]
+    }
+  ]
+}
+```
+
+This JSON-LD structure represents the step-by-step instructions for completing the form, organized in a recipe format that is easy to follow.

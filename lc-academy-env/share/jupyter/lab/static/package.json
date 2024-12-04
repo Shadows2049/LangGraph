@@ -147,6 +147,7 @@
   "dependencies": {
     "@jupyterlab/application": "~4.2.5",
     "@jupyterlab/application-extension": "~4.2.5",
+    "@jupyterlab/application-top": "file:",
     "@jupyterlab/apputils-extension": "~4.2.5",
     "@jupyterlab/cell-toolbar-extension": "~4.2.5",
     "@jupyterlab/celltags-extension": "~4.2.5",

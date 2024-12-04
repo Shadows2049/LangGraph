@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.irs.gov/efile"  targetNamespace="http://www.irs.gov/efile" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" >
+<xsd:include schemaLocation="../../NYSCommon/master.xsd"/>
+<xsd:include schemaLocation="SchedCT656PSHIPINFOBO.xsd"/>
+<xsd:complexType name="FormCT656BO">
+<xsd:complexContent>
+<xsd:extension base="FormBO">
+<xsd:sequence>
+	<xsd:element name="HOC_CRDT_ERNR_IND" minOccurs="0" type="switchIndicatorField"/>
+	<xsd:element name="HOC_CR_ERNR_NO_IND" minOccurs="0" type="switchIndicatorField"/>
+	<xsd:element name="HOC_FACLTY_NAME" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:pattern value=".{0,39}"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="HOC_EIN_ID" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:pattern value=".{0,9}"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="HOC_FACLTY_ADR" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:pattern value=".{0,30}"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="HOC_CMPL_DT" minOccurs="0" type="dateField"/>
+	<xsd:element name="HOC_CERT_NMBR" minOccurs="1">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:pattern value=".{0,14}"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="HOC_CERT_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="HOC_50_PCT_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="HOC_LSR_LN2_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="HOC_ADDL_TOT_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="HOC_TOT_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="HOC_ADDL_B_CR_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="HOC_PART_B_CR_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="HOC_TOT_CR_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="HOC_TXB4_CR_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="HOC_OCR_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="HOC_TXAFT_APL_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="HOC_FIX_MIN_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="HOC_LMT_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="HOC_USED_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="HOC_UNUSED_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="HOC_RFND_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="HOC_CR_2_NXT_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element minOccurs="0" name="CT656PSHIPINFO" type="SchedCT656PSHIPINFOBO"/>
+</xsd:sequence>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+</xsd:schema>

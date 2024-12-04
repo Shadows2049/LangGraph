@@ -1,0 +1,1170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.irs.gov/efile"  targetNamespace="http://www.irs.gov/efile" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" >
+<xsd:include schemaLocation="../../NYSCommon/master.xsd"/>
+<xsd:complexType name="FormCT222BO">
+<xsd:complexContent>
+<xsd:extension base="FormBO">
+<xsd:sequence>
+	<xsd:element name="ADJ_INSTL_IND" minOccurs="0" type="switchIndicatorField"/>
+	<xsd:element name="ANLZD_INSTL_IND" minOccurs="0" type="switchIndicatorField"/>
+	<xsd:element name="PRR_TX_IND" minOccurs="0" type="switchIndicatorField"/>
+	<xsd:element name="CUR_TX_IND" minOccurs="0" type="switchIndicatorField"/>
+	<xsd:element name="INSTALL_A_DT" minOccurs="0" type="dateField"/>
+	<xsd:element name="INSTALL_B_DT" minOccurs="0" type="dateField"/>
+	<xsd:element name="INSTALL_C_DT" minOccurs="0" type="dateField"/>
+	<xsd:element name="INSTALL_D_DT" minOccurs="0" type="dateField"/>
+	<xsd:element name="REQ_INSTALL_A_AMT" minOccurs="0" type="positiveAmountField"/>
+	<xsd:element name="REQ_INSTALL_B_AMT" minOccurs="0" type="positiveAmountField"/>
+	<xsd:element name="REQ_INSTALL_C_AMT" minOccurs="0" type="positiveAmountField"/>
+	<xsd:element name="REQ_INSTALL_D_AMT" minOccurs="0" type="positiveAmountField"/>
+	<xsd:element name="EST_TX_A_AMT" minOccurs="0" type="positiveAmountField"/>
+	<xsd:element name="EST_TX_B_AMT" minOccurs="0" type="positiveAmountField"/>
+	<xsd:element name="EST_TX_C_AMT" minOccurs="0" type="positiveAmountField"/>
+	<xsd:element name="EST_TX_D_AMT" minOccurs="0" type="positiveAmountField"/>
+	<xsd:element name="ENI_PREV_AMT" minOccurs="0" type="positiveAmountField"/>
+	<xsd:element name="LIAB_BEG_PCT_DT" minOccurs="0" type="dateField"/>
+	<xsd:element name="LIAB_END_PCT_DT" minOccurs="0" type="dateField"/>
+	<xsd:element name="ENI_PRR_AMT" minOccurs="0" type="positiveAmountField"/>
+	<xsd:element name="ENI_CUR_AMT" minOccurs="0" type="positiveAmountField"/>
+	<xsd:element name="ENI_B4_PREV_AMT" minOccurs="0" type="positiveAmountField"/>
+	<xsd:element name="ENI_B4_PRR_AMT" minOccurs="0" type="positiveAmountField"/>
+	<xsd:element name="ENI_B4_CUR_AMT" minOccurs="0" type="positiveAmountField"/>
+	<xsd:element name="ENI_OLD_5_AMT" minOccurs="0" type="positiveAmountField"/>
+	<xsd:element name="ENI_OLD_8_AMT" minOccurs="0" type="positiveAmountField"/>
+	<xsd:element name="ENI_OLD_11_AMT" minOccurs="0" type="positiveAmountField"/>
+	<xsd:element name="ENI_PREV_5_AMT" minOccurs="0" type="positiveAmountField"/>
+	<xsd:element name="ENI_PREV_8_AMT" minOccurs="0" type="positiveAmountField"/>
+	<xsd:element name="ENI_PREV_11_AMT" minOccurs="0" type="positiveAmountField"/>
+	<xsd:element name="ENI_LAST_5_AMT" minOccurs="0" type="positiveAmountField"/>
+	<xsd:element name="ENI_LAST_8_AMT" minOccurs="0" type="positiveAmountField"/>
+	<xsd:element name="ENI_LAST_11_AMT" minOccurs="0" type="positiveAmountField"/>
+	<xsd:element name="ENI_CUR_5_AMT" minOccurs="0" type="positiveAmountField"/>
+	<xsd:element name="ENI_CUR_8_AMT" minOccurs="0" type="positiveAmountField"/>
+	<xsd:element name="ENI_CUR_11_AMT" minOccurs="0" type="positiveAmountField"/>
+	<xsd:element name="ENI_OLD_6_AMT" minOccurs="0" type="positiveAmountField"/>
+	<xsd:element name="ENI_OLD_9_AMT" minOccurs="0" type="positiveAmountField"/>
+	<xsd:element name="ENI_OLD_12_AMT" minOccurs="0" type="positiveAmountField"/>
+	<xsd:element name="ENI_PREV_6_AMT" minOccurs="0" type="positiveAmountField"/>
+	<xsd:element name="ENI_PREV_9_AMT" minOccurs="0" type="positiveAmountField"/>
+	<xsd:element name="ENI_PREV_12_AMT" minOccurs="0" type="positiveAmountField"/>
+	<xsd:element name="ENI_LAST_6_AMT" minOccurs="0" type="positiveAmountField"/>
+	<xsd:element name="ENI_LAST_9_AMT" minOccurs="0" type="positiveAmountField"/>
+	<xsd:element name="ENI_LAST_12_AMT" minOccurs="0" type="positiveAmountField"/>
+	<xsd:element name="ENI_TX_6_AMT" minOccurs="0" type="positiveAmountField"/>
+	<xsd:element name="ENI_TX_9_AMT" minOccurs="0" type="positiveAmountField"/>
+	<xsd:element name="ENI_TX_12_AMT" minOccurs="0" type="positiveAmountField"/>
+	<xsd:element name="OTH_TX_6_AMT" minOccurs="0" type="positiveAmountField"/>
+	<xsd:element name="OTH_TX_9_AMT" minOccurs="0" type="positiveAmountField"/>
+	<xsd:element name="OTH_TX_12_AMT" minOccurs="0" type="positiveAmountField"/>
+	<xsd:element name="TX_CR_5_AMT" minOccurs="0" type="positiveAmountField"/>
+	<xsd:element name="TX_CR_8_AMT" minOccurs="0" type="positiveAmountField"/>
+	<xsd:element name="TX_CR_11_AMT" minOccurs="0" type="positiveAmountField"/>
+	<xsd:element name="RCPTS_PRD_1_AMT" minOccurs="0" type="positiveAmountField"/>
+	<xsd:element name="MNTH_1_NMBR" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:nonNegativeInteger">
+						<xsd:pattern value="[0-9]{1,2}"/>
+						<xsd:enumeration value="3"/>
+						<xsd:enumeration value="4"/>
+						<xsd:enumeration value="5"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="MNTH_2_NMBR" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:nonNegativeInteger">
+						<xsd:pattern value="[0-9]{1,2}"/>
+						<xsd:enumeration value="6"/>
+						<xsd:enumeration value="7"/>
+						<xsd:enumeration value="8"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="MNTH_3_NMBR" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:nonNegativeInteger">
+						<xsd:pattern value="[0-9]{1,2}"/>
+						<xsd:enumeration value="9"/>
+						<xsd:enumeration value="10"/>
+						<xsd:enumeration value="11"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="RCPTS_PRD_2_AMT" minOccurs="0" type="positiveAmountField"/>
+	<xsd:element name="RCPTS_PRD_3_AMT" minOccurs="0" type="positiveAmountField"/>
+	<xsd:element name="RCPTS_TX_PRD_1_AMT" minOccurs="0" type="positiveAmountField"/>
+	<xsd:element name="RCPTS_TX_PRD_2_AMT" minOccurs="0" type="positiveAmountField"/>
+	<xsd:element name="RCPTS_TX_PRD_3_AMT" minOccurs="0" type="positiveAmountField"/>
+	<xsd:element name="OTH_TX_PRD_1_AMT" minOccurs="0" type="positiveAmountField"/>
+	<xsd:element name="OTH_TX_PRD_2_AMT" minOccurs="0" type="positiveAmountField"/>
+	<xsd:element name="OTH_TX_PRD_3_AMT" minOccurs="0" type="positiveAmountField"/>
+	<xsd:element name="TX_CR_PRD_1_AMT" minOccurs="0" type="positiveAmountField"/>
+	<xsd:element name="TX_CR_PRD_2_AMT" minOccurs="0" type="positiveAmountField"/>
+	<xsd:element name="TX_CR_PRD_3_AMT" minOccurs="0" type="positiveAmountField"/>
+	<xsd:element name="ENI_LAST_CUR_AMT" minOccurs="0" type="positiveAmountField"/>
+	<xsd:element name="CAP_LAST_CUR_AMT" minOccurs="0" type="positiveAmountField"/>
+	<xsd:element name="SUBCAP_PR_CUR_AMT" minOccurs="0" type="positiveAmountField"/>
+	<xsd:element name="LAST_OTH_TX_AMT" minOccurs="0" type="positiveAmountField"/>
+	<xsd:element name="LAST_TX_CR_AMT" minOccurs="0" type="positiveAmountField"/>
+	<xsd:element name="TAX_RTN_FILED_DESC" minOccurs="1">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:pattern value=".{0,20}"/>
+						<xsd:enumeration value="CT3"/>
+						<xsd:enumeration value="CT3REF"/>
+						<xsd:enumeration value="CT4"/>
+						<xsd:enumeration value="CT3S"/>
+						<xsd:enumeration value="CT3M4M"/>
+						<xsd:enumeration value="CT3A"/>
+						<xsd:enumeration value="CT3AREF"/>
+						<xsd:enumeration value="CT33"/>
+						<xsd:enumeration value="CT33A"/>
+						<xsd:enumeration value="CT33C"/>
+						<xsd:enumeration value="CT33NL"/>
+						<xsd:enumeration value="CT33M"/>
+						<xsd:enumeration value="CT184"/>
+						<xsd:enumeration value="CT184M"/>
+						<xsd:enumeration value="CT186E"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="CY_TX_AFTCR_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="CMLTV_EXCP_CNT" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:pattern value=".{0,3}"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="PSTMRK_DT" minOccurs="0" type="dateField"/>
+	<xsd:element name="ACH_RESTRICT_IND" minOccurs="0" type="indicatorField"/>
+	<xsd:element name="IMG_IND" minOccurs="0" type="indicatorField"/>
+	<xsd:element name="FORM_ID_SEQ_NMBR" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:pattern value=".{0,1}"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="ROW_EXPIR_TS" minOccurs="0" type="timeStampField"/>
+	<xsd:element name="ROW_STATUS_IND" minOccurs="0" type="indicatorField"/>
+	<xsd:element name="RTN_CLM_IND" minOccurs="0" type="indicatorField"/>
+	<xsd:element name="RTN_CALC_IND" minOccurs="0" type="indicatorField"/>
+	<xsd:element name="RTN_BANK_CALC_IND" minOccurs="0" type="indicatorField"/>
+	<xsd:element name="DIN_NMBR" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:integer">
+						<xsd:pattern value="[\-?0-9]{1,15}"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="DCMT_RCVD_DT" minOccurs="0" type="dateField"/>
+	<xsd:element name="ROW_EFCTV_TS" minOccurs="0" type="timeStampField"/>
+	<xsd:element name="FRAUD_CK_DONE_IND" minOccurs="0" type="indicatorField"/>
+	<xsd:element name="SRC_CODE" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:pattern value=".{0,3}"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="CURRYR_TAX_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="PRVYR_TX_AFTCR_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="ANN_PYMT_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="ETCR_OVPMT_B_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="ETCR_OVPMT_C_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="ETCR_OVPMT_D_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="TOT_ETCR_NDR_B_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="TOT_ETCR_NDR_C_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="NDR_OVPMT_B_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="NDR_OVPMT_C_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="NDR_OVPMT_D_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="SUBT_ETCR_B_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="SUBT_ETCR_C_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="NDR_PNLT_B_AMT" minOccurs="0" type="positiveAmountField"/>
+	<xsd:element name="NDR_PNLT_C_AMT" minOccurs="0" type="positiveAmountField"/>
+	<xsd:element name="NDR_PNLT_D_AMT" minOccurs="0" type="positiveAmountField"/>
+	<xsd:element name="NDR_PNLT_A_AMT" minOccurs="0" type="positiveAmountField"/>
+	<xsd:element name="OVPMT_B_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="OVPMT_C_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="OVPMT_A_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="TOT_NDR_PNLT_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="MPLY_80PCT_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="SUBT_COL_A_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="DIVIDE_3_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="DVD_ENI_CUR_B_NMBR" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:decimal">
+						<xsd:fractionDigits value="5"/>
+						<xsd:totalDigits value="13"/>
+						<xsd:minInclusive value="-9999999.99999"/>
+						<xsd:maxInclusive value="9999999.99999"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="DVD_ENI_CUR_C_NMBR" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:decimal">
+						<xsd:fractionDigits value="5"/>
+						<xsd:totalDigits value="13"/>
+						<xsd:minInclusive value="-9999999.99999"/>
+						<xsd:maxInclusive value="9999999.99999"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="DVD_ENI_CUR_D_NMBR" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:decimal">
+						<xsd:fractionDigits value="5"/>
+						<xsd:totalDigits value="13"/>
+						<xsd:minInclusive value="-9999999.99999"/>
+						<xsd:maxInclusive value="9999999.99999"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="MLT_ENI_TAX_6_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="MLT_ENI_TAX_9_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="TOT_TXB4_CR_6_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="TOT_TXB4_CR_9_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="TOT_TXB4_CR_12_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="TTAX_AFTCR_9_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="RESULT_A_PCT" minOccurs="0" type="ratioField"/>
+	<xsd:element name="RESULT_B_PCT" minOccurs="0" type="ratioField"/>
+	<xsd:element name="RESULT_C_PCT" minOccurs="0" type="ratioField"/>
+	<xsd:element name="TOT_RESULT_PCT" minOccurs="0" type="ratioField"/>
+	<xsd:element name="BSE_PRD_PCT" minOccurs="0" type="ratioField"/>
+	<xsd:element name="DVD_OLD_B_NMBR" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:decimal">
+						<xsd:fractionDigits value="5"/>
+						<xsd:totalDigits value="13"/>
+						<xsd:minInclusive value="-9999999.99999"/>
+						<xsd:maxInclusive value="9999999.99999"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="DVD_OLD_C_NMBR" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:decimal">
+						<xsd:fractionDigits value="5"/>
+						<xsd:totalDigits value="13"/>
+						<xsd:minInclusive value="-9999999.99999"/>
+						<xsd:maxInclusive value="9999999.99999"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="DVD_OLD_D_NMBR" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:decimal">
+						<xsd:fractionDigits value="5"/>
+						<xsd:totalDigits value="13"/>
+						<xsd:minInclusive value="-9999999.99999"/>
+						<xsd:maxInclusive value="9999999.99999"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="DVD_PREV_B_NMBR" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:decimal">
+						<xsd:fractionDigits value="5"/>
+						<xsd:totalDigits value="13"/>
+						<xsd:minInclusive value="-9999999.99999"/>
+						<xsd:maxInclusive value="9999999.99999"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="DVD_PREV_C_NMBR" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:decimal">
+						<xsd:fractionDigits value="5"/>
+						<xsd:totalDigits value="13"/>
+						<xsd:minInclusive value="-9999999.99999"/>
+						<xsd:maxInclusive value="9999999.99999"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="DVD_PREV_D_NMBR" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:decimal">
+						<xsd:fractionDigits value="5"/>
+						<xsd:totalDigits value="13"/>
+						<xsd:minInclusive value="-9999999.99999"/>
+						<xsd:maxInclusive value="9999999.99999"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="DVD_LAST_B_NMBR" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:decimal">
+						<xsd:fractionDigits value="5"/>
+						<xsd:totalDigits value="13"/>
+						<xsd:minInclusive value="-9999999.99999"/>
+						<xsd:maxInclusive value="9999999.99999"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="DVD_LAST_C_NMBR" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:decimal">
+						<xsd:fractionDigits value="5"/>
+						<xsd:totalDigits value="13"/>
+						<xsd:minInclusive value="-9999999.99999"/>
+						<xsd:maxInclusive value="9999999.99999"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="DVD_LAST_D_NMBR" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:decimal">
+						<xsd:fractionDigits value="5"/>
+						<xsd:totalDigits value="13"/>
+						<xsd:minInclusive value="-9999999.99999"/>
+						<xsd:maxInclusive value="9999999.99999"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="TOT_DVD_B_NMBR" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:decimal">
+						<xsd:fractionDigits value="5"/>
+						<xsd:totalDigits value="13"/>
+						<xsd:minInclusive value="-9999999.99999"/>
+						<xsd:maxInclusive value="9999999.99999"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="TOT_DVD_C_NMBR" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:decimal">
+						<xsd:fractionDigits value="5"/>
+						<xsd:totalDigits value="13"/>
+						<xsd:minInclusive value="-9999999.99999"/>
+						<xsd:maxInclusive value="9999999.99999"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="TOT_DVD_D_NMBR" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:decimal">
+						<xsd:fractionDigits value="5"/>
+						<xsd:totalDigits value="13"/>
+						<xsd:minInclusive value="-9999999.99999"/>
+						<xsd:maxInclusive value="9999999.99999"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="DVD_TOT_B_NMBR" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:decimal">
+						<xsd:fractionDigits value="5"/>
+						<xsd:totalDigits value="13"/>
+						<xsd:minInclusive value="-9999999.99999"/>
+						<xsd:maxInclusive value="9999999.99999"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="DVD_TOT_C_NMBR" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:decimal">
+						<xsd:fractionDigits value="5"/>
+						<xsd:totalDigits value="13"/>
+						<xsd:minInclusive value="-9999999.99999"/>
+						<xsd:maxInclusive value="9999999.99999"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="DVD_TOT_D_NMBR" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:decimal">
+						<xsd:fractionDigits value="5"/>
+						<xsd:totalDigits value="13"/>
+						<xsd:minInclusive value="-9999999.99999"/>
+						<xsd:maxInclusive value="9999999.99999"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="TTAX_AFTCR_12_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="MLT_TTAX_6_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="MLT_TTAX_9_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="DVD_OLD_6_NMBR" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:decimal">
+						<xsd:fractionDigits value="5"/>
+						<xsd:totalDigits value="13"/>
+						<xsd:minInclusive value="-9999999.99999"/>
+						<xsd:maxInclusive value="9999999.99999"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="DVD_OLD_9_NMBR" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:decimal">
+						<xsd:fractionDigits value="5"/>
+						<xsd:totalDigits value="13"/>
+						<xsd:minInclusive value="-9999999.99999"/>
+						<xsd:maxInclusive value="9999999.99999"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="DVD_PREV_6_NMBR" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:decimal">
+						<xsd:fractionDigits value="5"/>
+						<xsd:totalDigits value="13"/>
+						<xsd:minInclusive value="-9999999.99999"/>
+						<xsd:maxInclusive value="9999999.99999"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="DVD_PREV_9_NMBR" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:decimal">
+						<xsd:fractionDigits value="5"/>
+						<xsd:totalDigits value="13"/>
+						<xsd:minInclusive value="-9999999.99999"/>
+						<xsd:maxInclusive value="9999999.99999"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="DVD_LAST_6_NMBR" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:decimal">
+						<xsd:fractionDigits value="5"/>
+						<xsd:totalDigits value="13"/>
+						<xsd:minInclusive value="-9999999.99999"/>
+						<xsd:maxInclusive value="9999999.99999"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="DVD_LAST_9_NMBR" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:decimal">
+						<xsd:fractionDigits value="5"/>
+						<xsd:totalDigits value="13"/>
+						<xsd:minInclusive value="-9999999.99999"/>
+						<xsd:maxInclusive value="9999999.99999"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="TOT_DVD_6_NMBR" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:decimal">
+						<xsd:fractionDigits value="5"/>
+						<xsd:totalDigits value="13"/>
+						<xsd:minInclusive value="-9999999.99999"/>
+						<xsd:maxInclusive value="9999999.99999"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="TOT_DVD_9_NMBR" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:decimal">
+						<xsd:fractionDigits value="5"/>
+						<xsd:totalDigits value="13"/>
+						<xsd:minInclusive value="-9999999.99999"/>
+						<xsd:maxInclusive value="9999999.99999"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="DVD_TOT_6_NMBR" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:decimal">
+						<xsd:fractionDigits value="5"/>
+						<xsd:totalDigits value="13"/>
+						<xsd:minInclusive value="-9999999.99999"/>
+						<xsd:maxInclusive value="9999999.99999"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="DVD_TOT_9_NMBR" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:decimal">
+						<xsd:fractionDigits value="5"/>
+						<xsd:totalDigits value="13"/>
+						<xsd:minInclusive value="-9999999.99999"/>
+						<xsd:maxInclusive value="9999999.99999"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="MLT_TTAX_12_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="ANLZD_1_PCT" minOccurs="0" type="ratioField"/>
+	<xsd:element name="ANLZD_2_PCT" minOccurs="0" type="ratioField"/>
+	<xsd:element name="ANLZD_3_PCT" minOccurs="0" type="ratioField"/>
+	<xsd:element name="ANLZD_TX_INC_1_AMT" minOccurs="0" type="positiveAmountField"/>
+	<xsd:element name="ANLZD_TX_INC_2_AMT" minOccurs="0" type="positiveAmountField"/>
+	<xsd:element name="ANLZD_TX_INC_3_AMT" minOccurs="0" type="positiveAmountField"/>
+	<xsd:element name="TOT_TX_B4CR_1_AMT" minOccurs="0" type="positiveAmountField"/>
+	<xsd:element name="CORP_PCT" minOccurs="0" type="ratioField"/>
+	<xsd:element name="TOT_TX_B4CR_2_AMT" minOccurs="0" type="positiveAmountField"/>
+	<xsd:element name="TOT_TX_B4CR_3_AMT" minOccurs="0" type="positiveAmountField"/>
+	<xsd:element name="TOT_TX_AFTCR_1_AMT" minOccurs="0" type="positiveAmountField"/>
+	<xsd:element name="TOT_TX_AFTCR_2_AMT" minOccurs="0" type="positiveAmountField"/>
+	<xsd:element name="TOT_TX_AFTCR_3_AMT" minOccurs="0" type="positiveAmountField"/>
+	<xsd:element name="MLT_AFTCR_1_AMT" minOccurs="0" type="positiveAmountField"/>
+	<xsd:element name="MLT_AFTCR_2_AMT" minOccurs="0" type="positiveAmountField"/>
+	<xsd:element name="MLT_AFTCR_3_AMT" minOccurs="0" type="positiveAmountField"/>
+	<xsd:element name="MLT_SM_CORP_1_AMT" minOccurs="0" type="positiveAmountField"/>
+	<xsd:element name="MLT_SM_CORP_2_AMT" minOccurs="0" type="positiveAmountField"/>
+	<xsd:element name="MLT_SM_CORP_3_AMT" minOccurs="0" type="positiveAmountField"/>
+	<xsd:element name="SEAS_ANLZD_B_AMT" minOccurs="0" type="positiveAmountField"/>
+	<xsd:element name="SEAS_ANLZD_C_AMT" minOccurs="0" type="positiveAmountField"/>
+	<xsd:element name="PT_1_PT_2_D_AMT" minOccurs="0" type="positiveAmountField"/>
+	<xsd:element name="TOT_A_B_AMT" minOccurs="0" type="positiveAmountField"/>
+	<xsd:element name="TOT_B_C_AMT" minOccurs="0" type="positiveAmountField"/>
+	<xsd:element name="TOT_C_D_AMT" minOccurs="0" type="positiveAmountField"/>
+	<xsd:element name="SUBT_TOT_PT_B_AMT" minOccurs="0" type="positiveAmountField"/>
+	<xsd:element name="SUBT_TOT_PT_C_AMT" minOccurs="0" type="positiveAmountField"/>
+	<xsd:element name="SUBT_TOT_PT_D_AMT" minOccurs="0" type="positiveAmountField"/>
+	<xsd:element name="SUBT_MFI_B_AMT" minOccurs="0" type="positiveAmountField"/>
+	<xsd:element name="SUBT_MFI_C_AMT" minOccurs="0" type="positiveAmountField"/>
+	<xsd:element name="SUBT_MFI_D_AMT" minOccurs="0" type="positiveAmountField"/>
+	<xsd:element name="SUBT_TOT_MFI_B_AMT" minOccurs="0" type="positiveAmountField"/>
+	<xsd:element name="SUBT_TOT_MFI_C_AMT" minOccurs="0" type="positiveAmountField"/>
+	<xsd:element name="MFI_TOT_MFI_C_AMT" minOccurs="0" type="positiveAmountField"/>
+	<xsd:element name="MFI_TOT_MFI_D_AMT" minOccurs="0" type="positiveAmountField"/>
+	<xsd:element name="REQ_INST_A_AMT" minOccurs="0" type="positiveAmountField"/>
+	<xsd:element name="REQ_INST_B_AMT" minOccurs="0" type="positiveAmountField"/>
+	<xsd:element name="REQ_INST_C_AMT" minOccurs="0" type="positiveAmountField"/>
+	<xsd:element name="REQ_INST_D_AMT" minOccurs="0" type="positiveAmountField"/>
+	<xsd:element name="APPL_AMT" minOccurs="0" type="positiveAmountField"/>
+	<xsd:element name="LAST_TAX_AMT" minOccurs="0" type="positiveAmountField"/>
+	<xsd:element name="RCOMP_TAX_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="TTAX_AFTCR_6_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="UNDR_A_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="UNDR_B_AMT" minOccurs="0" type="positiveAmountField"/>
+	<xsd:element name="UNDR_C_AMT" minOccurs="0" type="positiveAmountField"/>
+	<xsd:element name="UNDR_D_AMT" minOccurs="0" type="positiveAmountField"/>
+	<xsd:element name="PYMT_DATE" minOccurs="0" type="dateField"/>
+	<xsd:element name="PYMT_B_DATE" minOccurs="0" type="dateField"/>
+	<xsd:element name="PYMT_C_DATE" minOccurs="0" type="dateField"/>
+	<xsd:element name="PYMT_D_DATE" minOccurs="0" type="dateField"/>
+	<xsd:element name="INST_DAYS_NMBR" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:integer">
+						<xsd:pattern value="[\-?0-9]{1,4}"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="INST_DAYS_B_NMBR" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:integer">
+						<xsd:pattern value="[\-?0-9]{1,4}"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="INST_DAYS_C_NMBR" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:integer">
+						<xsd:pattern value="[\-?0-9]{1,4}"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="INST_DAYS_D_NMBR" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:integer">
+						<xsd:pattern value="[\-?0-9]{1,4}"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="DAFT_315CY_NMBR" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:integer">
+						<xsd:pattern value="[\-?0-9]{1,4}"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="DAFT_315CY_B_NMBR" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:integer">
+						<xsd:pattern value="[\-?0-9]{1,4}"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="DAFT_315CY_C_NMBR" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:integer">
+						<xsd:pattern value="[\-?0-9]{1,4}"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="DAFT_315CY_D_NMBR" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:integer">
+						<xsd:pattern value="[\-?0-9]{1,4}"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="DAFT_331CY_NMBR" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:integer">
+						<xsd:pattern value="[\-?0-9]{1,4}"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="DAFT_331CY_B_NMBR" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:integer">
+						<xsd:pattern value="[\-?0-9]{1,4}"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="DAFT_331CY_C_NMBR" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:integer">
+						<xsd:pattern value="[\-?0-9]{1,4}"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="DAFT_331CY_D_NMBR" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:integer">
+						<xsd:pattern value="[\-?0-9]{1,4}"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="DAFT_630CY_NMBR" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:integer">
+						<xsd:pattern value="[\-?0-9]{1,4}"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="DAFT_630CY_B_NMBR" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:integer">
+						<xsd:pattern value="[\-?0-9]{1,4}"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="DAFT_630CY_C_NMBR" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:integer">
+						<xsd:pattern value="[\-?0-9]{1,4}"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="DAFT_630CY_D_NMBR" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:integer">
+						<xsd:pattern value="[\-?0-9]{1,4}"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="DAFT_930CY_NMBR" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:integer">
+						<xsd:pattern value="[\-?0-9]{1,4}"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="DAFT_930CY_B_NMBR" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:integer">
+						<xsd:pattern value="[\-?0-9]{1,4}"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="DAFT_930CY_C_NMBR" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:integer">
+						<xsd:pattern value="[\-?0-9]{1,4}"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="DAFT_930CY_D_NMBR" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:integer">
+						<xsd:pattern value="[\-?0-9]{1,4}"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="DAFT_1231CY_NMBR" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:integer">
+						<xsd:pattern value="[\-?0-9]{1,4}"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="DAFT_1231CY_B_NMBR" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:integer">
+						<xsd:pattern value="[\-?0-9]{1,4}"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="DAFT_1231CY_C_NMBR" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:integer">
+						<xsd:pattern value="[\-?0-9]{1,4}"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="DAFT_1231CY_D_NMBR" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:integer">
+						<xsd:pattern value="[\-?0-9]{1,4}"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="DAFT_331NY_NMBR" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:integer">
+						<xsd:pattern value="[\-?0-9]{1,4}"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="DAFT_331NY_B_NMBR" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:integer">
+						<xsd:pattern value="[\-?0-9]{1,4}"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="DAFT_331NY_C_NMBR" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:integer">
+						<xsd:pattern value="[\-?0-9]{1,4}"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="DAFT_331NY_D_NMBR" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:integer">
+						<xsd:pattern value="[\-?0-9]{1,4}"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="DAFT_630NY_NMBR" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:integer">
+						<xsd:pattern value="[\-?0-9]{1,4}"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="DAFT_630NY_B_NMBR" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:integer">
+						<xsd:pattern value="[\-?0-9]{1,4}"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="DAFT_630NY_C_NMBR" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:integer">
+						<xsd:pattern value="[\-?0-9]{1,4}"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="DAFT_630NY_D_NMBR" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:integer">
+						<xsd:pattern value="[\-?0-9]{1,4}"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="DAFT_930NY_NMBR" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:integer">
+						<xsd:pattern value="[\-?0-9]{1,4}"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="DAFT_930NY_B_NMBR" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:integer">
+						<xsd:pattern value="[\-?0-9]{1,4}"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="DAFT_930NY_C_NMBR" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:integer">
+						<xsd:pattern value="[\-?0-9]{1,4}"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="DAFT_930NY_D_NMBR" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:integer">
+						<xsd:pattern value="[\-?0-9]{1,4}"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="DAFT_1231NY_NMBR" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:integer">
+						<xsd:pattern value="[\-?0-9]{1,4}"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="DAFT_1231NY_B_NMBR" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:integer">
+						<xsd:pattern value="[\-?0-9]{1,4}"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="DAFT_1231NY_C_NMBR" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:integer">
+						<xsd:pattern value="[\-?0-9]{1,4}"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="DAFT_1231NY_D_NMBR" minOccurs="0">
+		<xsd:complexType>
+			<xsd:attribute name="claimed">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:integer">
+						<xsd:pattern value="[\-?0-9]{1,4}"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="DAFT_315CY_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="DAFT_315CY_B_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="DAFT_315CY_C_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="DAFT_315CY_D_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="DAFT_331CY_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="DAFT_331CY_B_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="DAFT_331CY_C_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="DAFT_331CY_D_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="DAFT_630CY_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="DAFT_630CY_B_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="DAFT_630CY_C_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="DAFT_630CY_D_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="DAFT_930CY_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="DAFT_930CY_B_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="DAFT_930CY_C_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="DAFT_930CY_D_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="DAFT_1231CY_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="DAFT_1231CY_B_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="DAFT_1231CY_C_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="DAFT_1231CY_D_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="DAFT_331NY_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="DAFT_331NY_B_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="DAFT_331NY_C_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="DAFT_331NY_D_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="DAFT_630NY_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="DAFT_630NY_B_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="DAFT_630NY_C_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="DAFT_630NY_D_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="DAFT_930NY_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="DAFT_930NY_B_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="DAFT_930NY_C_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="DAFT_930NY_D_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="DAFT_1231NY_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="DAFT_1231NY_B_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="DAFT_1231NY_C_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="DAFT_1231NY_D_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="TOT_AMT" minOccurs="0" type="positiveAmountField"/>
+	<xsd:element name="TOT_B_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="TOT_C_AMT" minOccurs="0" type="amountField"/>
+	<xsd:element name="TOT_D_AMT" minOccurs="0" type="amountField"/>
+</xsd:sequence>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+</xsd:schema>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2006 rel. 3 sp2 (http://www.altova.com) by Terry Garber (SC DEPT OF REVENUE & TAXATION) -->
+<xsd:schema xmlns="http://www.irs.gov/efile" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.irs.gov/efile" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0">
+	<xsd:include schemaLocation="../NYSBusiness/ProcessBO.xsd"/>
+	<xsd:element name="ReturnDataState" type="ReturnDataStateType"/>
+	<xsd:complexType name="ReturnDataStateType">
+		<xsd:annotation>
+			<xsd:documentation>Content model for a sample state return type</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="processBO" type="ProcessBO" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:schema>
